@@ -21,6 +21,8 @@
     <link href="{{ asset('asset/lib/flaticon/font/flaticon.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/lib/animate/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('login/profileUser/css/profile.css')}}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">

@@ -15,12 +15,13 @@
                                     <a href="#">Khoa Toán-Tin Học</a>
                                     <ul class="sub-menu">
                                         <span class="f-title">Nghành Học</span>
-                                        <li><a href="{{ route('KH_maytinh') }}">Khoa Học Máy Tính</a></li>
-                                        <li><a href="{{ route('Toan_ungdung') }}">Toán Ứng Dụng</a></li>
-                                        <li><a href="{{ route('Mang_maytinh') }}">Mạng Máy Tính & Truyền Thông Dữ Liệu</a></li>
-                                        <li><a href="{{ route('HT_thongtin') }}">Hệ Thống Thông Tin</a></li>
-                                        <li><a href="{{ route('TT_nhantao') }}">Trí Tuệ Nhân Tạo</a></li>
-                                        <li><a href="{{ route('CN_thongtin') }}">Công Nghệ Thông Tin</a></li>
+                                        <li><a href="{{ route('KH-maytinh') }}">Khoa Học Máy Tính</a></li>
+                                        <li><a href="{{ route('Toan-UD') }}">Toán Ứng Dụng</a></li>
+                                        <li><a href="{{ route('Mang-maytinh') }}">Mạng Máy Tính & Truyền Thông Dữ
+                                                Liệu</a></li>
+                                        <li><a href="{{ route('HT-thongtin') }}">Hệ Thống Thông Tin</a></li>
+                                        <li><a href="{{ route('TT-nhantao') }}">Trí Tuệ Nhân Tạo</a></li>
+                                        <li><a href="{{ route('CN-thongtin') }}">Công Nghệ Thông Tin</a></li>
                                     </ul>
                                 </li>
                                 {{-- Khoa Kinh Tế Quản Lý --}}
@@ -43,8 +44,8 @@
                                     <a href="#">Khoa Khoa Học & Sức Khoẻ</a>
                                     <ul class="sub-menu">
                                         <span class="f-title">Nghành Học</span>
-                                        <li><a href="{{route('DieuDuong')}}">Điều Dưỡng</a></li>
-                                        <li><a href="{{route('DieuDuong')}}">Dinh Dưỡng</a></li>
+                                        <li><a href="{{ route('DieuDuong') }}">Điều Dưỡng</a></li>
+                                        <li><a href="{{ route('DieuDuong') }}">Dinh Dưỡng</a></li>
                                     </ul>
                                 </li>
                                 {{-- Khoa Ngoại Ngữ --}}
@@ -52,10 +53,10 @@
                                     <a href="#">Khoa Ngoại Ngữ</a>
                                     <ul class="sub-menu">
                                         <span class="f-title">Nghành Học</span>
-                                        <li><a href="{{route('ANH')}}">Ngôn Ngữ Anh</a></li>
-                                        <li><a href="{{route('NHAT')}}">Ngôn Ngữ Nhật</a></li>
-                                        <li><a href="{{route('TQ')}}">Ngôn Ngữ Trung Quốc</a></li>
-                                        <li><a href="{{route('HAN')}}">Ngôn Ngữ Hàn Quốc</a></li>
+                                        <li><a href="{{ route('ANH') }}">Ngôn Ngữ Anh</a></li>
+                                        <li><a href="{{ route('NHAT') }}">Ngôn Ngữ Nhật</a></li>
+                                        <li><a href="{{ route('TQ') }}">Ngôn Ngữ Trung Quốc</a></li>
+                                        <li><a href="{{ route('HAN') }}">Ngôn Ngữ Hàn Quốc</a></li>
                                     </ul>
                                 </li>
                                 {{-- Khoa Khoa Học Xã Hội & Nhân Văn --}}
@@ -63,8 +64,8 @@
                                     <a href="#">Khoa Khoa Học Xã Hội & Nhân Văn</a>
                                     <ul class="sub-menu">
                                         <span class="f-title">Nghành Học</span>
-                                        <li><a href="{{route('CT_xahoi')}}">Việt Nam Học</a></li>
-                                        <li><a href="{{route('VN_hoc')}}">Công Tác Xã Hội</a></li>
+                                        <li><a href="{{ route('CT_xahoi') }}">Việt Nam Học</a></li>
+                                        <li><a href="{{ route('VN_hoc') }}">Công Tác Xã Hội</a></li>
                                     </ul>
                                 </li>
                                 {{-- Khoa Du Lịch --}}
@@ -72,7 +73,7 @@
                                     <a href="#">Khoa Du Lịch</a>
                                     <ul class="sub-menu">
                                         <span class="f-title">Nghành Học</span>
-                                        <li><a href="{{route('DL_luhanh')}}">Quản Trị & Du Lịch-Lữ Hành</a></li>
+                                        <li><a href="{{ route('DL_luhanh') }}">Quản Trị & Du Lịch-Lữ Hành</a></li>
                                     </ul>
                                 </li>
                                 {{-- Khoa Âm Nhạc Ứng Dụng --}}
@@ -80,7 +81,7 @@
                                     <a href="#">Khoa Âm Nhạc Ứng Dụng</a>
                                     <ul class="sub-menu">
                                         <span class="f-title">Nghành Học</span>
-                                        <li><a href="{{route('Thanhnhac')}}">Thanh Nhạc</a></li>
+                                        <li><a href="{{ route('Thanhnhac') }}">Thanh Nhạc</a></li>
                                     </ul>
                                 </li>
                                 {{-- Khoa Truyền Thông Đa Phương Tiện --}}
@@ -88,7 +89,8 @@
                                     <a href="#">Truyền Thông Đa Phương Tiện</a>
                                     <ul class="sub-menu">
                                         <span class="f-title">Nghành Học</span>
-                                        <li><a href="{{route('TT_daphuongtien')}}">Truyền Thông Đa  Phương Tiện</a></li>
+                                        <li><a href="{{ route('TT_daphuongtien') }}">Truyền Thông Đa Phương Tiện</a>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -147,7 +149,7 @@
                 <li>
                     <a href="#">Cựu Sinh Viên & Doanh Nghiệp</a>
                     <ul class="sub-menu">
-                        <li><a href="#">Thêm Bài Tuyển Dụng</a></li>
+                        <li><a href="{{route('getPost.index')}}">Thêm Bài Tuyển Dụng</a></li>
                     </ul>
                 </li>
 
@@ -158,11 +160,25 @@
                         <li><a href="#">Tra Cứu Điểm</a></li>
                     </ul>
                 </li>
+
+                @if (Auth::check() == true)
+                    <li style="width: 203px; position: absolute; right: -260px;">
+
+                        <a href="#"><i class="fas fa-user">&nbsp;&nbsp;</i> {{ auth()->user()->first_name }}
+                            {{ auth()->user()->last_name }}</a>
+                        <ul class="sub-menu">
+                            <li><a href="{{route('profile')}}">Trang Cá Nhân</a></li>
+                            <li><a href="{{route('logout')}}"> <i class="fas fa-sign-out-alt">&nbsp;&nbsp;</i>Đăng xuất</a></li>
+                        </ul>
+                    </li>
+                @endif
             </ul>
 
-            <div class="ml-auto">
-                <a class="btn btn-custom" href="{{ route('login') }}">Login</a>
-            </div>
+            @if (Auth::check() == false)
+                <div class="ml-auto">
+                    <a class="btn btn-custom" href="{{ route('login') }}">Login</a>
+                </div>
+            @endif
         </nav>
     </div>
 </div>
