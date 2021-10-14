@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Schema;
 class CreateUsersTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations create user table
+     * sex -> giới tính
+     * type -> admin, sinh viên, giảng viên
      *
      * @return void
      */
@@ -19,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('first_name');
             $table->string('last_name');
+            $table->integer('sex');
             $table->date('date_birth');
             $table->string('email');
             $table->string('phone_number');

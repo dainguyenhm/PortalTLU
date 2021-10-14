@@ -28,7 +28,7 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'student_code' => 'required|min:6|unique',
+            'student_code' => 'required|min:6|unique:students',
         ], [
             'student_code.required' => "Bạn chưa nhập mã sinh viên",
             'student_code.min' => "Mã sinh viên phải có ít nhất 6 ký tự.",
@@ -40,6 +40,7 @@ class StudentController extends Controller
         $student->student_code = $request->student_code;
         $student->type = $request->type;
         $student->faculity_id = $request->faculity_id;
+        $student->class = $request->class;
         $student->save();
 
         return redirect()->route('student.list')->with('Thongbao', 'Thêm sinh viên thành công.');

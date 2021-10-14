@@ -7,11 +7,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Trang Quản Trị</a>
+                <a class="navbar-brand" href="{{route('manager.index')}}">Trang Quản Trị</a>
             </div>
             <!-- /.navbar-header -->
 
-            <ul class="nav navbar-top-links navbar-right">
+            {{-- <ul class="nav navbar-top-links navbar-right">
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -19,20 +19,16 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
 
-                        {{-- @if (isset($user_login)) --}}
-
-                        <li><a><i class="fa fa-user fa-fw"></i>name</a>
+                        <li><a><i
+                                    class="fa fa-user fa-fw"></i>{{ auth()->user()->first_name }}&nbsp;{{ auth()->user()->last_name }}</a>
                         </li>
                         <label for=""></label>
                         <li><a href=""><i class="fa fa-gear fa-fw"></i>Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href=""><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="{{ route('getAdmin.logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
-
-                        {{-- @endif --}}
-
-                    </ul>
+                    </ul> --}}
                     <!-- /.dropdown-user -->
                 </li>
                 <!-- /.dropdown -->
@@ -89,7 +85,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="{{ route('enterprise.list') }}"><i class="fa fa-users fa-fw"></i>&nbsp;&nbsp;Doanh
                                 Nghiệp <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -102,13 +98,14 @@
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
-                        </li>
+                        </li> --}}
                         <li>
-                            <a href="{{ route('post.list') }}"><i class="fas fa-paste"></i>&nbsp;&nbsp;Bài viết <span
-                                    class="fa arrow"></span></a>
+                            <a href="{{ route('post.list') }}"><i class="fas fa-paste"></i>&nbsp;&nbsp;Bài viết
+                                <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{ route('post.list') }}"><i class="fas fa-list-alt"></i>&nbsp;&nbsp;Danh
+                                    <a href="{{ route('post.list') }}"><i
+                                            class="fas fa-list-alt"></i>&nbsp;&nbsp;Danh
                                         sách</a>
                                 </li>
                             </ul>
@@ -155,7 +152,7 @@
                                             class="fas fa-list-alt"></i>&nbsp;&nbsp;Danh sách</a>
                                 </li>
                                 <li>
-                                    <a href="#">Thêm bảng điểm</a>
+                                    <a href="{{route('gettranscript.create')}}">Thêm bảng điểm</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -165,7 +162,8 @@
                                     class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{ route('user.list') }}"><i class="fas fa-list-alt"></i>&nbsp;&nbsp;Danh
+                                    <a href="{{ route('user.list') }}"><i
+                                            class="fas fa-list-alt"></i>&nbsp;&nbsp;Danh
                                         sách</a>
                                 </li>
                                 <li>
@@ -180,7 +178,8 @@
                                     class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{ route('role.list') }}"><i class="fas fa-list-alt"></i>&nbsp;&nbsp;Danh
+                                    <a href="{{ route('role.list') }}"><i
+                                            class="fas fa-list-alt"></i>&nbsp;&nbsp;Danh
                                         sách</a>
                                 </li>
                                 <li>

@@ -14,7 +14,7 @@ class TeacherController extends Controller
         $teacher = Teacher::all();
         return view('index_Chuan.admin.teacher.list', ['teacher' => $teacher]);
     }
-    public function getcreate()
+    public function create()
     {
         $user = User::where('type', '2')->get();
         return view('index_Chuan.admin.teacher.insert', ['user' => $user]);

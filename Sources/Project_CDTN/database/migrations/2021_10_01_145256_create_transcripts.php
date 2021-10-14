@@ -15,7 +15,7 @@ class CreateTranscripts extends Migration
     {
         Schema::create('transcripts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('name');
+            $table->string('name');
             
             $table->integer('student_id')->unsigned();
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');

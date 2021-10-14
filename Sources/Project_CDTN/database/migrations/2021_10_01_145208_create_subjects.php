@@ -7,7 +7,10 @@ use Illuminate\Support\Facades\Schema;
 class CreateSubjects extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations create subject table
+     * name -> tên môn học
+     * subject-code -> mã môn học
+     * credit -> số tín chỉ
      *
      * @return void
      */
@@ -17,6 +20,7 @@ class CreateSubjects extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('subject_code');
+            $table->integer('credit');
             $table->timestamps();
         });
     }

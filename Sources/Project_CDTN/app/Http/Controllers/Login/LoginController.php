@@ -17,7 +17,6 @@ class LoginController extends Controller
     
     function postlogin(Request $request)
     { 
-        // dd($request);
         $this->validate($request, [
             'user_name' => 'required',
             'password' => 'required|min:8|max:32'

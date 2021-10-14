@@ -35,76 +35,76 @@
                                 <td>{{ $st->student_code }}</td>
                                 <td>
                                     @switch($st->faculity_id)
-                                        @case($st->faculity_id == 9)
+                                        @case(9)
                                             {{ 'Khoa học Máy Tính' }}
                                         @break
-                                        @case($st->faculity == 10)
+                                        @case(10)
                                             {{ 'Toán Ứng Dụng' }}
                                         @break
-                                        @case($st->faculity == 11)
+                                        @case(11)
                                             {{ 'Mạng Truyền Thông & Truyền Thông Dữ Liệu' }}
                                         @break
-                                        @case($st->faculity == 12)
+                                        @case(12)
                                             {{ 'Hệ Thống Thông Tin' }}
                                         @break
-                                        @case($st->faculity == 13)
+                                        @case( 13)
                                             {{ 'Trí Tuệ Nhân Tạo' }}
                                         @break
-                                        @case($st->faculity == 14)
+                                        @case(14)
                                             {{ 'Công Nghệ Thông tin' }}
                                         @break
-                                        @case($st->faculity == 16)
+                                        @case( 15)
                                             {{ 'Kế Toán' }}
                                         @break
-                                        @case($st->faculity == 17)
+                                        @case(16)
                                             {{ 'Tài Chính Ngân Hàng' }}
                                         @break
-                                        @case($st->faculity == 18)
+                                        @case(17)
                                             {{ 'Quản Trị Kinh Doanh' }}
                                         @break
-                                        @case($st->faculity == 20)
+                                        @case(18)
                                             {{ 'Marketing' }}
                                         @break
-                                        @case($st->faculity == 21)
+                                        @case(19)
                                             {{ 'Logitics & Quản Lý Chuỗi Cung Ứng' }}
                                         @break
-                                        @case($st->faculity == 22)
+                                        @case(20)
                                             {{ 'Luật Kinh Tế' }}
                                         @break
-                                        @case($st->faculity == 23)
+                                        @case(21)
                                             {{ 'Kinh Tế Quốc Tế' }}
                                         @break
-                                        @case($st->faculity == 24)
+                                        @case(22)
                                             {{ 'Điều Dưỡng' }}
                                         @break
-                                        @case($st->faculity == 25)
+                                        @case(23)
                                             {{ 'Dinh Dưỡng' }}
                                         @break
-                                        @case($st->faculity == 26)
+                                        @case(25)
                                             {{ 'Ngôn Ngữ Anh' }}
                                         @break
-                                        @case($st->faculity == 27)
+                                        @case(26)
                                             {{ 'Ngôn Ngữ Nhật Bản' }}
                                         @break
-                                        @case($st->faculity == 28)
+                                        @case(27)
                                             {{ 'Ngôn Ngữ Hàn Quốc' }}
                                         @break
-                                        @case($st->faculity == 29)
+                                        @case(28)
                                             {{ 'Ngôn Ngữ Trung Quốc' }}
                                         @break
-                                        @case($st->faculity == 30)
+                                        @case(29)
                                             {{ 'Việt Nam Học' }}
                                         @break
-                                        @case($st->faculity == 31)
+                                        @case(30)
                                             {{ 'Công Tác Xã Hội' }}
                                         @break
-                                        @case($st->faculity == 32)
+                                        @case(31)
                                             {{ 'Quản Trị & Du Lịch - Lữ Hành' }}
                                         @break
-                                        @case($st->faculity == 33)
+                                        @case(32)
                                             {{ 'Thanh Nhạc' }}
                                         @break
-                                        @case($st->faculity == 35)
+                                        @case(33)
                                             {{ 'Truyền Thông Đa Phương Tiện' }}
                                         @break
                                         @default

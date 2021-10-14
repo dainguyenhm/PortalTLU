@@ -19,6 +19,8 @@ class CreateStudents extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('student_code');
+            $table->integer('session');
+            $table->string('class');
             $table->integer('faculity_id')->unsigned()->nullable();
             $table->foreign('faculity_id')->references('id')->on('faculity_majors');
             $table->timestamps();

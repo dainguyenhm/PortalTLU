@@ -34,7 +34,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Mã Môn Học</label>
-                                <input class="form-control" type="text" name="subject_code" placeholder="Nhập mã giảng viên...." />
+                                <input class="form-control" type="text" name="subject_code" placeholder="Nhập mã mônn học...." />
+                            </div>
+                            <div class="form-group">
+                                <label>Số tín chỉ</label>
+                                <input class="form-control" type="text" name="credit" placeholder="Nhập số tín chỉ...." />
                             </div>
                             <button type="submit" class="btn btn-info">Thêm</button>
                             <button type="reset" class="btn btn-secondary">Đặt Lại</button>

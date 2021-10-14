@@ -39,7 +39,7 @@ class SubjectController extends Controller
 
         $subject->name = $request->name;
         $subject->subject_code  = $request->subject_code;
-
+        $subject->credit =$request->credit;
 
         $subject->save();
 
@@ -61,6 +61,7 @@ class SubjectController extends Controller
 
         $subject->name = $request->name;
         $subject->subject_code  = $request->subject_code;
+        $subject->credit =$request->credit;
 
         $subject->save();
 

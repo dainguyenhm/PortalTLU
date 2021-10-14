@@ -65,6 +65,10 @@
                                         @endforeach
                                     </select>
                             </div>
+                            <div class="form-group">
+                                <label>lớp</label>
+                                <input class="form-control" type="text" name="class" placeholder="Nhập lớp của sinh viên...." />
+                            </div>
                             <button type="submit" class="btn btn-info">Thêm</button>
                             <button type="reset" class="btn btn-secondary">Đặt Lại</button>
                         <form>
