@@ -16,8 +16,8 @@ class CreateFaculityMajors extends Migration
         Schema::create('faculity_majors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('parent_id')->unsigned()->nullable(true);
-            $table->foreign('parent_id')->references('id')->on('faculity_majors');
+            $table->integer('faculity_major_id')->unsigned()->nullable(true);
+            $table->foreign('faculity_major_id')->references('id')->on('faculity_majors');
             $table->timestamps();
         });
     }

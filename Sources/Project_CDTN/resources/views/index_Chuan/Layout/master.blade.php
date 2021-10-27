@@ -5,7 +5,7 @@
         <div class="row align-items-center">
             <div class="col-lg-4 col-md-12">
                 <div class="logo">
-                    <a href="{{ route('index') }}">
+                    <a href="{{ route('home') }}">
                         {{-- <h1>Thăng<span>Long</span></h1> --}}
                         <img width="480px" height="auto" src="{{ asset('asset/img/logo.svg') }}" alt="Logo">
                     </a>

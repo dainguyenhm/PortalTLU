@@ -11,18 +11,28 @@ class FaculityMajor extends Model
     use HasFactory;
     protected $table = 'faculity_majors';
 
-    public function students() 
+    public function students()
     {
         return $this->belongsToMany(Students::class, 'faculity_id', 'id');
     }
 
-    public function childs()
+    public function faculityMajors()
     {
-        return $this->hasMany(FaculityMajor::class, 'parent_id', 'id');
+        return $this->hasMany(FaculityMajor::class);
     }
 
-    public function parent()
+    public function childrenFaculityMajors()
     {
-        return $this->belongsTo(FaculityMajor::class, 'parent_id', 'id');
+        return $this->hasMany(FaculityMajor::class,'faculity_major_id','id')->with('faculityMajors');
     }
+
+    // public function childs()
+    // {
+    //     return $this->hasMany(FaculityMajor::class)->with('childs');
+    // }
+
+    // public function parent()
+    // {
+    //     return $this->belongsTo(FaculityMajor::class, 'parent_id', 'id')->with('parent');
+    // }
 }

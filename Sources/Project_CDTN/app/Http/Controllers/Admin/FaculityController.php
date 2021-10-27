@@ -31,14 +31,14 @@ class FaculityController extends Controller
     }
     public function createMajor()
     {
-        $faculity = FaculityMajor::whereNull('parent_id')->get();
+        $faculity = FaculityMajor::whereNull('faculity_major_id')->get();
         return view('index_Chuan.admin.faculity.insertMajor',['faculity'=>$faculity]);
     }
     public function storeMajor(Request $request)
     {
         $faculity = new FaculityMajor();
         $faculity->name = $request->name;
-        $faculity->parent_id = $request->parent_id;
+        $faculity->faculity_major_id = $request->faculity_major_id;
         $faculity->save();
 
         return redirect()->route('faculity.list')->with('Thongbao', 'Thêm nghành thành công.');

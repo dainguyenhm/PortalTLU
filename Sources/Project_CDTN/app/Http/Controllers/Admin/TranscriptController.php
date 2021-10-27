@@ -35,13 +35,13 @@ class TranscriptController extends Controller
     //     return back();
     // }
 
-    public function import_csv(Request $request){
-        // $path = $request->file('file')->getRealPath();
-        // Excel::import(new Excelimports, $request->file);
-        $reader = ReaderFactory::create(Type::XLSX);
-        $path_file = $request->pathfile;
-        $reader->open($path_file);
-        return back();
-    }
+    // public function import_csv(Request $request){
+    //     // $path = $request->file('file')->getRealPath();
+    //     // Excel::import(new Excelimports, $request->file);
+    //     $reader = ReaderFactory::create(Type::XLSX);
+    //     $path_file = $request->pathfile;
+    //     $reader->open($path_file);
+    //     return back();
+    // }
 
 }

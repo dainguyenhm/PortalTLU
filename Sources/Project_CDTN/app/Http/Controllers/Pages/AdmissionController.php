@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Http\Controllers\Pages;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\Post;
+
+class AdmissionController extends Controller
+{
+    public function formal(){
+        return view('index_Chuan.Pages.General.Admissions.formal');
+    }
+
+    public function trainingMaster(){
+        return view('index_Chuan.Pages.General.Admissions.trainingMaster');
+    }
+
+    public function intermational(){
+        return view('index_Chuan.Pages.General.Admissions.internationalMasters');
+    }
+
+    public function connection(){
+        return view('index_Chuan.Pages.General.Admissions.connection');
+    }
+}

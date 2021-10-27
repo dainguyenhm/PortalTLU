@@ -75,6 +75,18 @@
                                 <label class="radio-inline">
                                     <input name="type" value="2" type="radio">Giảng Viên
                                 </label>
+                                <label class="radio-inline">
+                                    <input name="type" value="3" type="radio">Cựu Sinh Viên
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Giới Tính</label>
+                                <label class="radio-inline">
+                                    <input name="sex" value="0" checked="" type="radio">Nam
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="sex" value="1" type="radio">Nữ
+                                </label>
                             </div>
                             <button type="submit" class="btn btn-info">Thêm</button>
                             <button type="reset" class="btn btn-secondary">Đặt Lại</button>

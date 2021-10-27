@@ -23,6 +23,7 @@
                             <th>Mã Sinh Viên</th>
                             <th>Khoa Ngành</th>
                             <th>Trạng thái</th>
+                            <th>Khoá</th>
                             <th>Xoá</th>
                             <th>Sửa</th>
                         </tr>
@@ -33,6 +34,7 @@
                                 <td>{{ $st->id }}</td>
                                 <td>{{ $st->user_id }}</td>
                                 <td>{{ $st->student_code }}</td>
+                                
                                 <td>
                                     @switch($st->faculity_id)
                                         @case(9)
@@ -62,22 +64,22 @@
                                         @case(17)
                                             {{ 'Quản Trị Kinh Doanh' }}
                                         @break
-                                        @case(18)
+                                        @case(19)
                                             {{ 'Marketing' }}
                                         @break
-                                        @case(19)
+                                        @case(20)
                                             {{ 'Logitics & Quản Lý Chuỗi Cung Ứng' }}
                                         @break
-                                        @case(20)
+                                        @case(21)
                                             {{ 'Luật Kinh Tế' }}
                                         @break
-                                        @case(21)
+                                        @case(22)
                                             {{ 'Kinh Tế Quốc Tế' }}
                                         @break
-                                        @case(22)
+                                        @case(23)
                                             {{ 'Điều Dưỡng' }}
                                         @break
-                                        @case(23)
+                                        @case(24)
                                             {{ 'Dinh Dưỡng' }}
                                         @break
                                         @case(25)
@@ -118,6 +120,7 @@
                                         {{ 'Đã tốt Nghiệp' }}
                                     @endif
                                 </td>
+                                <td>{{$st->session}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('getStudent.delete',$st->id)}}"> Xoá</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ route('getStudent.update', $st->id) }}">Sửa</a></td>
                             </tr>

@@ -20,7 +20,7 @@
                                 <tr align="center">
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>parent_id</th>
+                                    <th>faculity_major_id </th>
                                     <th>Delete</th>
                                     <th>Edit</th>
                                 </tr>
@@ -30,7 +30,7 @@
                                 <tr class="odd gradeX" align="center">
                                     <td>{{$fl->id}}</td>
                                     <td>{{$fl->name}}</td>
-                                    <td>{{$fl->parent_id}}</td>
+                                    <td>{{$fl->faculity_major_id }}</td>
                                     <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('delete',$fl->id)}}"> Delete</a></td>
                                     <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('getFaculity.update',$fl->id) }}">Edit</a></td>
                                 </tr>                                    

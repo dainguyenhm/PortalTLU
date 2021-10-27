@@ -21,6 +21,12 @@ Route::get('/', function () {
     return view('index_Chuan/index');
 })->name('index');
 
+Route::get('home', 'Index\HomeController@home')->name('home');
+
+Route::get('Error\403', function () {
+    return view('index_Chuan/403');
+})->name('403');
+
 Route::prefix('login')->group(function () {
     Route::get('dangnhap', 'Login\LoginController@getlogin')->name('login');
     Route::post('loginUser', 'Login\LoginController@postlogin')->name('loginUser');
@@ -28,53 +34,52 @@ Route::prefix('login')->group(function () {
     Route::get('logout', 'Login\LoginController@getlogout')->name('logout');
     Route::get('Quen-mat-khau', 'Login\LoginController@fogot')->name('forgotPW');
 });
+// 'middleware'=>['only.student','only.admin']
+Route::group(['prefix' => 'index'], function () {
+    Route::group(['prefix' => 'General'], function () {
+        Route::group(['prefix' => 'Faculity'], function () {
+            Route::prefix('Major')->group(function () { 
+                Route::get('Details/{id}', 'Index\HomeController@detail')->name('details');
+            });
+        });
 
-Route::prefix('Khoa')->group(function () {
-    Route::prefix('ToanTin')->group(function () {
-        Route::get('Khoa-hoc-may-tinh', 'Pages\toanTinController@KH_maytinh')->name('KH-maytinh');
-        Route::get('He-thong-thong-tin', 'Pages\toanTinController@HT_thongTin')->name('HT-thongtin');
-        Route::get('Cong-nghe-thong-tin', 'Page\/toanTinController@CN_thongtin')->name('CN-thongtin');
-        Route::get('Mang-may-tinh', 'Pages\toanTinController@Mang_maytinh')->name('Mang-maytinh');
-        Route::get('Toan-ung-dung', 'Pages\toanTinController@Toan_UD')->name('Toan-UD');
-        Route::get('Tri-tue-nhan-tao', 'Pages\toanTinController@TT_nhantao')->name('TT-nhantao');
-    });
-    Route::prefix('KinhTe')->group(function () {
-        Route::get('Ke-Toan', 'Pages\kinhTeController@Kinhte')->name('Kinhte');
-        Route::get('Kinh-Te-Quoc-Te', 'Pages\kinhTeController@KT_quocte')->name('KT_quocte');
-        Route::get('Logitics', 'Pages\kinhTeController@LOGITICS')->name('LOGITICS');
-        Route::get('Luat-Kinh-Te', 'Pages\kinhTeController@Luat_kt')->name('Luat_kt');
-        Route::get('Marketing', 'Pages\kinhTeController@Marketing')->name('Marketing');
-        Route::get('Quan-Tri-Kinh-Doanh', 'Pages\kinhTeController@QT_kinhdoanh')->name('QT_kinhdoanh');
-        Route::get('Tai-Chinh-Ngan-Hang', 'Pages\kinhTeController@TC_nganhang')->name('TC_nganhang');
-    });
-    Route::prefix('SucKhoe')->group(function () {
-        Route::get('DieuDuong', 'Pages\sucKhoeController@DieuDuong')->name('DieuDuong');
-        Route::get('DinhDuong', 'Pages\sucKhoeController@DinhDuong')->name('DinhDuong');
-    });
-    Route::prefix('NgoaiNgu')->group(function () {
-        Route::get('Ngon-Ngu-Anh', 'Pages\ngoaiNguController@NN_ANH')->name('ANH');
-        Route::get('Ngon-Ngu-Nhat', 'Pages\ngoaiNguController@NN_NHAT')->name('NHAT');
-        Route::get('Ngon-Ngu-Han', 'Pages\ngoaiNguController@NN_HAN')->name('HAN');
-        Route::get('Ngon-Ngu-Trung-Quoc', 'Pages\ngoaiNguController@NN_TQ')->name('TQ');
-    });
-    Route::prefix('XaHoi-NhanVan')->group(function () {
-        Route::get('Cong-Tac-Xa-Hoi', 'Pages\xahoi_NhanvanController@CT_xahoi')->name('CT_xahoi');
-        Route::get('Viet-Nam-Hoc', 'Pages\xahoi_NhanvanController@VN_hoc')->name('VN_hoc');
-    });
-    Route::prefix('TruyenThong')->group(function () {
-        Route::get('Truyen-thong-da-phuong-tien', 'Pages\truyenThongController@TT_daphuongtien')->name('TT_daphuongtien');
-    });
-    Route::prefix('DULICH')->group(function () {
-        Route::get('Du-Lich-Lu-Hanh', 'Pages\duLichController@DL_luhanh')->name('DL_luhanh');
-    });
-    Route::prefix('AMNHAC')->group(function () {
-        Route::get('Thanh-Nhac', 'Pages/amNhacController@ThanhNhac')->name('Thanhnhac');
-    });
-});
+        Route::group(['prefix' => 'Admissions'], function () {
+            Route::get('Formal-University', 'Pages\AdmissionController@formal')->name('formal');
+            
+            Route::get('Training-Master', 'Pages\AdmissionController@trainingMaster')->name('trainingMaster');
+            
+            Route::get('Intermationnal-Master', 'Pages\AdmissionController@intermational')->name('intermational');
+            
+            Route::get('Connection', 'Pages\AdmissionController@connection')->name('connection');
+        });
 
-Route::prefix('Profile')->group(function () {
-    Route::get('trang-ca-nhan', 'Login\LoginController@Profile')->name('profile');
-    Route::post('sua-trang-ca-nhan/{id}', 'Login\LoginController@postProfile')->name('postProfile');
+        Route::group(['prefix' => 'Event'], function() {
+            Route::get('Event','Pages\EventController@event')->name('event');
+        });
+
+        Route::group(['prefix' => 'Scholarship'], function(){
+            Route::get('Scholarship','Pages\ScholarShipController@scholarship')->name('scholarship');
+        });
+    });
+
+    Route::group(['prefix' => 'SinhVien'], function () {
+        Route::get('Tra-Cuu-Ket-Qua-Hoc-Tap', 'Index\StudentController@search')->name('search');
+
+        Route::group(['prefix' => 'Thông Báo'], function () {
+            Route::get('Dao-Tao', 'Index\StudentController@educate')->name('educate');
+
+            Route::get('Hoc-Phi', 'Index\StudentController@tuition')->name('tuition');
+
+            Route::get('Bao-Hiem', 'Index\StudentController@insurance')->name('insurance');
+        });
+
+        Route::get('Bai-Tuyen-Dung', 'Index\StudentController@newpost')->name('newpost');
+    });
+
+    Route::prefix('Profile')->group(function () {
+        Route::get('trang-ca-nhan', 'Login\LoginController@Profile')->name('profile');
+        Route::post('sua-trang-ca-nhan/{id}', 'Login\LoginController@postProfile')->name('postProfile');
+    });
 });
 
 Route::prefix('login-Admin')->group(function () {
@@ -82,8 +87,7 @@ Route::prefix('login-Admin')->group(function () {
     Route::post('login', 'Admin\LoginAdminController@postlogin')->name('postAdmin.login');
     Route::get('logout', 'Admin\LoginAdminController@getlogout')->name('getAdmin.logout');
 });
-// 'middleware' => ['auth', 'only.admin']
-Route::group(['prefix' => 'admin',], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], function () {
     Route::get('quan-tri', 'Admin\LoginAdminController@manager')->name('manager.index');
 
     Route::prefix('user')->group(function () {
@@ -136,6 +140,10 @@ Route::group(['prefix' => 'admin',], function () {
         Route::get('list', 'Admin\PostController@list')->name('post.list');
 
         Route::get('accept', 'Admin\PostController@accept')->name('accept');
+
+        Route::get('form-insert-post','Admin\PostController@insert')->name('post.insert');
+
+        Route::post('form-insert-post','Admin\PostController@store')->name('post.store');
     });
 
     Route::prefix('faculityMajor')->group(function () {
@@ -190,14 +198,8 @@ Route::group(['prefix' => 'admin',], function () {
     Route::get('only-admin', function () {
         echo "Admin Zone";
     });
-    Route::get('/', function () {
-        return view('index_Chuan/index');
-    })->name('index');
-
-    Route::get('\Error\403', function () {
-        return view('index_Chuan/403');
-    });
 });
+
 Route::prefix('index')->group(function () {
     Route::prefix('Old-Student')->group(function () {
         Route::get('pots', 'Index\StudentController@getpost')->name('getPost.index');

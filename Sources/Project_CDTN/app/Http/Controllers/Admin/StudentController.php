@@ -41,6 +41,7 @@ class StudentController extends Controller
         $student->type = $request->type;
         $student->faculity_id = $request->faculity_id;
         $student->class = $request->class;
+        $student->session = $request->session;
         $student->save();
 
         return redirect()->route('student.list')->with('Thongbao', 'Thêm sinh viên thành công.');

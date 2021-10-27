@@ -7,11 +7,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{route('manager.index')}}">Trang Quản Trị</a>
+                <a class="navbar-brand" href="{{ route('manager.index') }}">Trang Quản Trị</a>
             </div>
             <!-- /.navbar-header -->
 
-            {{-- <ul class="nav navbar-top-links navbar-right">
+            <ul class="nav navbar-top-links navbar-right">
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -28,7 +28,7 @@
                         <li class="divider"></li>
                         <li><a href="{{ route('getAdmin.logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
-                    </ul> --}}
+                    </ul>
                     <!-- /.dropdown-user -->
                 </li>
                 <!-- /.dropdown -->
@@ -108,6 +108,10 @@
                                             class="fas fa-list-alt"></i>&nbsp;&nbsp;Danh
                                         sách</a>
                                 </li>
+                                <li>
+                                    <a href="{{ route('post.insert') }}"><i
+                                            class="fas fa-list-alt"></i>&nbsp;&nbsp;Thêm Bài Viết</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -152,7 +156,7 @@
                                             class="fas fa-list-alt"></i>&nbsp;&nbsp;Danh sách</a>
                                 </li>
                                 <li>
-                                    <a href="{{route('gettranscript.create')}}">Thêm bảng điểm</a>
+                                    <a href="{{ route('gettranscript.create') }}">Thêm bảng điểm</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

@@ -19,8 +19,8 @@ class CreatePosts extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('type');
             $table->string('title');
-            $table->string('content');
-            $table->string('summary');
+            $table->longText('content');
+            $table->longText('summary');
             $table->integer('status');
             $table->string('img');
             $table->timestamps();

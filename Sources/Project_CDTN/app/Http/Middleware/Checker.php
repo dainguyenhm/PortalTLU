@@ -4,9 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class OnlyAdminCanAcess
+class Checker
 {
     /**
      * Handle an incoming request.
@@ -15,11 +14,9 @@ class OnlyAdminCanAcess
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, $roles)
     {
-        if (Auth::user()->type == 0) {
-            return $next($request);
-        }
-        return redirect()->route('403');
+        dd($roles);
+        return $next($request);
     }
 }

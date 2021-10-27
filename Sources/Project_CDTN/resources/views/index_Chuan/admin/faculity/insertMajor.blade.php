@@ -34,8 +34,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label>ParentID</label>
-                                    <select class="form-control" name="parent_id">
+                                <label>faculity_major_id </label>
+                                    <select class="form-control" name="faculity_major_id">
                                         @foreach ($faculity as $fl)
                                             <option value="{{ $fl->id }}">{{ $fl->name }}</option>
                                         @endforeach
@@ -51,5 +51,6 @@
             </div>
             <!-- /.container-fluid -->
         </div>
-    @endsection
-    @include('index_Chuan.admin.Layout_admin.footer')
+    </div>
+@endsection
+@include('index_Chuan.admin.Layout_admin.footer')

@@ -69,6 +69,10 @@
                                 <label>lớp</label>
                                 <input class="form-control" type="text" name="class" placeholder="Nhập lớp của sinh viên...." />
                             </div>
+                            <div class="form-group">
+                                <label>Khoá</label>
+                                <input class="form-control" type="text" name="session" placeholder="Nhập lớp của sinh viên...." />
+                            </div>
                             <button type="submit" class="btn btn-info">Thêm</button>
                             <button type="reset" class="btn btn-secondary">Đặt Lại</button>
                         <form>

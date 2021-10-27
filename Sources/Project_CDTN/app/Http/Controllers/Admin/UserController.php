@@ -108,6 +108,7 @@ class UserController extends Controller
         $user->user_name   = $request->user_name;
         $user->phone_number = $request->phone_number;
         $user->date_birth = $request->date_birth;
+        $user->sex = $request->sex;
         $user->type = $request->type;
         
         $user->save();

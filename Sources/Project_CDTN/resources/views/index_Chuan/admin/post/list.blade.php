@@ -5,7 +5,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Giảng Viên
+                            <h1 class="page-header">Bài Viết
                                 <small>Danh Sách</small>
                             </h1>
                         </div>
@@ -20,7 +20,7 @@
                                 <tr align="center">
                                     <th>ID</th>
                                     <th>User_ID</th>
-                                    <th>Type</th>
+                                    <th>Loại Bài Viết</th>
                                     <th>Nội Dung</th>
                                     <th>Tóm tắt</th>
                                     <th>Hình Ảnh</th>
@@ -34,11 +34,33 @@
                                 <tr class="odd gradeX" align="center">
                                     <td>{{$pt->id}}</td>
                                     <td>{{$pt->user_id}}</td>
-                                    <td>{{$pt->type}}</td>
+                                    <td>
+                                        @switch($pt->type)
+                                            @case(0)
+                                                {{"Thông Báo"}}
+                                                @break
+                                            @case(1)
+                                                {{"Bài Viết"}}
+                                                @break
+                                            @default
+                                                
+                                        @endswitch
+                                    </td>
                                     <td>{{$pt->content}}</td>
                                     <td>{{$pt->summary}}</td>
                                     <td>{{$pt->img}}</td>
-                                    <td>{{$pt->status}}</td>
+                                    <td>
+                                        @switch($pt->status)
+                                            @case(0)
+                                                {{"Chưa Duyệt"}}
+                                                @break
+                                            @case(1)
+                                                {{"Duyệt"}}
+                                                @break
+                                            @default
+                                                
+                                        @endswitch
+                                    </td>
                                     <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href=""> Duyệt</a></td>
                                     <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="">Từ Chối</a></td>
                                 </tr>                                    

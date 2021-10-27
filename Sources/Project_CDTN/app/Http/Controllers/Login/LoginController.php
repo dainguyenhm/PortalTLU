@@ -19,11 +19,11 @@ class LoginController extends Controller
     { 
         $this->validate($request, [
             'user_name' => 'required',
-            'password' => 'required|min:8|max:32'
+            'password' => 'required|min:6|max:32'
         ], [
             'user_name.required' => 'Bạn chưa nhập UserName',
             'password.required' => 'Bạn chưa nhập Password',
-            'password.min'      => 'Password phải có ít nhất 8 ký tự',
+            'password.min'      => 'Password phải có ít nhất 6 ký tự',
             'password.max'      => 'Password không quá 32 ký tự'
         ]);
         

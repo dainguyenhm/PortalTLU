@@ -28,6 +28,7 @@
                                     <th>Số điện thoại</th>
                                     <th>Địa chỉ</th>
                                     <th>Loại Tài Khoản</th>
+                                    <th>Giới Tính</th>
                                     <th>Xoá</th>
                                     <th>Sửa</th>
                                 </tr>
@@ -61,6 +62,16 @@
                                                 @endswitch
                                             
                                             </td>
+                                            <td> 
+                                                @switch($us->sex)
+                                                @case(0)
+                                                    {{"nam"}}
+                                                    @break
+                                                @case(1)
+                                                    {{"nữ"}}
+                                                    @break                        
+                                                @default
+                                            @endswitch</td>
                                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('getUser.delete',$us->id)}}">Xoá</a></td>
                                             <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('getUser.update',$us->id)}}">Sửa</a></td>
                                         </tr> 
