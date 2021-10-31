@@ -66,14 +66,18 @@ Route::group(['prefix' => 'index'], function () {
         Route::get('Tra-Cuu-Ket-Qua-Hoc-Tap', 'Index\StudentController@search')->name('search');
 
         Route::group(['prefix' => 'Thông Báo'], function () {
-            Route::get('Dao-Tao', 'Index\StudentController@educate')->name('educate');
+            Route::get('Dao-Tao', 'Index\StudentIndexController@educate')->name('educate');
 
-            Route::get('Hoc-Phi', 'Index\StudentController@tuition')->name('tuition');
+            Route::get('Hoc-Phi', 'Index\StudentIndexController@tuition')->name('tuition');
 
-            Route::get('Bao-Hiem', 'Index\StudentController@insurance')->name('insurance');
+            Route::get('Bao-Hiem', 'Index\StudentIndexController@insurance')->name('insurance');
+
+            Route::get('Thong-Bao','Index\StudentIndexController@message')->name('message');
+
+            Route::get('Thong-Bao-Bao-Hiem','Index\StudentIndexController@messageTuition')->name('messageTuition');
         });
 
-        Route::get('Bai-Tuyen-Dung', 'Index\StudentController@newpost')->name('newpost');
+        Route::get('Bai-Tuyen-Dung', 'Index\StudentIndexController@newpost')->name('newpost');
     });
 
     Route::prefix('Profile')->group(function () {

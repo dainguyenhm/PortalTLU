@@ -11,6 +11,8 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Transcript;
 use Box\Spout\Reader\ReaderFactory;
 use Box\Spout\Common\Type;
+use Box\Spout\Reader\Common\Creator\ReaderEntityFactory;
+
 
 class TranscriptController extends Controller
 {
@@ -26,22 +28,20 @@ class TranscriptController extends Controller
         return view('index_Chuan.admin.transcript.insert', ['student' => $student, 'subject' => $subject]);
     }
 
-    // public function postcreate(Request $request)
-    // {
-    //     $this->validate($request, [], []);
+    public function import_csv(Request $request)
+    {
+        try {
+            $reader = ReaderEntityFactory::createXLSXReader();
+            $path_file = $request->pathfile;
+            $reader->open($path_file);
+            dd($reader);
+            $studentImports = array();
+            dd($reader->getSheetIterator());
+            return redirect()->back()->with('success', 'Successfully');
+        } catch (Throwable $th) {
+            //throw $th;
+        }
+    }
 
-    //     $path = $request->file('file')->getRealPath();
-    //     Excel::import(new Excelimports, $path);
-    //     return back();
-    // }
-
-    // public function import_csv(Request $request){
-    //     // $path = $request->file('file')->getRealPath();
-    //     // Excel::import(new Excelimports, $request->file);
-    //     $reader = ReaderFactory::create(Type::XLSX);
-    //     $path_file = $request->pathfile;
-    //     $reader->open($path_file);
-    //     return back();
-    // }
-
+    
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Index;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class StudentController extends Controller
+class StudentIndexController extends Controller
 {
     public function search(){
         return view('index_Chuan.Pages.Student.search');
@@ -28,5 +28,13 @@ class StudentController extends Controller
     }
     public function getpost(){
         return view('index_Chuan.Pages.StudentOld.post');
+    }
+
+    public function message(){
+        return view('index_Chuan.Pages.Student.message');
+    }
+
+    public function messageTuition(){
+        return view('index_Chuan.Pages.Student.messageTuition');
     }
 }

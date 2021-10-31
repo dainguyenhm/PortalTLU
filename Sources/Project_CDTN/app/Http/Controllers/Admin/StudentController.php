@@ -19,8 +19,8 @@ class StudentController extends Controller
 
     public function create()
     {
-        $faculity = FaculityMajor::whereNull('parent_id')->get();
-        $major = FaculityMajor::whereNotNull('parent_id')->get();
+        $faculity = FaculityMajor::whereNull('faculity_major_id')->get();
+        $major = FaculityMajor::whereNotNull('faculity_major_id')->get();
         $user = User::where('type', '1')->get();
         return view('index_Chuan.admin.student.insert', ['user' => $user, 'faculity' => $faculity, 'major' => $major]);
     }

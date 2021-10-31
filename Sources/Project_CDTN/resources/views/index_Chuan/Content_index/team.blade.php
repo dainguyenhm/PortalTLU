@@ -11,8 +11,8 @@
                         <img src="{{asset('asset/img/thay-phan-huy-phu.jpg')}}" alt="Team Image">
                     </div>
                     <div class="team-text">
-                        <h2>TS.Phan Huy Phú</h2>
-                        <p>Hiệu Trưởng</p>
+                        <h2>Hiệu Trưởng</h2>
+                        <p>TS.Phan Huy Phú</p>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                     </div>
                     <div class="team-text">
                         <h2>Phó Hiệu Trưởng</h2>
-                        <p>PGS.TS.Nguyễn Minh Xuân</p>
+                        <p style="font-size: 15px;">PGS.TS.Nguyễn Minh Xuân</p>
                     </div>
                 </div>
             </div>
