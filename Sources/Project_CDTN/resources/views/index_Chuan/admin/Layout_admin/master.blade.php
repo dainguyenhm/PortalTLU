@@ -68,6 +68,10 @@
                                     <a href="{{ route('getStudent.create') }}"><i
                                             class="fas fa-user-plus"></i>&nbsp;&nbsp;Thêm Sinh Viên</a>
                                 </li>
+                                <li>
+                                    <a href="{{ route('getStudent.import') }}"><i
+                                            class="fas fa-user-plus"></i>&nbsp;&nbsp;Import</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

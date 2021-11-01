@@ -89,7 +89,29 @@ class TranscriptController extends Controller
 
     function importTranscript($data)
     {
-        
+        foreach ($data->getRowIterator() as $rowIndex => $row) {
+            if ($rowIndex === 1) {
+                continue;
+            }
+            $cell = $row->getCells();
+            $this->createTranscript(
+                $cell[0]->getValue(),
+                $cell[1]->getValue(),
+                $cell[3]->getValue()
+            );  
+        }
+    }
+
+    function createTranscript($studentCode, $subjectCode, $score)
+    {
+        $student = Student::where('student_code', $studentCode)->first();
+        $subject = Subject::where('subject_code', $subjectCode)->first();
+        if( $student && $subject){
+            $checkExist = Transcript::where('student_id', $student->id)->where('subject_id', $subject->id)->first();
+            if(!$checkExist){
+                Transcript::createTranscriptFromFile($student->id, $subject->id, $score);
+            }
+        }
     }
 
     function importStudent($data)

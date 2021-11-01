@@ -113,6 +113,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], func
 
         Route::get('create-student', 'Admin\StudentController@create')->name('getStudent.create');
 
+        Route::get('import', 'Admin\StudentController@import')->name('getStudent.import');
+
         Route::post('form-create-student', 'Admin\StudentController@store')->name('postStudent.create');
 
         Route::get('update/{id}', 'Admin\StudentController@getupdate')->name('getStudent.update');

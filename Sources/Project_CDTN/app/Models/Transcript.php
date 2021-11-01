@@ -22,4 +22,14 @@ class Transcript extends Model
     {
         return $this->belongsTo(Subject::class, 'subject_id','id');
     }
+
+    public static function createTranscriptFromFile($studentId, $subjectId, $score){
+        $transcipt = new Transcript;
+        $transcipt->student_id  = $studentId;
+        $transcipt->subject_id  = $subjectId;
+        $transcipt->score       = $score;
+        $transcipt->save();
+        
+        return $transcipt;
+    }
 }

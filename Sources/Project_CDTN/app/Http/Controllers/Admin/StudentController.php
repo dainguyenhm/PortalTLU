@@ -77,4 +77,9 @@ class StudentController extends Controller
 
         return redirect()->route('student.list')->with('Thongbao', 'Xoá sinh viên thành công.');
     }
+
+    public function import()
+    {
+        return view('index_Chuan.admin.student.import');
+    }
 }
