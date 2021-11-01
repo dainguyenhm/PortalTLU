@@ -27,7 +27,7 @@
                                 @foreach ($score as $K => $value)
                                     <tr>
                                         <th scope="row">{{ $K + 1 }}</th>
-                                        <td>{{ $value->subject_id }}</td>
+                                        <td>{{ $value->Subject->subject_code }}</td>
                                         <td>{{ $value->Subject->name }}</td>
                                         <td>{{ $value->score }}</td>
                                         <td>{{ $value->Subject->credit }}</td>

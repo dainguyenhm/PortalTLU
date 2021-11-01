@@ -20,10 +20,11 @@ class StudentIndexController extends Controller
         $search = $request->search;
         $student = Student::where('student_code', "$search")->first();
         $score = Transcript::where('student_id',  $student->id)->get();
-    //    dd($score);
-        foreach ($score as $score) {
-            $count = $count + $score->Subject->credit;
+        
+        foreach ($score as $value) {
+            $count = $count + $value->Subject->credit;
         }
+        
         return view('index_Chuan/Pages/Student/result', ['score' => $score, 'count' => $count]);
         
     }
