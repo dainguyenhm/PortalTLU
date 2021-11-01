@@ -19,7 +19,7 @@
                     <thead>
                         <tr align="center">
                             <th>ID</th>
-                            <th>UserID</th>
+                            <th>Tên Sinh Viên</th>
                             <th>Mã Sinh Viên</th>
                             <th>Khoa Ngành</th>
                             <th>Trạng thái</th>
@@ -32,7 +32,7 @@
                         @foreach ($student as $st)
                             <tr class="odd gradeX" align="center">
                                 <td>{{ $st->id }}</td>
-                                <td>{{ $st->user_id }}</td>
+                                <td>{{ $st->User->first_name}}&nbsp;{{ $st->User->last_name}}</td>
                                 <td>{{ $st->student_code }}</td>
                                 
                                 <td>

@@ -14,7 +14,8 @@ class TranscriptController extends Controller
 {
     public function list()
     {
-        return view('index_Chuan.admin.transcript.list');
+        $transcript = Transcript::all();
+        return view('index_Chuan.admin.transcript.list',['transcript'=>$transcript]);
     }
 
     public function getcreate()

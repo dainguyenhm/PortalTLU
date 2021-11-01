@@ -9,45 +9,56 @@ use App\Models\Transcript;
 
 class StudentIndexController extends Controller
 {
-    public function search(){
+    public function search()
+    {
         return view('index_Chuan.Pages.Student.search');
     }
 
-    public function postSearch(Request $request){
+    public function postSearch(Request $request)
+    {
+        $count = 0;
         $search = $request->search;
-        $student = Student::where('student_code',"$search")->first();
-
-        // dd($student);
+        $student = Student::where('student_code', "$search")->first();
         $score = Transcript::where('student_id',  $student->id)->get();
-        // dd($score);
-        return view('index_Chuan/Pages/Student/result',['score'=>$score]);
-
+    //    dd($score);
+        foreach ($score as $score) {
+            $count = $count + $score->Subject->credit;
+        }
+        return view('index_Chuan/Pages/Student/result', ['score' => $score, 'count' => $count]);
+        
     }
 
-    public function educate(){
+    public function educate()
+    {
         return view('index_Chuan.Pages.Student.educate');
     }
 
-    public function tuition(){
+    public function tuition()
+    {
         return view('index_Chuan.Pages.Student.tuition');
     }
 
-    public function insurance(){
+    public function insurance()
+    {
         return view('index_Chuan.Pages.Student.insurance');
     }
 
-    public function newpost(){
+    public function newpost()
+    {
         return view('index_Chuan.Pages.Student.newpost');
     }
-    public function getpost(){
+    public function getpost()
+    {
         return view('index_Chuan.Pages.StudentOld.post');
     }
 
-    public function message(){
+    public function message()
+    {
         return view('index_Chuan.Pages.Student.message');
     }
 
-    public function messageTuition(){
+    public function messageTuition()
+    {
         return view('index_Chuan.Pages.Student.messageTuition');
     }
 }

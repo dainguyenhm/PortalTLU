@@ -24,27 +24,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($score as $score)
+                                @foreach ($score as $K => $value)
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>{{ $score->subject_id }}</td>
-                                        <td></td>
-                                        <td>9</td>
-                                        <td>3</td>
+                                        <th scope="row">{{ $K + 1 }}</th>
+                                        <td>{{ $value->subject_id }}</td>
+                                        <td>{{ $value->Subject->name }}</td>
+                                        <td>{{ $value->score }}</td>
+                                        <td>{{ $value->Subject->credit }}</td>
                                     </tr>
                                 @endforeach
                                 <tr>
-                                    <th scope="row">2</th>
-                                    <td>GT456</td>
-                                    <td>Giả Tích 2</td>
-                                    <td>9</td>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
+                                    <th scope="row">{{ $K + 2 }}</th>
                                     <td colspan="3">Tổng Số Tín Chỉ</td>
-                                    <td>6</td>
-
+                                    <td>{{$count}}</td>
                                 </tr>
                             </tbody>
                         </table>
