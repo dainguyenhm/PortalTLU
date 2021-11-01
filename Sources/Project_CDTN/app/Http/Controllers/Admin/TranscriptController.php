@@ -6,14 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Subject;
-use App\Imports\Excelimports;
-use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Transcript;
-use App\Models\User;
-use Box\Spout\Reader\ReaderFactory;
-use Box\Spout\Common\Type;
 use Box\Spout\Reader\Common\Creator\ReaderEntityFactory;
-use Mockery\Matcher\Subset;
+
 
 class TranscriptController extends Controller
 {

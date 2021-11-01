@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('index_Chuan/index');
 })->name('index');
 
+Route::get('result', function () {
+    return view('index_Chuan/Pages/Student/result');
+});
+
 Route::get('home', 'Index\HomeController@home')->name('home');
 
 Route::get('Error\403', function () {
@@ -63,7 +67,7 @@ Route::group(['prefix' => 'index'], function () {
     });
 
     Route::group(['prefix' => 'SinhVien'], function () {
-        Route::get('Tra-Cuu-Ket-Qua-Hoc-Tap', 'Index\StudentController@search')->name('search');
+        Route::get('Tra-Cuu-Ket-Qua-Hoc-Tap', 'Index\StudentIndexController@search')->name('search');
 
         Route::group(['prefix' => 'Thông Báo'], function () {
             Route::get('Dao-Tao', 'Index\StudentIndexController@educate')->name('educate');
