@@ -14,4 +14,14 @@ class Subject extends Model
     {
         return $this->hasMany(Transcript::class,'subject_id','id');
     }
+
+    public static function createSubjectFromFile($name, $code, $credit){
+        $subject = new Subject;
+        $subject->name          = $name;
+        $subject->subject_code  = $code;
+        $subject->credit        = $credit;
+        $subject->save();
+        
+        return $subject;
+    }
 }

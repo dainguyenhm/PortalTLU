@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -44,6 +45,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    const ADMIN = 0;
+    const STUDENT = 1;
+    const TEACHER = 2;
+
     public function getAuthPassword()
     {
         return $this->password;
@@ -72,5 +77,24 @@ class User extends Authenticatable
     public function posts()
     {
         return $this->hasMany(Post::class, 'user_id', 'id');
+    }
+
+    public static function createUserFromFile($code, $name, $birthDay, $sex){
+        $arrName = explode(' ',$name);
+        $firstName = array_shift($arrName);
+        $lastName = implode(' ',$arrName);
+
+        $user = new User;
+        $user->user_name = $code;
+        $user->password = Hash::make($code);
+        $user->first_name = $firstName;
+        $user->last_name = $lastName;
+        $user->date_birth = $birthDay;
+        $user->type = self::STUDENT;
+        $user->sex = $sex;
+        $user->email = sprintf('%s@thanglong.edu.vn', $code);
+        $user->save();
+
+        return $user;
     }
 }
