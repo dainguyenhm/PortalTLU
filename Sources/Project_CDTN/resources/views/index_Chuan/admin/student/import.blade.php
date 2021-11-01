@@ -27,7 +27,7 @@
                     @endif
                     <div class="col-lg-7" style="padding-bottom:120px">
                         <div class="card-body">
-                            <form action="{{ route('Transcript.import') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('Student.import') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <label>Import path file to Wards</label>
                                 <input type="file" name="pathfile" accept=".xlsx" class="form-control">

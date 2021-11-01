@@ -69,7 +69,7 @@
                                             class="fas fa-user-plus"></i>&nbsp;&nbsp;Thêm Sinh Viên</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('getStudent.import') }}"><i
+                                    <a href="{{ route('Student.import') }}"><i
                                             class="fas fa-user-plus"></i>&nbsp;&nbsp;Import</a>
                                 </li>
                             </ul>

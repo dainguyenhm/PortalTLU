@@ -40,24 +40,6 @@ class TranscriptController extends Controller
                 $this->importSubject($sheet);
                 $this->importTranscript($sheet);
             }
-
-            return redirect()->back()->with('success', 'Successfully');
-        } catch (Throwable $th) {
-            //throw $th;
-        }
-    }
-
-    public function import_student(Request $request)
-    {
-        try {
-            $reader = ReaderEntityFactory::createXLSXReader();
-            $path_file = $request->pathfile;
-            $reader->open($path_file);
-
-            foreach ($reader->getSheetIterator() as $k => $sheet) {
-                $this->importStudent($sheet);
-            }
-
             return redirect()->back()->with('success', 'Successfully');
         } catch (Throwable $th) {
             //throw $th;
@@ -111,48 +93,6 @@ class TranscriptController extends Controller
             if(!$checkExist){
                 Transcript::createTranscriptFromFile($student->id, $subject->id, $score);
             }
-        }
-    }
-
-    function importStudent($data)
-    {
-        foreach ($data->getRowIterator() as $rowIndex => $row) {
-            if ($rowIndex === 1) {
-                continue;
-            }
-            $cell = $row->getCells();
-
-            $user = $this->createUser(
-                $cell[0]->getValue(), 
-                $cell[1]->getValue(), 
-                $cell[2]->getValue(), 
-                $cell[3]->getValue()
-            );
-
-            $this->createStudent(
-                $user->id,
-                $cell[0]->getValue(),
-                $cell[6]->getValue(),
-                $cell[4]->getValue(),
-                $cell[5]->getValue(), 
-            );  
-        }
-    }
-
-    function createUser($code, $name, $birthDay, $sex)
-    {
-        $user = User::where('user_name', $code)->first();
-        if(!$user){
-            $user = User::createUserFromFile($code, $name, $birthDay, $sex);
-        }
-        return $user;
-    }
-
-    function createStudent($userId, $code, $session, $class, $faculityName)
-    {
-        $student = Student::where('student_code', $code)->get();
-        if(!count($student)){
-            Student::createStudentFromFile($userId, $code, $session, $class, $faculityName);
         }
     }
 
