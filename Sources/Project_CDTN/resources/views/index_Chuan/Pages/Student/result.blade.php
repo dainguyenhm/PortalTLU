@@ -4,51 +4,56 @@
 @endsection
 @section('content')
     <!-- Single Post Start-->
-    <div class="menu-tab">
-        <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'profile')" id="defaultOpen">Két Quả Tra Cứu <button>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="menu-tab">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openCity(event, 'profile')" id="defaultOpen">Két Quả Tra Cứu
+                            <button>
+                    </div>
+                    <div id="profile" class="tabcontent">
+                        <table class="table table-bordered" style="overflow-y: scroll; height: 700px;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Mã Môn Học</th>
+                                    <th scope="col">Tên Môn Học</th>
+                                    <th scope="col">Điểm</th>
+                                    <th scope="col">Số Tín Chỉ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($score as $score)
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>{{ $score->subject_id }}</td>
+                                        <td></td>
+                                        <td>9</td>
+                                        <td>3</td>
+                                    </tr>
+                                @endforeach
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>GT456</td>
+                                    <td>Giả Tích 2</td>
+                                    <td>9</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="3">Tổng Số Tín Chỉ</td>
+                                    <td>6</td>
 
-        </div>
+                                </tr>
+                            </tbody>
+                        </table>
 
-        <div id="profile" class="tabcontent">
-            <div class="col-lg-7" style="padding: 20px 20px; ">
-                <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th scope="col">STT</th>
-                        <th scope="col">Mã Môn Học</th>
-                        <th scope="col">Tên Môn Học</th>
-                        <th scope="col">Điểm</th>
-                        <th scope="col">Số Tín Chỉ</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>GT0321</td>
-                        <td>Giải Tích 1</td>
-                        <td>9</td>
-                        <td>3</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>GT456</td>
-                        <td>Giả Tích 2</td>
-                        <td>9</td>
-                        <td>3</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="3">Tổng Số Tín Chỉ</td>
-                        <td>6</td>
-                        
-                      </tr>
-                    </tbody>
-                  </table>
+                    </div>
+
+                </div>
             </div>
-            
         </div>
-
     </div>
     <script>
         function openCity(evt, cityName) {

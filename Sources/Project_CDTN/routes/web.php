@@ -69,6 +69,8 @@ Route::group(['prefix' => 'index'], function () {
     Route::group(['prefix' => 'SinhVien'], function () {
         Route::get('Tra-Cuu-Ket-Qua-Hoc-Tap', 'Index\StudentIndexController@search')->name('search');
 
+        Route::post('Ket-Qua-Tra-Cuu', 'Index\StudentIndexController@postSearch')->name('postSearch');
+
         Route::group(['prefix' => 'Thông Báo'], function () {
             Route::get('Dao-Tao', 'Index\StudentIndexController@educate')->name('educate');
 
@@ -97,6 +99,7 @@ Route::prefix('login-Admin')->group(function () {
 });
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], function () {
     Route::get('quan-tri', 'Admin\LoginAdminController@manager')->name('manager.index');
+    
 
     Route::prefix('user')->group(function () {
         Route::get('list', 'Admin\UserController@list')->name('user.list');

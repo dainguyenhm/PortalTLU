@@ -3,12 +3,25 @@
 namespace App\Http\Controllers\Index;
 
 use App\Http\Controllers\Controller;
+use App\Models\Student;
 use Illuminate\Http\Request;
+use App\Models\Transcript;
 
 class StudentIndexController extends Controller
 {
     public function search(){
         return view('index_Chuan.Pages.Student.search');
+    }
+
+    public function postSearch(Request $request){
+        $search = $request->search;
+        $student = Student::where('student_code',"$search")->first();
+
+        // dd($student);
+        $score = Transcript::where('student_id',  $student->id)->get();
+        // dd($score);
+        return view('index_Chuan/Pages/Student/result',['score'=>$score]);
+
     }
 
     public function educate(){

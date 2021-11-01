@@ -12,18 +12,18 @@
 
         <div id="profile" class="tabcontent">
             <div class="col-lg-7" style="padding: 20px 20px; ">
-                <form action="" method="POST">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                <form action="{{ route('postSearch') }}" method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                     <div class="form-group">
                         <label>Tra Cứu Bảng Điểm</label>
-                        <input class="form-control " name="" placeholder="Nhập Mã Sinh Viên......." value="" />
+                        <input class="form-control " name="search" placeholder="Nhập Mã Sinh Viên......." value="" />
                     </div>
-                    
+
                     <button type="submit" class="btn btn-info">Tra Cứu</button>
                     <button type="reset" class="btn btn-secondary">Đặt Lại</button>
                 <form>
             </div>
-            
+
         </div>
 
     </div>
