@@ -29,16 +29,53 @@
                         <form action="{{route('postTeacher.create')}}" method="POST">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group">
-                                <label>Mã Giảng Viên</label>
-                                <input class="form-control" type="text" name="teacher_code" placeholder="Nhập mã giảng viên...." />
+                                <label>Họ</label>
+                                <input class="form-control" name="first_name" placeholder="Nhập tên người dùng...." />
                             </div>
                             <div class="form-group">
-                                <label>Chọn User</label>
-                                    <select class="form-control" name="user_id">
-                                        @foreach ($user as $us)
-                                            <option value="{{ $us->id }}">{{ $us->first_name}}&nbsp;{{$us->last_name }}</option>
-                                        @endforeach
-                                    </select>
+                                <label>Tên</label>
+                                <input class="form-control" name="last_name" placeholder="Nhập tên người dùng...." />
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input class="form-control" type="email" name="email" placeholder="Nhập địa chỉ email..." />
+                            </div>
+                            <div class="form-group">
+                                <label>Ngày Sinh</label>
+                                <input class="form-control" type="date" name="date_birth" placeholder="" />
+                            </div>
+                            <div class="form-group">
+                                <label>Địa Chỉ</label>
+                                <input class="form-control" type="text" name="address" placeholder="Nhập địa chỉ....." />
+                            </div>
+                            <div class="form-group">
+                                <label>Số Điện Thoại</label>
+                                <input class="form-control" type="text" name="phone_number" placeholder="Nhập số điện thoại....." />
+                            </div>
+                            <div class="form-group">
+                                <label>UserName</label>
+                                <input class="form-control" name="user_name" placeholder="Nhập tên người dùng...." />
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input class="form-control" name="password" placeholder="Nhập Mật khẩu....." type="password" />
+                            </div>
+                            <div class="form-group">
+                                <label>Nhập lại Password</label>
+                                <input class="form-control" name="passwordAgain" placeholder="Nhập lại Mật khẩu....." type="password" />
+                            </div>
+                            <div class="form-group">
+                                <label>Giới Tính</label>
+                                <label class="radio-inline">
+                                    <input name="sex" value="0" checked="" type="radio">Nam
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="sex" value="1" type="radio">Nữ
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Mã Giảng Viên</label>
+                                <input class="form-control" type="text" name="teacher_code" placeholder="Nhập mã giảng viên...." />
                             </div>
                             <button type="submit" class="btn btn-info">Thêm</button>
                             <button type="reset" class="btn btn-secondary">Đặt Lại</button>

@@ -82,6 +82,7 @@ class TranscriptController extends Controller
                 $cell[3]->getValue()
             );  
         }
+        return redirect()->route('transcript.list')->with('Thongbao', 'Thêm Bảng điểm thành công.');
     }
 
     function createTranscript($studentCode, $subjectCode, $score)
