@@ -181,22 +181,6 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="{{ route('user.list') }}"><i class="fas fa-users"></i>&nbsp;&nbsp;Roles<span
-                                    class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{{ route('role.list') }}"><i
-                                            class="fas fa-list-alt"></i>&nbsp;&nbsp;Danh
-                                        sách</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('getRole.create') }}"><i
-                                            class="fas fa-user-plus"></i>&nbsp;&nbsp;Thêm Quyền</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

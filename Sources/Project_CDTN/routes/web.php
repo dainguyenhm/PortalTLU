@@ -152,11 +152,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], func
     Route::prefix('post')->group(function () {
         Route::get('list', 'Admin\PostController@list')->name('post.list');
 
-        Route::get('accept', 'Admin\PostController@accept')->name('accept');
+        // Route::get('accept', 'Admin\PostController@accept')->name('accept');
 
         Route::get('form-insert-post','Admin\PostController@insert')->name('post.insert');
 
         Route::post('form-insert-post','Admin\PostController@store')->name('post.store');
+
+        Route::post('acceptPost/{id}','Admin\PostController@acceptPost')->name('acceptPost');
+
+        Route::get('delete','Admin\PostController@delete')->name('post.delete');
     });
 
     Route::prefix('faculityMajor')->group(function () {

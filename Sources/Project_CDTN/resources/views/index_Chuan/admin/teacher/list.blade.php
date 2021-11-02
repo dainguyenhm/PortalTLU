@@ -19,7 +19,7 @@
                             <thead>
                                 <tr align="center">
                                     <th>ID</th>
-                                    <th>UserID</th>
+                                    <th>Tên Giảng Viên</th>
                                     <th>Mã Giảng Viên</th>
                                     <th>Xoá</th>
                                     <th>Sửa</th>
@@ -29,7 +29,7 @@
                                 @foreach ($teacher as $tc)
                                 <tr class="odd gradeX" align="center">
                                     <td>{{$tc->id}}</td>
-                                    <td>{{$tc->user_id}}</td>
+                                    <td>{{$tc->User->first_name}}&nbsp;{{$tc->User->last_name}}</td>
                                     <td>{{$tc->teacher_code}}</td>
                                     <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('getTeacher.delete',$tc->id)}}"> Xoá</a></td>
                                     <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="{{route('getTeacher.update',$tc->id)}}">Sửa</a></td>

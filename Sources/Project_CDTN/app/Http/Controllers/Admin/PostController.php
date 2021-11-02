@@ -19,6 +19,13 @@ class PostController extends Controller
         return view('index_Chuan.admin.post.insert',['user'=>$user]);
     }
 
+    function acceptPost($id){
+        $post = Post::find($id);
+        $post->status = 1;
+        $post->save();
+        return redirect()->route('post.list')->with('Thongbao', 'Duyệt Thành Công');
+    }
+
     public function store(Request $request){
         $this->validate($request, [
             'user_id' => 'required',
@@ -59,6 +66,6 @@ class PostController extends Controller
             $post->img = "";
         }
         $post->save();
-        return redirect()->route('post.insert')->with('Thongbao', 'Thêm Tin Tức Thành Công');
+        return redirect()->route('post.insert')->with('Thongbao', 'Thêm Thành Công');
     }
 }

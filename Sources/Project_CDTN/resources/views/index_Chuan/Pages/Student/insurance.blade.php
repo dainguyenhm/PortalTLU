@@ -8,7 +8,7 @@
         <div class="row">
 
             <div class="col-md-12">
-                <h3><b style="font-size: 60px;"> Thông Báo Thu Phí Bảo Hiểm Học Kỳ I nhóm I Năm Học 2021</b></h3>
+                <h3><b style="font-size: 60px;"> Thông Báo Thu Phí Bảo Hiểm Năm Học 2021</b></h3>
             </div>
             
         </div>
