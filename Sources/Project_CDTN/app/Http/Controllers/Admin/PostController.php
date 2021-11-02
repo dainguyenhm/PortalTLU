@@ -68,4 +68,10 @@ class PostController extends Controller
         $post->save();
         return redirect()->route('post.insert')->with('Thongbao', 'Thêm Thành Công');
     }
+
+    public function delete($id){
+        $post = Post::find($id);
+        $post->delete();
+        return redirect()->route('post.insert')->with('Thongbao', 'Xoá Thành Công');
+    }
 }

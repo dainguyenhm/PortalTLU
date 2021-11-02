@@ -158,9 +158,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], func
 
         Route::post('form-insert-post','Admin\PostController@store')->name('post.store');
 
-        Route::post('acceptPost/{id}','Admin\PostController@acceptPost')->name('acceptPost');
+        Route::get('acceptPost/{id}','Admin\PostController@acceptPost')->name('acceptPost');
 
-        Route::get('delete','Admin\PostController@delete')->name('post.delete');
+        Route::get('delete/{id}','Admin\PostController@delete')->name('post.delete');
     });
 
     Route::prefix('faculityMajor')->group(function () {
