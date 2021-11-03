@@ -66,25 +66,50 @@ Route::group(['prefix' => 'index'], function () {
         });
     });
 
-    Route::group(['prefix' => 'SinhVien'], function () {
-        Route::get('Tra-Cuu-Ket-Qua-Hoc-Tap', 'Index\StudentIndexController@search')->name('search');
+    Route::group(['prefix' => 'Students'], function () {
+        Route::get('form-Look-up-learning-results', 'Index\StudentIndexController@search')->name('search');
 
-        Route::post('Ket-Qua-Tra-Cuu', 'Index\StudentIndexController@postSearch')->name('postSearch');
+        Route::post('search-results', 'Index\StudentIndexController@postSearch')->name('postSearch');
 
-        Route::group(['prefix' => 'Thông Báo'], function () {
-            Route::get('Dao-Tao', 'Index\StudentIndexController@educate')->name('educate');
+        Route::group(['prefix' => 'Messages'], function () {
+            Route::get('Educate', 'Index\StudentIndexController@educate')->name('educate');
 
-            Route::get('Hoc-Phi', 'Index\StudentIndexController@tuition')->name('tuition');
+            Route::get('TuiTion', 'Index\StudentIndexController@tuition')->name('tuition');
 
-            Route::get('Bao-Hiem', 'Index\StudentIndexController@insurance')->name('insurance');
+            Route::get('Insurance', 'Index\StudentIndexController@insurance')->name('insurance');
 
-            Route::get('Thong-Bao','Index\StudentIndexController@message')->name('message');
+            Route::get('Details','Index\StudentIndexController@detailMessage')->name('detail.message');
 
-            Route::get('Thong-Bao-Bao-Hiem','Index\StudentIndexController@messageTuition')->name('messageTuition');
+            Route::get('Message-Tuition','Index\StudentIndexController@messageTuition')->name('messageTuition');
         });
 
-        Route::get('Bai-Tuyen-Dung', 'Index\StudentIndexController@newpost')->name('newpost');
+        Route::get('Recruitment', 'Index\StudentIndexController@newRecruitment')->name('newRecruitment');
     });
+
+    Route::group(['prefix' => 'Teacher'], function () {
+        Route::get('Payroll lookup', 'Index\TeacherIndexController@search')->name('teacher.search');
+
+        // Route::post('search-result', 'Index\TeacherIndexController@postSearch')->name('postSearch');
+
+        Route::group(['prefix' => 'Messages'], function () {
+            Route::get('Educate', 'Index\TeacherIndexController@educate')->name('teacher.educate');
+
+            Route::get('TuiTion', 'Index\TeacherIndexController@tuition')->name('teacher.tuition');
+
+            Route::get('Insurance', 'Index\TeacherIndexController@insurance')->name('teacher.insurance');
+
+            Route::get('Details','Index\TeacherIndexController@message')->name('teacher.message');
+
+            Route::get('Message-Tuition','Index\TeacherIndexController@messageTuition')->name('teacher.messageTuition');
+        });
+    });
+
+    Route::group(['prefix'=>'Old-Student'], function(){
+        Route::get('Form-Recruitment','Index\StudentIndexController@recruitment')->name('recruitment');
+
+        Route::post('Post-Recruitment','Index\StudentIndexController@postRecruitment')->name('postRecruitment');
+    });
+
 
     Route::prefix('Profile')->group(function () {
         Route::get('trang-ca-nhan', 'Login\LoginController@Profile')->name('profile');
@@ -217,8 +242,3 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], func
     });
 });
 
-Route::prefix('index')->group(function () {
-    Route::prefix('Old-Student')->group(function () {
-        Route::get('pots', 'Index\StudentController@getpost')->name('getPost.index');
-    });
-});

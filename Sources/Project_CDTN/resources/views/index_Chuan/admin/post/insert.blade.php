@@ -28,14 +28,6 @@
                     <div class="col-lg-7" style="padding-bottom:120px">
                         <form action="{{route('post.store')}}" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}" >
-                            {{-- {{-- <div class="form-group">
-                                <label>Thể Loại</label>
-                                <select class="form-control" name="TheLoai" id="TheLoai">
-                                    @foreach ($theloai as $tl)
-                                        <option value="{{$tl->id}}">{{$tl->Ten}}</option>
-                                    @endforeach
-                                </select>
-                            </div> --}}
                             <div class="form-group">
                                 <label>Chọn User</label>
                                 <select class="form-control" name="user_id" id="LoaiTin">

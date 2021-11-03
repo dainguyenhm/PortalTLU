@@ -9,40 +9,36 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 class="page-header">
-                    <small>Thêm mới tin tức</small>
+                    <small style="color: ghostwhite;">Thêm mới Bài Tuyển Dụng</small>
                 </h1>
             </div>
         </div>
-        <form action="#" method="post" class="create-form" enctype="multipart/form-data">
+        <form action="{{route('postRecruitment')}}" method="post" class="create-form" enctype="multipart/form-data">
             @csrf
-            <div class="row line-item">
-                <div class="col-md-2">
-                    <label>Nhóm tin tức</label>
-                </div>
-                <div class="col-md-8">
-                    <select name="post_group_id" class="form-control">
-                        {{-- @foreach ($post_groups as $post_group)
-                            <option value="{{ $post_group->id }}">{{ $post_group->name }}</option>
-                        @endforeach --}}
-                    </select>
-                </div>
-            </div>
             <div class="row line-item">
                 <div class="col-md-2">
                     <label>Tiêu đề</label>
                 </div>
                 <div class="col-md-8">
-                    <input type="text" name="title" class="form-control">
+                    <input style="height: 100px;" type="text" name="title" class="form-control" placeholder="Nhập tiêu đề.............">
                 </div>
-            </div>
+            </div> <br>
+            <div class="row line-item">
+                <div class="col-md-2">
+                    <label>Tóm Tắt</label>
+                </div>
+                <div class="col-md-8">
+                    <textarea class="ckeditor" name="summary" id="demo" rows="3"></textarea>
+                </div>
+            </div><br>
             <div class="row line-item">
                 <div class="col-md-2">
                     <label>Nội dung</label>
                 </div>
                 <div class="col-md-8">
-                    <textarea id="content-ckeditor" name="content" class="form-control"></textarea>
+                    <textarea class="ckeditor" name="content" id="demo" rows="5"></textarea>
                 </div>
-            </div>
+            </div><br>
             <div class="row line-item">
                 <div class="col-md-2">
                     <label>Hình ảnh</label>
@@ -50,11 +46,11 @@
                 <div class="col-md-4">
                     <input type="file" name="image">
                 </div>
-            </div>
+            </div><br>
             <div class="row line-item">
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <input type="submit" value="Lưu" class="btn btn-primary">
+                    <input type="submit" value="Gửi" class="btn btn-primary">
                     <input type="reset" value="Nhập lại" class="btn btn-danger">
                 </div>
             </div>

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Models\Transcript;
+use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class StudentIndexController extends Controller
 {
@@ -44,16 +46,61 @@ class StudentIndexController extends Controller
         return view('index_Chuan.Pages.Student.insurance');
     }
 
-    public function newpost()
+    public function newRecruitment()
     {
-        return view('index_Chuan.Pages.Student.newpost');
+        
+        return view('index_Chuan.Pages.Student.post');
     }
-    public function getpost()
+    public function recruitment()
     {
         return view('index_Chuan.Pages.StudentOld.post');
     }
 
-    public function message()
+    public function postRecruitment(Request $request){
+        $this->validate($request,[
+            'title'=>'required|min:6|unique:posts,title',
+            'summary'=>'required|min:10',
+            'content'=>'required|min:30',
+
+        ],[
+            'title.required' => 'Bạn chưa nhật tiêu đề',
+            'title.min'      => 'Tiêu đề phải có ít nhất 5 ký tự',
+            'summary.required' => 'Bạn chưa nhập tóm tắt',
+            'summary.min'      => 'Tóm Tắt phải có ít nhất 10 ký tự',
+            'content.required' => 'Bạn chưa nhập nội dung',
+            'content.min'     => 'Nội dung phải có ít nhất 5 ký tự',
+        ]);
+
+        $recruitment = new Post();
+        $recruitment->title = $request->title;
+        $recruitment->summary = $request->summary;
+        $recruitment->content = $request->content;
+        $recruitment->user_id = Auth()->user()->id;
+        $recruitment->type = 1;
+        $recruitment->status= 0;
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $duoi = $file->getClientOriginalExtension();
+            if ($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg') {
+                return redirect()->route('post.insert')->with('Thongbao', 'File chưa đúng định dạng. Hình ảnh phải có đuôi jpg,png,jpeg');
+            }
+            $name = $file->getClientOriginalName();
+            $img = "a" . "_" . $name;
+            while (file_exists('upload/images/$img')) {
+                $Hinh = "b" . "_" . $name;
+            }
+            $file->move("upload/images", $img);
+            $recruitment->img = $img;
+        } else {
+            $recruitment->img = "";
+        }
+        $recruitment->save();
+        return redirect()->route('recruitment')->with('Thongbao', 'Gửi Thành Thành Công, Vui Lòng Đợi Xét Duyệt');
+
+
+    } 
+
+    public function detailMessage()
     {
         return view('index_Chuan.Pages.Student.message');
     }

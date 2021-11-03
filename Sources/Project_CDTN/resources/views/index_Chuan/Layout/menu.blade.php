@@ -58,7 +58,7 @@
                                 <li><a href="{{ route('insurance') }}">Bảo Hiểm</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Xem Bài Đăng Tuyển Dụng</a></li>
+                        <li><a href="{{route('newRecruitment')}}">Xem Bài Đăng Tuyển Dụng</a></li>
                     </ul>
                 </li>
                 {{-- Giảng Viên --}}
@@ -69,9 +69,9 @@
                         <li>
                             <a href="#">Xem Thông Báo</a>
                             <ul class="sub-menu">
-                                <li><a href="#">Đào Tạo</a></li>
-                                <li><a href="#">Học Phí</a></li>
-                                <li><a href="#">Bảo Hiểm</a></li>
+                                <li><a href="{{route('teacher.educate')}}">Đào Tạo</a></li>
+                                <li><a href="{{route('teacher.tuition')}}">Học Phí</a></li>
+                                <li><a href="{{route('teacher.insurance')}}">Bảo Hiểm</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -80,7 +80,7 @@
                 <li>
                     <a href="#">Cựu Sinh Viên & Doanh Nghiệp</a>
                     <ul class="sub-menu">
-                        <li><a href="{{ route('getPost.index') }}">Thêm Bài Tuyển Dụng</a></li>
+                        <li><a href="{{ route('recruitment') }}">Thêm Bài Tuyển Dụng</a></li>
                     </ul>
                 </li>
 

@@ -14,5 +14,5 @@
 
 <!-- Template Javascript -->
 <script src="{{ asset('asset/js/main.js') }}"></script>
-
+<script type="text/javascript" language="javascript" src="{{asset('admin/ckeditor/ckeditor.js')}}" ></script>
 </html>
