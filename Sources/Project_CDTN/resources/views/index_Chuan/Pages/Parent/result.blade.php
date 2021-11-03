@@ -12,6 +12,7 @@
                         <button class="tablinks" onclick="openCity(event, 'profile')" id="defaultOpen">Két Quả Tra Cứu
                             <button>
                     </div>
+                   
                     <div id="profile" class="tabcontent">
                         <table class="table table-bordered" style="overflow-y: scroll; height: 700px;">
                             <thead>
@@ -23,10 +24,10 @@
                                     <th scope="col">Số Tín Chỉ</th>
                                 </tr>
                             </thead>
-                            <div>
-                                <p>{{$score->Student->student_code}}</p>
-                            </div>
                             <tbody>
+                                {{-- <div>
+                                    <h3><b>{{auth()->user()->first_name}}</b></h3>
+                                </div> --}}
                                 @foreach ($score as $K => $value)
                                     <tr>
                                         <th scope="row">{{ $K + 1 }}</th>
@@ -35,6 +36,7 @@
                                         <td>{{ $value->score }}</td>
                                         <td>{{ $value->Subject->credit }}</td>
                                     </tr>
+                                    
                                 @endforeach
                                 <tr>
                                     <th scope="row">{{ $K + 2 }}</th>

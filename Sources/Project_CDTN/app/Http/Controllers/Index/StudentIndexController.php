@@ -46,10 +46,15 @@ class StudentIndexController extends Controller
         return view('index_Chuan.Pages.Student.insurance');
     }
 
-    public function newRecruitment()
+    public function listRecruitment(){
+        $post = Post::all();
+        return view('index_Chuan.Pages.Student.postList',['post'=>$post]);
+    }
+
+    public function newRecruitment($id)
     {
-        
-        return view('index_Chuan.Pages.Student.post');
+        $post = Post::find($id);
+        return view('index_Chuan.Pages.Student.post',['post'=>$post]);
     }
     public function recruitment()
     {

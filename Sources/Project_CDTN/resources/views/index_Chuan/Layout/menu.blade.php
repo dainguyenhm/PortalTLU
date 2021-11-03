@@ -58,7 +58,7 @@
                                 <li><a href="{{ route('insurance') }}">Bảo Hiểm</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{route('newRecruitment')}}">Xem Bài Đăng Tuyển Dụng</a></li>
+                        <li><a href="{{route('listRecruitment')}}">Xem Bài Đăng Tuyển Dụng</a></li>
                     </ul>
                 </li>
                 {{-- Giảng Viên --}}
@@ -88,7 +88,7 @@
                 <li>
                     <a href="#">Phụ Huynh</a>
                     <ul class="sub-menu">
-                        <li><a href="#">Tra Cứu Điểm</a></li>
+                        <li><a href="{{ route('parent.search') }}">Tra Cứu Điểm</a></li>
                     </ul>
                 </li>
 

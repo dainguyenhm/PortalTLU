@@ -83,7 +83,9 @@ Route::group(['prefix' => 'index'], function () {
             Route::get('Message-Tuition','Index\StudentIndexController@messageTuition')->name('messageTuition');
         });
 
-        Route::get('Recruitment', 'Index\StudentIndexController@newRecruitment')->name('newRecruitment');
+        Route::get('list-Recruitment','Index\StudentIndexController@listRecruitment')->name('listRecruitment');
+
+        Route::get('Recruitment/{id}', 'Index\StudentIndexController@newRecruitment')->name('newRecruitment');
     });
 
     Route::group(['prefix' => 'Teacher'], function () {
@@ -108,6 +110,12 @@ Route::group(['prefix' => 'index'], function () {
         Route::get('Form-Recruitment','Index\StudentIndexController@recruitment')->name('recruitment');
 
         Route::post('Post-Recruitment','Index\StudentIndexController@postRecruitment')->name('postRecruitment');
+    });
+
+    Route::group(['prefix'=>'Parent'],function(){
+        Route::get('form-Look-up-learning-results-Parent', 'Index\ParentIndexController@search')->name('parent.search');
+
+        Route::post('search-results-Parent', 'Index\ParentIndexController@postSearch')->name('parent.postSearch');
     });
 
 
