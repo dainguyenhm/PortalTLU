@@ -27,6 +27,7 @@
                                     <th>Trạng Thái</th>
                                     <th>Duyệt</th>
                                     <th>Từ Chối</th>
+                                    <th>Sửa</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -63,6 +64,7 @@
                                     </td>
                                     <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="/admin/post/acceptPost/{{$pt->id}}"> Duyệt</a></td>
                                     <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="/admin/post/delete/{{$pt->id}}">Từ Chối</a></td>
+                                    <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="/admin/post/form-Update/{{$pt->id}}">Sửa</a></td>
                                 </tr>                                    
                                 @endforeach
 

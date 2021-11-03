@@ -194,6 +194,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], func
         Route::get('acceptPost/{id}','Admin\PostController@acceptPost')->name('acceptPost');
 
         Route::get('delete/{id}','Admin\PostController@delete')->name('post.delete');
+
+        Route::get('form-Update/{id}','Admin\PostController@getUpdate')->name('pots.getUpdate');
+
+        Route::post('Post-Update/{id}','Admin\PostController@postUpdate')->name('pots.update');
     });
 
     Route::prefix('faculityMajor')->group(function () {

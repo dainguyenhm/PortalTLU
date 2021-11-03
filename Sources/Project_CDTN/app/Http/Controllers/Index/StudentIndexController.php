@@ -47,7 +47,7 @@ class StudentIndexController extends Controller
     }
 
     public function listRecruitment(){
-        $post = Post::all();
+        $post = Post::where('type','1')->get();
         return view('index_Chuan.Pages.Student.postList',['post'=>$post]);
     }
 

@@ -116,6 +116,10 @@
                                     <a href="{{ route('post.insert') }}"><i
                                             class="fas fa-list-alt"></i>&nbsp;&nbsp;Thêm Bài Viết</a>
                                 </li>
+                                {{-- <li>
+                                    <a href="/admin/post/form-Update/{{$post->id}}"><i
+                                            class="fas fa-list-alt"></i>&nbsp;&nbsp;Thêm Bài Viết</a>
+                                </li> --}}
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

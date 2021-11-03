@@ -24,7 +24,7 @@
                                 </tr>
                             </thead>
                             <div>
-                                <p>{{$score->Student->student_code}}</p>
+                                <h3><b>{{auth()->user()->first_name}}&nbsp;{{auth()->user()->last_name}}</b></h3>
                             </div>
                             <tbody>
                                 @foreach ($score as $K => $value)

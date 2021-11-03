@@ -21,12 +21,12 @@
                     <div class="sidebar-widget">
                         <div class="single-bio">
                             <div class="single-bio-img">
-                                <img src="img/user.jpg" />
+                                <img src="/upload/images/{{$post->img}}" />
                             </div>
                             <div class="single-bio-text">
-                                <h3>Author Name</h3>
+                                <h3>Tập Đoàn Tuyển Dụng</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea dictumst.
+                                    {!! $post->title !!}
                                 </p>
                             </div>
                             <div class="single-bio-social">
@@ -39,14 +39,14 @@
                         </div>
                     </div>
                     
-                    <div class="sidebar-widget">
+                    {{-- <div class="sidebar-widget">
                         <div class="search-widget">
                             <form>
                                 <input class="form-control" type="text" placeholder="Search Keyword">
                                 <button class="btn"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
-                    </div>
+                    </div> --}}
 
                     {{-- <div class="sidebar-widget">
                         <h2 class="widget-title">Recent Post</h2>
@@ -114,14 +114,6 @@
                         </div>
                     </div> --}}
 
-                    <div class="sidebar-widget">
-                        <h2 class="widget-title">Text Widget</h2>
-                        <div class="text-widget">
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea nec eros. Nunc eu enim non turpis id augue.
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

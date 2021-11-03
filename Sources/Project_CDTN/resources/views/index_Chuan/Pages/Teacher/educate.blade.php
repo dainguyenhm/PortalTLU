@@ -16,7 +16,7 @@
                         <img src="{{asset('upload/images/LogoTLU.jpg')}}" alt="Image">
                     </div>
                     <div class="blog-text">
-                        <h3><a href="{{route('message')}}">Thông Báo Đăng Ký Học Kỳ I Nhóm I Năm học 2021</a></h3>
+                        <h3><a href="{{route('teacher.message')}}">Thông Báo Đăng Ký Học Kỳ I Nhóm I Năm học 2021</a></h3>
                         <p></p>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                         <img src="{{asset('upload/images/LogoTLU.jpg')}}" alt="Image">
                     </div>
                     <div class="blog-text">
-                        <h3><a href="{{route('message')}}">Thông Báo Đăng Ký Học Kỳ I Nhóm II Năm học 2021</a></h3>
+                        <h3><a href="{{route('teacher.message')}}">Thông Báo Đăng Ký Học Kỳ I Nhóm II Năm học 2021</a></h3>
                         <p></p>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         <img src="{{asset('upload/images/LogoTLU.jpg')}}" alt="Image">
                     </div>
                     <div class="blog-text">
-                        <h3><a href="{{route('message')}}">Thông Báo Đăng Ký Học Kỳ I Nhóm III Năm học 2021 </a></h3>
+                        <h3><a href="{{route('teacher.message')}}">Thông Báo Đăng Ký Học Kỳ I Nhóm III Năm học 2021 </a></h3>
                         <p></p>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                         <img src="{{asset('upload/images/LogoTLU.jpg')}}" alt="Image">
                     </div>
                     <div class="blog-text">
-                        <h3><a href="{{route('message')}}">Thông Báo Đăng Ký Học Kỳ II Nhóm I Năm học 2021</a></h3>
+                        <h3><a href="{{route('teacher.message')}}">Thông Báo Đăng Ký Học Kỳ II Nhóm I Năm học 2021</a></h3>
                         <p></p>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                         <img src="{{asset('upload/images/LogoTLU.jpg')}}" alt="Image">
                     </div>
                     <div class="blog-text">
-                        <h3><a href="{{route('message')}}">Thông Báo Đăng Ký Học Kỳ II Nhóm II Năm học 2021</a></h3>
+                        <h3><a href="{{route('teacher.message')}}">Thông Báo Đăng Ký Học Kỳ II Nhóm II Năm học 2021</a></h3>
                         <p></p>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                         <img src="{{asset('upload/images/LogoTLU.jpg')}}" alt="Image">
                     </div>
                     <div class="blog-text">
-                        <h3><a href="{{route('message')}}">Thông Báo Đăng Ký Học Kỳ II Nhóm III Năm học 2021</a></h3>
+                        <h3><a href="{{route('teacher.message')}}">Thông Báo Đăng Ký Học Kỳ II Nhóm III Năm học 2021</a></h3>
                         <p></p>
                     </div>
                 </div>
