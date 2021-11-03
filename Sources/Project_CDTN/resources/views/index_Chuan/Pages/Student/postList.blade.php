@@ -15,10 +15,12 @@
                         <div class="blog-img">
                             <img src="{{ asset('upload/images/fpt.png') }}" alt="Image">
                         </div>
+                        @foreach ($post as $post)
                         <div class="blog-text">
-                            {{-- /index/Students/Recruitment/{{ $post->id }} --}}
-                            <h3><a href="">Bài Đăng Tuyển Dụng Công ty FPT</a></h3>
+                            
+                            <h3><a href="/index/Students/Recruitment/{{ $post->id }}">Bài Đăng Tuyển Dụng Công ty FPT</a></h3>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
