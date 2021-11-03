@@ -22,5 +22,10 @@ class HomeController extends Controller
     public function detail($id){
         $post = Post::find($id);
         return view('index_Chuan.Pages.General.detail',['post'=>$post]);
+  
+    }
+
+    public function about(){
+        return view('index_Chuan.Pages.about');
     }
 }

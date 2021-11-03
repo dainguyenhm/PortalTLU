@@ -604,8 +604,10 @@ a:focus {
     margin-bottom: 45px;
     padding: 90px 0;
     text-align: center;
-    background: #202C45;
+    background-image:url('https://lh3.googleusercontent.com/proxy/K1cRcVo8TiH4JhAeAM5AUtPvqxVKCpG3SKigA1ENa3z5u_HuQB8X0SNSYL-LMKl1QBsFc1hwyW7pgFxCMbNc4QfVX0s');
     border-top: 1px dotted #ffffff;
+    color: #202C45;
+
 }
 
 .page-header h2 {
@@ -777,6 +779,7 @@ a:focus {
     font-size: 45px;
     font-weight: 700;
     text-transform: capitalize;
+    text-align: center;
 }
 
 @media (max-width: 991.98px) {
