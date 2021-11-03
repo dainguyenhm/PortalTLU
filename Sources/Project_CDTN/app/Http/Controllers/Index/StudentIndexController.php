@@ -63,7 +63,7 @@ class StudentIndexController extends Controller
 
     public function postRecruitment(Request $request){
         $this->validate($request,[
-            'title'=>'required|min:6|unique:posts,title',
+            'title'=>'required|min:6|unique:posts',
             'summary'=>'required|min:10',
             'content'=>'required|min:30',
 

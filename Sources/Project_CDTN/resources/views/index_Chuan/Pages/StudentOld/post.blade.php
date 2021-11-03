@@ -8,11 +8,26 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+                <div class="col-lg-7" style="padding-bottom:120px">
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            @foreach ($errors->all() as $err)
+                                {{ $err }}<br>
+                            @endforeach
+                        </div>
+                    @endif
+
+                    @if (session('Thongbao'))
+                        <div class="alert alert-success">
+                            {{ session('Thongbao') }}
+                        </div>
+                    @endif
                 <h1 class="page-header">
                     <small style="color: ghostwhite;">Thêm mới Bài Tuyển Dụng</small>
                 </h1>
             </div>
         </div>
+
         <form action="{{route('postRecruitment')}}" method="post" class="create-form" enctype="multipart/form-data">
             @csrf
             <div class="row line-item">
@@ -44,7 +59,7 @@
                     <label>Hình ảnh</label>
                 </div>
                 <div class="col-md-4">
-                    <input type="file" name="image">
+                    <input type="file" name="img">
                 </div>
             </div><br>
             <div class="row line-item">
