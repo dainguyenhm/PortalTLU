@@ -42,6 +42,8 @@ Route::prefix('login')->group(function () {
 Route::group(['prefix' => 'index'], function () {
     Route::get('about','Index\HomeController@about')->name('about');
 
+    Route::get('team','Index\HomeController@team')->name('team');
+
     Route::group(['prefix' => 'General'], function () {
         Route::group(['prefix' => 'Faculity'], function () {
             Route::prefix('Major')->group(function () { 

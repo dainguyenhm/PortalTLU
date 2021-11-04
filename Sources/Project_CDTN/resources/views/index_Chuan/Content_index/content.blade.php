@@ -18,7 +18,7 @@
                         </p>
                         <ul>
                             <li><a href="" class="far fa-check-circle"> Cơ Sở Vật Chất </a></li>
-                            <li><a href="" class="far fa-check-circle"> Đội Ngũ Giảng Viên </a></li>
+                            <li><a href="{{route('team')}}" class="far fa-check-circle"> Đội Ngũ Giảng Viên </a></li>
                         </ul>
                         <a class="btn btn-custom" href="{{route('about')}}"> Xem Thêm </a>
                     </div>

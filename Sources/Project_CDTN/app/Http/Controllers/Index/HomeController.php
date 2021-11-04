@@ -28,4 +28,9 @@ class HomeController extends Controller
     public function about(){
         return view('index_Chuan.Pages.about');
     }
+
+    public function team(){
+        return view('index_Chuan.Pages.teamList');
+    }
 }
+
