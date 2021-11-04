@@ -9,9 +9,8 @@ class TeacherIndexController extends Controller
 {
     public function search()
     {
-        return view('index_Chuan.Pages.Teacher.search');
+        return view('index_Chuan.Pages.Teacher.payroll');
     }
-
 
     public function educate()
     {
@@ -37,4 +36,5 @@ class TeacherIndexController extends Controller
     {
         return view('index_Chuan.Pages.Teacher.messageTuition');
     }
+
 }

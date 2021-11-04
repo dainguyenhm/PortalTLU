@@ -9,8 +9,8 @@
                 <p>Bài Tuyển Dụng</p>
                 <h2>Danh Sách Bài Tuyển Dụng</h2>
             </div>
-            @foreach ($post as $post)
                 <div class="row">
+                    @foreach ($post as $post)
                     <div class="col-lg-4">
                         <div class="blog-item">
                             <div class="blog-img">
@@ -21,8 +21,8 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
-            @endforeach
         </div>
     </div>
 @endsection

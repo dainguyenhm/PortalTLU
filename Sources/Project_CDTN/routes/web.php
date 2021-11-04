@@ -91,7 +91,7 @@ Route::group(['prefix' => 'index'], function () {
     });
 
     Route::group(['prefix' => 'Teacher'], function () {
-        Route::get('Payroll lookup', 'Index\TeacherIndexController@search')->name('teacher.search');
+        Route::get('Payroll-lookup', 'Index\TeacherIndexController@search')->name('teacher.search');
 
         // Route::post('search-result', 'Index\TeacherIndexController@postSearch')->name('postSearch');
 

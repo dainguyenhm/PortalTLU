@@ -30,24 +30,11 @@
                     <div class="sidebar">
                         <div class="sidebar-widget">
                             <div class="single-bio">
-                                {{-- <div class="single-bio-img">
-                                    @foreach ($post as $pt)
-                                        <img src="{{ $pt->img }}"/>    
-                                    @endforeach
-                                    
-                                </div> --}}
+                                <div class="single-bio-img">
+                                    <img src="/upload/images/{{$post->img}}" />
+                                </div>
                                 <div class="single-bio-text">
-                                    <h3>Mã nghành 7340201</h3>
-                                    <p>
-                                        Thời gian học <b>4 năm</b>
-                                    </p>
-
-                                    <p>
-                                        Tổ hợp môn thi <b>A00,A01</b>
-                                    </p>
-                                    <p>
-                                        Học phí <b>24.200.000vnđ/năm</b>
-                                    </p>
+                                    <h1 style="color: ghostwhite;">{!!$post->title!!}</h1>
                                 </div>
                                 <div class="single-bio-social">
                                     <a class="btn" href="https://www.facebook.com/groups/cnttdhthanglong"><i
