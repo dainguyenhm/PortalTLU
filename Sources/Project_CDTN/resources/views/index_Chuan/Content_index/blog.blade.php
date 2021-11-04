@@ -9,11 +9,6 @@
                 <div class="blog-item">
                     <div class="blog-img">
                         <img src="{{asset('asset/img/phonghoc2.jpg')}}" alt="Image">
-                        {{-- <div class="meta-date">
-                            <span>01</span>
-                            <strong>Jan</strong>
-                            <span>2045</span>
-                        </div> --}}
                     </div>
                     <div class="blog-text">
                         <h3><a href="#">Hệ sinh thái học Âm nhạc ứng dụng</a></h3>

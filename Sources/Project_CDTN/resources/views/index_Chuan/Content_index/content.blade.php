@@ -10,7 +10,7 @@
                 <div class="col-lg-6">
                     <div class="section-header text-left">
                         <p>Giới Thiệu</p>
-                        <h2>Đại Học Thăng Long</h2>
+                        <h1><b>Đại Học Thăng Long</b></h1>
                     </div>
                     <div class="about-content">
                         <p>
@@ -20,7 +20,7 @@
                             <li><a href="" class="far fa-check-circle"> Cơ Sở Vật Chất </a></li>
                             <li><a href="" class="far fa-check-circle"> Đội Ngũ Giảng Viên </a></li>
                         </ul>
-                        <a class="btn btn-custom" href=""> Xem Thêm </a>
+                        <a class="btn btn-custom" href="{{route('about')}}"> Xem Thêm </a>
                     </div>
                 </div>
             </div>

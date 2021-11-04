@@ -98,16 +98,6 @@
                     <a href="">Đăng Ký Học</a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                {{-- <div class="footer-newsletter">
-                    <h2>Newsletter</h2>
-                    <form>
-                        <input class="form-control" placeholder="Full Name">
-                        <input class="form-control" placeholder="Email">
-                        <button class="btn btn-custom">Submit</button>
-                    </form>
-                </div> --}}
-            </div>
         </div>
     </div>
     <div class="container copyright">
