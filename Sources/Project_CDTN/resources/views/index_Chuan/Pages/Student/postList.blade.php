@@ -9,20 +9,23 @@
                 <p>Bài Tuyển Dụng</p>
                 <h2>Danh Sách Bài Tuyển Dụng</h2>
             </div>
-                <div class="row">
-                    @foreach ($post as $post)
-                    <div class="col-lg-4">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img style="height: 220px; with=200px;" src="/upload/images/{{ $post->img }}" />
-                            </div>
-                            <div class="blog-text">
-                                <h3><a href="/index/Students/Recruitment/{{ $post->id }}">{{ $post->title }}</a></h3>
+            <div class="row">
+                @foreach ($post as $post)
+                    @if ($post->status == 1)
+                        <div class="col-lg-4">
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img style="height: 220px; with=200px;" src="/upload/images/{{ $post->img }}" />
+                                </div>
+                                <div class="blog-text">
+                                    <h3><a href="/index/Students/Recruitment/{{ $post->id }}">{{ $post->title }}</a>
+                                    </h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    @endforeach
-                </div>
+                    @endif
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection
