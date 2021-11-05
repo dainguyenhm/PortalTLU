@@ -12,7 +12,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <embed src="{!! $post->link !!}" type="application/pdf" height="1200px" width="1200">
+                    <embed src="{{ asset($post->link) }}" type="application/pdf" height="1200px" width="1200">
                 </div>
             </div>
     </div>

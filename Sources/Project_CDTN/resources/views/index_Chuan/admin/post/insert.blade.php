@@ -63,10 +63,6 @@
                                 <input type="file" name="img" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label>Links</label>
-                                <input class="form-control" name="links" placeholder="Nhập links...." />
-                            </div>
-                            <div class="form-group">
                                 <label>Trạng Thái</label>
                                 <label class="radio-inline">
                                     <input name="status" value="0" checked="" type="radio">Chưa Duyệt

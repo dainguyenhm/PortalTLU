@@ -95,7 +95,7 @@ Route::group(['prefix' => 'index'], function () {
     Route::group(['prefix' => 'Teacher','middleware'=>['only.teacher']], function () {
         Route::get('Payroll-lookup', 'Index\TeacherIndexController@search')->name('teacher.search');
 
-        // Route::post('search-result', 'Index\TeacherIndexController@postSearch')->name('postSearch');
+        Route::post('search-result', 'Index\TeacherIndexController@postSearch')->name('postSearch');
 
         Route::group(['prefix' => 'Messages'], function () {
             Route::get('Educate', 'Index\TeacherIndexController@educate')->name('teacher.educate');
