@@ -33,7 +33,8 @@ class StudentIndexController extends Controller
 
     public function educate()
     {
-        return view('index_Chuan.Pages.Student.educate');
+        $post = Post::all();
+        return view('index_Chuan.Pages.Student.educate',['post'=>$post]);
     }
 
     public function tuition()
@@ -106,9 +107,10 @@ class StudentIndexController extends Controller
 
     } 
 
-    public function detailMessage()
+    public function detailMessage($id)
     {
-        return view('index_Chuan.Pages.Student.message');
+        $post = Post::find($id);
+        return view('index_Chuan.Pages.Student.message',['post'=>$post]);
     }
 
     public function messageTuition($id)

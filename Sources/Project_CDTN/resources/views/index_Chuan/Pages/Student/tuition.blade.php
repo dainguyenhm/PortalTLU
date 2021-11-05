@@ -11,19 +11,21 @@
             </div>
             <div class="row">
                 @foreach ($post as $post)
-                   @if ($post->link != null)
-                   <div class="col-lg-4">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{asset('upload/images/LogoTLU.jpg')}}" alt="Image">
-                        </div>
-                        <div class="blog-text">
-                            <h3><a href="/index/Students/Messages/Message-Tuition/{{$post->id}}">{{ $post->title }}</a></h3>
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-                   @endif
+                    @if ($post->link != null && $post->status == 1 &&$post->message == 1)           
+                            <div class="col-lg-4">
+                                <div class="blog-item">
+                                    <div class="blog-img">
+                                        <img src="{{ asset('upload/images/LogoTLU.jpg') }}" alt="Image">
+                                    </div>
+                                    <div class="blog-text">
+                                        <h3><a
+                                                href="/index/Students/Messages/Message-Tuition/{{ $post->id }}">{{ $post->title }}</a>
+                                        </h3>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                    @endif
                 @endforeach
             </div>
         </div>

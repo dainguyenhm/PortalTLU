@@ -9,24 +9,28 @@ use App\Models\User;
 
 class PostController extends Controller
 {
-    public function list(){
+    public function list()
+    {
         $post = Post::all();
-        return view('index_Chuan.admin.post.list',['post'=>$post]);
+        return view('index_Chuan.admin.post.list', ['post' => $post]);
     }
 
-    public function insert(){
-        $user = User::where('type','0')->get();
-        return view('index_Chuan.admin.post.insert',['user'=>$user]);
+    public function insert()
+    {
+        $user = User::where('type', '0')->get();
+        return view('index_Chuan.admin.post.insert', ['user' => $user]);
     }
 
-    function acceptPost($id){
+    function acceptPost($id)
+    {
         $post = Post::find($id);
         $post->status = 1;
         $post->save();
         return redirect()->route('post.list')->with('Thongbao', 'Duyệt Thành Công');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $this->validate($request, [
             'user_id' => 'required',
             'title' => 'required|min:5|unique:posts,title',
@@ -48,7 +52,7 @@ class PostController extends Controller
         $post->summary = $request->summary;
         $post->content = $request->content;
         $post->status = $request->status;
-
+        $post->message = $request->message;
 
         if ($request->hasFile('pdf')) {
             $file = $request->file('pdf');
@@ -86,13 +90,15 @@ class PostController extends Controller
         return redirect()->route('post.insert')->with('Thongbao', 'Thêm Thành Công');
     }
 
-    public function getUpdate($id){
-        $user = User::where('type','0')->get();
+    public function getUpdate($id)
+    {
+        $user = User::where('type', '0')->get();
         $post = Post::find($id);
-        return view('index_Chuan.admin.post.update',['post'=>$post,'user'=>$user]);
+        return view('index_Chuan.admin.post.update', ['post' => $post, 'user' => $user]);
     }
 
-    public function postUpdate(Request $request, $id){
+    public function postUpdate(Request $request, $id)
+    {
         $this->validate($request, [
             'user_id' => 'required',
             'title' => 'required|min:5|unique:posts',
@@ -113,7 +119,7 @@ class PostController extends Controller
         $post->summary = $request->summary;
         $post->content = $request->content;
         $post->status  = $request->status;
-        $post->link   = $request->links;
+        $post->message = $request->message;
 
         if ($request->hasFile('pdf')) {
             $file = $request->file('pdf');
@@ -128,7 +134,7 @@ class PostController extends Controller
             }
             $file->move("pdf", $pdf);
         }
-        
+
         $post->type = $request->type;
         if ($request->hasFile('img')) {
             $file = $request->file('img');
@@ -150,7 +156,8 @@ class PostController extends Controller
         return redirect()->route('post.list')->with('Thongbao', 'Sửa Thành Công');
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $post = Post::find($id);
         $post->delete();
         return redirect()->route('post.insert')->with('Thongbao', 'Xoá Thành Công');

@@ -59,6 +59,18 @@
                                 </label>
                             </div>
                             <div class="form-group">
+                                <label>Loại Thông Báo</label>
+                                <label class="radio-inline">
+                                    <input name="message" value="0" checked="" type="radio">Đào Tạo
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="message" value="1" type="radio">Học Phí
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="message" value="2" type="radio">Bảo Hiểm
+                                </label>
+                            </div>
+                            <div class="form-group">
                                 <label>Hình ảnh</label>
                                 <input type="file" name="img" class="form-control">
                             </div>

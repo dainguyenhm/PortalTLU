@@ -10,100 +10,22 @@
                 <h2>Thông Báo Đào Tạo Trường Đại Học Thăng Long</h2>
             </div>
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{ asset('upload/images/TLU/DKH-KyI-NhomI.jpg') }}" alt="Image">
+                @foreach ($post as $post)
+                    @if ($post->link != null && $post->message == 0 && $post->status == 1)
+                        <div class="col-lg-4">
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img src="{{ asset('upload/images/LogoTLU.jpg') }}" alt="Image">
+                                </div>
+                                <div class="blog-text">
+                                    <h3><a
+                                            href="/index/Students/Messages/Details/{{ $post->id }}">{{ $post->title }}</a>
+                                    </h3>
+                                </div>
+                            </div>
                         </div>
-                        <div class="blog-text">
-                            <h3><a href="{{ route('detail.message') }}">Thông Báo Đăng Ký Học Kỳ I Nhóm I Năm học 2021</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{ asset('upload/images/TLU/DKH-KyII-NhomI.jpg') }}" alt="Image">
-                        </div>
-                        <div class="blog-text">
-                            <h3><a href="{{ route('detail.message') }}">Thông Báo Đăng Ký Học Kỳ II Nhóm I Năm học 2021</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{ asset('upload/images/TLU/DKH-KyIII-NhomI.jpg') }}" alt="Image">
-                        </div>
-                        <div class="blog-text">
-                            <h3><a href="{{ route('detail.message') }}">Thông Báo Đăng Ký Học Kỳ III Nhóm I Năm học 2021 </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{asset('upload/images/TLU/DKH-KyI-NhomII.jpg')}}" alt="Image">
-                        </div>
-                        <div class="blog-text">
-                            <h3><a href="{{ route('detail.message') }}">Thông Báo Đăng Ký Học Kỳ I Nhóm II Năm học 2021</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{asset('upload/images/TLU/DKH-KyII-NhomII.jpg')}}" alt="Image">
-                        </div>
-                        <div class="blog-text">
-                            <h3><a href="{{ route('detail.message') }}">Thông Báo Đăng Ký Học Kỳ II Nhóm II Năm học 2021</a></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{asset('upload/images/TLU/DKH-KyIII-NhomII.jpg')}}" alt="Image">
-                        </div>
-                        <div class="blog-text">
-                            <h3><a href="{{ route('detail.message') }}">Thông Báo Đăng Ký Học Kỳ III Nhóm II Năm học 2021</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{asset('upload/images/TLU/DKH-KyI-NhomIII.jpg')}}" alt="Image">
-                        </div>
-                        <div class="blog-text">
-                            <h3><a href="{{ route('detail.message') }}">Thông Báo Đăng Ký Học Kỳ I Nhóm III Năm học 2021</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{asset('upload/images/TLU/DKH-KyII-NhomIII.jpg')}}" alt="Image">
-                        </div>
-                        <div class="blog-text">
-                            <h3><a href="{{ route('detail.message') }}">Thông Báo Đăng Ký Học Kỳ II Nhóm III Năm học 2021</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{asset('upload/images/TLU/DKH-KyIII-NhomIII.jpg')}}" alt="Image">
-                        </div>
-                        <div class="blog-text">
-                            <h3><a href="{{ route('detail.message') }}">Thông Báo Đăng Ký Học Kỳ III Nhóm III Năm học 2021</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
