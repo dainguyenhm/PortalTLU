@@ -104,9 +104,9 @@ Route::group(['prefix' => 'index'], function () {
 
             Route::get('Insurance', 'Index\TeacherIndexController@insurance')->name('teacher.insurance');
 
-            Route::get('Details','Index\TeacherIndexController@message')->name('teacher.message');
+            Route::get('Details/{id}','Index\TeacherIndexController@message')->name('teacher.message');
 
-            Route::get('Message-Tuition','Index\TeacherIndexController@messageTuition')->name('teacher.messageTuition');
+            Route::get('Message-Tuition/{id}','Index\TeacherIndexController@messageTuition')->name('teacher.messageTuition');
         });
     });
 

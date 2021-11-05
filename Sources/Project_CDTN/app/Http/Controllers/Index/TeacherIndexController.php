@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Index;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class TeacherIndexController extends Controller
 {
@@ -14,12 +15,14 @@ class TeacherIndexController extends Controller
 
     public function educate()
     {
-        return view('index_Chuan.Pages.Teacher.educate');
+        $post = Post::all();
+        return view('index_Chuan.Pages.Teacher.educate',['post'=>$post]);
     }
 
     public function tuition()
     {
-        return view('index_Chuan.Pages.Teacher.tuition');
+        $post = Post::all();
+        return view('index_Chuan.Pages.Teacher.tuition',['post'=>$post]);
     }
 
     public function insurance()
@@ -27,14 +30,16 @@ class TeacherIndexController extends Controller
         return view('index_Chuan.Pages.Teacher.insurance');
     }
 
-    public function message()
+    public function message($id)
     {
-        return view('index_Chuan.Pages.Teacher.message');
+        $post = Post::find($id);
+        return view('index_Chuan.Pages.Teacher.message',['post'=>$post]);
     }
 
-    public function messageTuition()
+    public function messageTuition($id)
     {
-        return view('index_Chuan.Pages.Teacher.messageTuition');
+        $post = Post::find($id);
+        return view('index_Chuan.Pages.Teacher.messageTuition',['post'=>$post]);
     }
 
     public function postSearch(Request $request)
