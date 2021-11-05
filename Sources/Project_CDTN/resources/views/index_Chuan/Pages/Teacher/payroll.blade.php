@@ -13,19 +13,19 @@
                         <div class="col-md-4 mb-3">
                             <label for="validationDefault01">Số Tiết</label>
                             <input type="text" class="form-control" name="lesson" id="validationDefault01" placeholder="Nhập Số Tiết....." 
-                                value="{{ $lesson ? $lesson : ''}}"
+                                value="{{ isset($lesson) ? $lesson : ''}}"
                                 required>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationDefault02">Hệ Số Giáo Viên</label>
                             <input type="text" class="form-control" name="teacherCoefficient" name="teacherCoefficient" id="validationDefault02" placeholder="Nhập Hệ Số Giáo Viên....." 
-                                value="{{ $teacherCoefficient ? $teacherCoefficient : ''}}"
+                                value="{{ isset($teacherCoefficient) ? $teacherCoefficient : ''}}"
                                 required>
                         </div> <br> <br>                        
                         <div class="col-md-4 mb-3">
                             <label for="validationDefault02">Hệ Số Môn Học</label>
                             <input type="text" class="form-control" id="subjectCoefficient" name="subjectCoefficient" placeholder="Hệ Số Môn Học......"
-                                value="{{ $subjectCoefficient ? $subjectCoefficient : ''}}"
+                                value="{{ isset($subjectCoefficient) ? $subjectCoefficient : ''}}"
                                 required>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -33,7 +33,7 @@
                             <div class="input-group">
                             <input type="text" class="form-control" id="classCoefficient" name="classCoefficient" placeholder="Hệ Số Lớp......"
                                     aria-describedby="inputGroupPrepend2"
-                                    value="{{ $classCoefficient ? $classCoefficient : ''}}"
+                                    value="{{ isset($classCoefficient) ? $classCoefficient : ''}}"
                                     required>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                             <div class="input-group">
                             <input type="text" class="form-control" name="result"
                                     aria-describedby="inputGroupPrepend2" 
-                                    value="{{ $money ? $money : ''}}"
+                                    value="{{ isset($money) ? $money : ''}}"
                                     required disabled>
                             </div>
                         </div>
