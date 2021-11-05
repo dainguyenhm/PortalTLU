@@ -48,7 +48,6 @@ class PostController extends Controller
         $post->summary = $request->summary;
         $post->content = $request->content;
         $post->status = $request->status;
-        $post->link   = $request->links;
 
 
         if ($request->hasFile('pdf')) {
@@ -63,6 +62,7 @@ class PostController extends Controller
                 $pdf = "b" . "_" . $name;
             }
             $file->move("pdf", $pdf);
+            $post->link =  sprintf('pdf/%s', $pdf);
         }
 
         $post->type = $request->type;

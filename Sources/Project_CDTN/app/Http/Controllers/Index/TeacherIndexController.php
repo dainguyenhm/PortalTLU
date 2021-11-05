@@ -37,4 +37,23 @@ class TeacherIndexController extends Controller
         return view('index_Chuan.Pages.Teacher.messageTuition');
     }
 
+    public function postSearch(Request $request)
+    {
+        $lesson             = $request->lesson;
+        $teacherCoefficient = $request->teacherCoefficient;
+        $subjectCoefficient = $request->subjectCoefficient;
+        $classCoefficient   = $request->classCoefficient;
+
+        $money = $lesson * ( $teacherCoefficient + $subjectCoefficient + $classCoefficient ) * 10000;
+        
+        return view('index_Chuan.Pages.Teacher.payroll', [
+            'lesson'                => $lesson,
+            'teacherCoefficient'    => $teacherCoefficient,
+            'subjectCoefficient'    => $subjectCoefficient,
+            'classCoefficient'      => $classCoefficient,
+            'money'                 => $money
+        ]);
+
+    }
+
 }
