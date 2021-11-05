@@ -5,18 +5,18 @@
 @section('content')
 
     <div class="container">
-        <div class="row">
-
-            <div class="col-md-12">
-                <h3><b style="font-size: 60px;"> Thông Báo Thu Học Phí Học Kỳ I nhóm I Năm Học 2021</b></h3>
+        @foreach ($post as $post)
+            <div class="row">
+                <div class="col-md-12">
+                    <h3><b style="font-size: 60px;"> {!! $post->title !!} </b></h3>
+                </div>
             </div>
-            
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <embed src="{{asset('pdf/Thong bao Thu hoc phi biên tập.pdf')}}" type="application/pdf"   height="1200px" width="1200">
+            <div class="row">
+                <div class="col-md-12">
+                    <embed src="{!! $post->link !!}" type="application/pdf" height="1200px" width="1200">
+                </div>
             </div>
-        </div>
+        @endforeach
     </div>
 
 @endsection

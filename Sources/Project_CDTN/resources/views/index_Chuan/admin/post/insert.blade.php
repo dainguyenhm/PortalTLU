@@ -48,6 +48,7 @@
                                 <label>Nội dung</label>
                                 <textarea class="ckeditor" name="content" id="demo" rows="5"></textarea>
                             </div>
+
                             <div class="form-group">
                                 <label>Loại Bài Viết</label>
                                 <label class="radio-inline">
@@ -62,6 +63,10 @@
                                 <input type="file" name="img" class="form-control">
                             </div>
                             <div class="form-group">
+                                <label>Links</label>
+                                <input class="form-control" name="links" placeholder="Nhập links...." />
+                            </div>
+                            <div class="form-group">
                                 <label>Trạng Thái</label>
                                 <label class="radio-inline">
                                     <input name="status" value="0" checked="" type="radio">Chưa Duyệt
@@ -69,6 +74,10 @@
                                 <label class="radio-inline">
                                     <input name="status" value="1" type="radio">Duyệt
                                 </label>
+                                <div class="form-group">
+                                    <label>Chọn file</label>
+                                    <input type="file" name="pdf" class="form-control">
+                                </div>
                             </div>
                             
                             <button type="submit" class="btn btn-info">Thêm</button>

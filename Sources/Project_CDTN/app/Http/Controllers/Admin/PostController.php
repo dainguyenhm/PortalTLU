@@ -48,6 +48,23 @@ class PostController extends Controller
         $post->summary = $request->summary;
         $post->content = $request->content;
         $post->status = $request->status;
+        $post->link   = $request->links;
+
+
+        if ($request->hasFile('pdf')) {
+            $file = $request->file('pdf');
+            $duoi = $file->getClientOriginalExtension();
+            if ($duoi != 'pdf') {
+                return redirect()->route('post.insert')->with('Thongbao', 'File chưa đúng định dạng.');
+            }
+            $name = $file->getClientOriginalName();
+            $pdf = "a" . "_" . $name;
+            while (file_exists('pdf/$pdf')) {
+                $pdf = "b" . "_" . $name;
+            }
+            $file->move("pdf", $pdf);
+        }
+
         $post->type = $request->type;
         if ($request->hasFile('img')) {
             $file = $request->file('img');
@@ -95,7 +112,8 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->summary = $request->summary;
         $post->content = $request->content;
-        $post->status = $request->status;
+        $post->status  = $request->status;
+        $post->links   = $request->links;
         $post->type = $request->type;
         if ($request->hasFile('img')) {
             $file = $request->file('img');

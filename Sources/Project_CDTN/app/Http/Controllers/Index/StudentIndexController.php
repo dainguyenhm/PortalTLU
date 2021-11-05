@@ -38,7 +38,8 @@ class StudentIndexController extends Controller
 
     public function tuition()
     {
-        return view('index_Chuan.Pages.Student.tuition');
+        $post = Post::all();
+        return view('index_Chuan.Pages.Student.tuition',['post'=>$post]);
     }
 
     public function insurance()
@@ -110,8 +111,9 @@ class StudentIndexController extends Controller
         return view('index_Chuan.Pages.Student.message');
     }
 
-    public function messageTuition()
+    public function messageTuition($id)
     {
-        return view('index_Chuan.Pages.Student.messageTuition');
+        $post = Post::find($id);
+        return view('index_Chuan.Pages.Student.messageTuition',['post'=>$post]);
     }
 }

@@ -84,7 +84,7 @@ Route::group(['prefix' => 'index'], function () {
 
             Route::get('Details','Index\StudentIndexController@detailMessage')->name('detail.message');
 
-            Route::get('Message-Tuition','Index\StudentIndexController@messageTuition')->name('messageTuition');
+            Route::get('Message-Tuition/{id}','Index\StudentIndexController@messageTuition')->name('messageTuition');
         });
 
         Route::get('list-Recruitment','Index\StudentIndexController@listRecruitment')->name('listRecruitment');
