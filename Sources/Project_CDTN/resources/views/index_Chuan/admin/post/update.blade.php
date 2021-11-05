@@ -87,6 +87,10 @@
                                     @endif
                                     type="radio">Duyệt
                                 </label>
+                                <div class="form-group">
+                                    <label>Chọn file</label>
+                                    <input type="file" name="pdf" class="form-control">
+                                </div>
                             </div>
 
                             <button type="submit" class="btn btn-info">Sửa</button>

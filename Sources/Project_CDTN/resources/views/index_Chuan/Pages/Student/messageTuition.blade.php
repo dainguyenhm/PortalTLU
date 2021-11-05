@@ -5,7 +5,6 @@
 @section('content')
 
     <div class="container">
-        @foreach ($post as $post)
             <div class="row">
                 <div class="col-md-12">
                     <h3><b style="font-size: 60px;"> {!! $post->title !!} </b></h3>
@@ -16,7 +15,6 @@
                     <embed src="{!! $post->link !!}" type="application/pdf" height="1200px" width="1200">
                 </div>
             </div>
-        @endforeach
     </div>
 
 @endsection
