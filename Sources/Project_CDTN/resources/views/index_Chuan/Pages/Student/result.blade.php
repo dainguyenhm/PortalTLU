@@ -24,7 +24,7 @@
                                 </tr>
                             </thead>
                             <div>
-                                <h3><b>{{auth()->user()->first_name}}&nbsp;{{auth()->user()->last_name}}</b></h3>
+                                <h3><b>Bảng Điểm:{{$search}}</b></h3>
                             </div>
                             <tbody>
                                 @foreach ($score as $K => $value)

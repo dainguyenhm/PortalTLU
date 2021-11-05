@@ -27,7 +27,7 @@ class ParentIndexController extends Controller
             $count = $count + $value->Subject->credit;
         }
         
-        return view('index_Chuan/Pages/Parent/result', ['score' => $score, 'count' => $count]);
+        return view('index_Chuan/Pages/Parent/result', ['score' => $score, 'count' => $count,'user'=>$user,'student'=>$student]);
         
     }
 }

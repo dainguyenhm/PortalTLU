@@ -27,7 +27,7 @@ class StudentIndexController extends Controller
             $count = $count + $value->Subject->credit;
         }
         
-        return view('index_Chuan/Pages/Student/result', ['score' => $score, 'count' => $count]);
+        return view('index_Chuan/Pages/Student/result', ['score' => $score, 'count' => $count,'search'=>$search]);
         
     }
 

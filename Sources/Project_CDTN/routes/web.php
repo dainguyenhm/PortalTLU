@@ -38,7 +38,7 @@ Route::prefix('login')->group(function () {
     Route::get('logout', 'Login\LoginController@getlogout')->name('logout');
     Route::get('Quen-mat-khau', 'Login\LoginController@fogot')->name('forgotPW');
 });
-// 'middleware'=>['only.student','only.admin']
+
 Route::group(['prefix' => 'index'], function () {
     Route::get('about','Index\HomeController@about')->name('about');
 
@@ -70,7 +70,7 @@ Route::group(['prefix' => 'index'], function () {
         });
     });
 
-    Route::group(['prefix' => 'Students'], function () {
+    Route::group(['prefix' => 'Students','middleware'=>['only.student']], function () {
         Route::get('form-Look-up-learning-results', 'Index\StudentIndexController@search')->name('search');
 
         Route::post('search-results', 'Index\StudentIndexController@postSearch')->name('postSearch');
@@ -92,7 +92,7 @@ Route::group(['prefix' => 'index'], function () {
         Route::get('Recruitment/{id}', 'Index\StudentIndexController@newRecruitment')->name('newRecruitment');
     });
 
-    Route::group(['prefix' => 'Teacher'], function () {
+    Route::group(['prefix' => 'Teacher','middleware'=>['only.teacher']], function () {
         Route::get('Payroll-lookup', 'Index\TeacherIndexController@search')->name('teacher.search');
 
         // Route::post('search-result', 'Index\TeacherIndexController@postSearch')->name('postSearch');
@@ -110,7 +110,7 @@ Route::group(['prefix' => 'index'], function () {
         });
     });
 
-    Route::group(['prefix'=>'Old-Student'], function(){
+    Route::group(['prefix'=>'Old-Student','middleware'=>['only.oldStudent']], function(){
         Route::get('Form-Recruitment','Index\StudentIndexController@recruitment')->name('recruitment');
 
         Route::post('Post-Recruitment','Index\StudentIndexController@postRecruitment')->name('postRecruitment');

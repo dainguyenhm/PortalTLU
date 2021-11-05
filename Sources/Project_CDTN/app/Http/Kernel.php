@@ -57,6 +57,8 @@ class Kernel extends HttpKernel
         'auth' => \App\Http\Middleware\Authenticate::class,
         'only.student' => \App\Http\Middleware\OnlyStudentCanAcess::class,
         'only.admin' => \App\Http\Middleware\OnlyAdminCanAcess::class,
+        'only.teacher' => \App\Http\Middleware\OnlyTeacherCanAcess::class,
+        'only.oldStudent' => \App\Http\Middleware\OnlyOldStudentCanAcess::class,
         'cheker' => \App\Http\Middleware\Checker::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,

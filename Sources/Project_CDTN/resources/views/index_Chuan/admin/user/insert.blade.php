@@ -67,7 +67,7 @@
                             <div class="form-group">
                                 <label>Loại User</label>
                                 <label class="radio-inline">
-                                    <input name="type" value="0" checked="" type="radio">Admin
+                                    <input name="type" value="0" checked="" type="radio">Admin.
                                 </label>
                                 <label class="radio-inline">
                                     <input name="type" value="1" type="radio">Sinh Viên

@@ -25,9 +25,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- <div>
-                                    <h3><b>{{auth()->user()->first_name}}</b></h3>
-                                </div> --}}
+                                <div>
+                                    <h5><b> <span>Bảng Điểm Của Sinh Viên:</span> {{$user->first_name}}&nbsp;{{$user->last_name}}&nbsp;<span>_Mã Sinh Viên</span> &nbsp;{{$student->student_code}}</b></h5>
+                                </div>
                                 @foreach ($score as $K => $value)
                                     <tr>
                                         <th scope="row">{{ $K + 1 }}</th>
