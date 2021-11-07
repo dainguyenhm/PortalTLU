@@ -40,37 +40,45 @@ Route::prefix('login')->group(function () {
 });
 
 Route::group(['prefix' => 'index'], function () {
-    Route::get('about','Index\HomeController@about')->name('about');
+    Route::get('about', 'Index\HomeController@about')->name('about');
 
-    Route::get('team','Index\HomeController@team')->name('team');
+    Route::get('team', 'Index\HomeController@team')->name('team');
+
+    Route::group(['prefix' => 'infrastructure'], function () {
+        Route::get('blog', 'Index\HomeController@infrastructure')->name('infrastructure');
+
+        Route::get('infrastructure-details', 'Index\HomeController@Infrastdetails')->name('infrastructure.details');
+    });
 
     Route::group(['prefix' => 'General'], function () {
         Route::group(['prefix' => 'Faculity'], function () {
-            Route::prefix('Major')->group(function () { 
+            Route::prefix('Major')->group(function () {
                 Route::get('Details/{id}', 'Index\HomeController@detail')->name('details');
             });
         });
 
         Route::group(['prefix' => 'Admissions'], function () {
             Route::get('Formal-University', 'Pages\AdmissionController@formal')->name('formal');
-            
+
+            Route::get('Formal-University-Details/{id}', 'Pages\AdmissionController@formalDetails')->name('formal.Detals');
+
             Route::get('Training-Master', 'Pages\AdmissionController@trainingMaster')->name('trainingMaster');
-            
+
             Route::get('Intermationnal-Master', 'Pages\AdmissionController@intermational')->name('intermational');
-            
+
             Route::get('Connection', 'Pages\AdmissionController@connection')->name('connection');
         });
 
-        Route::group(['prefix' => 'Event'], function() {
-            Route::get('Event','Pages\EventController@event')->name('event');
+        Route::group(['prefix' => 'Event'], function () {
+            Route::get('Event', 'Pages\EventController@event')->name('event');
         });
 
-        Route::group(['prefix' => 'Scholarship'], function(){
-            Route::get('Scholarship','Pages\ScholarShipController@scholarship')->name('scholarship');
+        Route::group(['prefix' => 'Scholarship'], function () {
+            Route::get('Scholarship', 'Pages\ScholarShipController@scholarship')->name('scholarship');
         });
     });
 
-    Route::group(['prefix' => 'Students','middleware'=>['only.student']], function () {
+    Route::group(['prefix' => 'Students', 'middleware' => ['only.student']], function () {
         Route::get('form-Look-up-learning-results', 'Index\StudentIndexController@search')->name('search');
 
         Route::post('search-results', 'Index\StudentIndexController@postSearch')->name('postSearch');
@@ -82,17 +90,17 @@ Route::group(['prefix' => 'index'], function () {
 
             Route::get('Insurance', 'Index\StudentIndexController@insurance')->name('insurance');
 
-            Route::get('Details/{id}','Index\StudentIndexController@detailMessage')->name('detail.message');
+            Route::get('Details/{id}', 'Index\StudentIndexController@detailMessage')->name('detail.message');
 
-            Route::get('Message-Tuition/{id}','Index\StudentIndexController@messageTuition')->name('messageTuition');
+            Route::get('Message-Tuition/{id}', 'Index\StudentIndexController@messageTuition')->name('messageTuition');
         });
 
-        Route::get('list-Recruitment','Index\StudentIndexController@listRecruitment')->name('listRecruitment');
+        Route::get('list-Recruitment', 'Index\StudentIndexController@listRecruitment')->name('listRecruitment');
 
         Route::get('Recruitment/{id}', 'Index\StudentIndexController@newRecruitment')->name('newRecruitment');
     });
 
-    Route::group(['prefix' => 'Teacher','middleware'=>['only.teacher']], function () {
+    Route::group(['prefix' => 'Teacher', 'middleware' => ['only.teacher']], function () {
         Route::get('Payroll-lookup', 'Index\TeacherIndexController@search')->name('teacher.search');
 
         Route::post('search-result', 'Index\TeacherIndexController@postSearch')->name('postSearch');
@@ -104,19 +112,19 @@ Route::group(['prefix' => 'index'], function () {
 
             Route::get('Insurance', 'Index\TeacherIndexController@insurance')->name('teacher.insurance');
 
-            Route::get('Details/{id}','Index\TeacherIndexController@message')->name('teacher.message');
+            Route::get('Details/{id}', 'Index\TeacherIndexController@message')->name('teacher.message');
 
-            Route::get('Message-Tuition/{id}','Index\TeacherIndexController@messageTuition')->name('teacher.messageTuition');
+            Route::get('Message-Tuition/{id}', 'Index\TeacherIndexController@messageTuition')->name('teacher.messageTuition');
         });
     });
 
-    Route::group(['prefix'=>'Old-Student','middleware'=>['only.oldStudent']], function(){
-        Route::get('Form-Recruitment','Index\StudentIndexController@recruitment')->name('recruitment');
+    Route::group(['prefix' => 'Old-Student', 'middleware' => ['only.oldStudent']], function () {
+        Route::get('Form-Recruitment', 'Index\StudentIndexController@recruitment')->name('recruitment');
 
-        Route::post('Post-Recruitment','Index\StudentIndexController@postRecruitment')->name('postRecruitment');
+        Route::post('Post-Recruitment', 'Index\StudentIndexController@postRecruitment')->name('postRecruitment');
     });
 
-    Route::group(['prefix'=>'Parent'],function(){
+    Route::group(['prefix' => 'Parent'], function () {
         Route::get('form-Look-up-learning-results-Parent', 'Index\ParentIndexController@search')->name('parent.search');
 
         Route::post('search-results-Parent', 'Index\ParentIndexController@postSearch')->name('parent.postSearch');
@@ -136,7 +144,7 @@ Route::prefix('login-Admin')->group(function () {
 });
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], function () {
     Route::get('quan-tri', 'Admin\LoginAdminController@manager')->name('manager.index');
-    
+
 
     Route::prefix('user')->group(function () {
         Route::get('list', 'Admin\UserController@list')->name('user.list');
@@ -157,7 +165,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], func
 
         Route::get('create-student', 'Admin\StudentController@create')->name('getStudent.create');
 
-        Route::match(['get', 'post'],'import', 'Admin\StudentController@import')->name('Student.import');
+        Route::match(['get', 'post'], 'import', 'Admin\StudentController@import')->name('Student.import');
 
         Route::post('form-create-student', 'Admin\StudentController@store')->name('postStudent.create');
 
@@ -191,17 +199,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], func
 
         // Route::get('accept', 'Admin\PostController@accept')->name('accept');
 
-        Route::get('form-insert-post','Admin\PostController@insert')->name('post.insert');
+        Route::get('form-insert-post', 'Admin\PostController@insert')->name('post.insert');
 
-        Route::post('form-insert-post','Admin\PostController@store')->name('post.store');
+        Route::post('form-insert-post', 'Admin\PostController@store')->name('post.store');
 
-        Route::get('acceptPost/{id}','Admin\PostController@acceptPost')->name('acceptPost');
+        Route::get('acceptPost/{id}', 'Admin\PostController@acceptPost')->name('acceptPost');
 
-        Route::get('delete/{id}','Admin\PostController@delete')->name('post.delete');
+        Route::get('delete/{id}', 'Admin\PostController@delete')->name('post.delete');
 
-        Route::get('form-Update/{id}','Admin\PostController@getUpdate')->name('pots.getUpdate');
+        Route::get('form-Update/{id}', 'Admin\PostController@getUpdate')->name('pots.getUpdate');
 
-        Route::post('Post-Update/{id}','Admin\PostController@postUpdate')->name('pots.update');
+        Route::post('Post-Update/{id}', 'Admin\PostController@postUpdate')->name('pots.update');
     });
 
     Route::prefix('faculityMajor')->group(function () {
@@ -257,4 +265,3 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], func
         echo "Admin Zone";
     });
 });
-

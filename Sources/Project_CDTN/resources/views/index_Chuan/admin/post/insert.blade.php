@@ -69,6 +69,9 @@
                                 <label class="radio-inline">
                                     <input name="message" value="2" type="radio">Bảo Hiểm
                                 </label>
+                                <label class="radio-inline">
+                                    <input name="message" value="3" type="radio">Tuyển Sinh
+                                </label>
                             </div>
                             <div class="form-group">
                                 <label>Hình ảnh</label>

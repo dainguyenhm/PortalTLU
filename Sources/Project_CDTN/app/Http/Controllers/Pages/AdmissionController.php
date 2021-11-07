@@ -9,7 +9,8 @@ use App\Models\Post;
 class AdmissionController extends Controller
 {
     public function formal(){
-        return view('index_Chuan.Pages.General.Admissions.formal');
+        $post = Post::where('message','3')->get();
+        return view('index_Chuan.Pages.General.Admissions.formal',['post'=>$post]);
     }
 
     public function trainingMaster(){
@@ -22,5 +23,10 @@ class AdmissionController extends Controller
 
     public function connection(){
         return view('index_Chuan.Pages.General.Admissions.connection');
+    }
+
+    public function formalDetails($id){
+        $post = Post::find($id);
+        return view('index_Chuan.Pages.General.Admissions.details',['post'=>$post]);
     }
 }

@@ -31,25 +31,9 @@
                     <div class="checkimg-2">
                         <img width="280" height="190" src="{{asset('asset/img/home-doi-song-06.jpg')}}" alt="Image">
                     </div>
-                    {{-- <div class="checkimg-3">
-                        <img width="350" height="270" src="{{asset('asset/img/tuyensinh7.jpg')}}" alt="Image">
-                    </div> --}}
+                    
                 </div>            
             </div>
-            {{-- <div class="col-lg col-md-2">
-
-                <div class="facts-text row">
-                    <div class="col-md-6">
-                        <h1 data-toggle="counter-up">3400</h1>
-                        <p>Sinh viên nhập học năm 2020(k33)</p>
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <h1 data-toggle="counter-up">25</h1>
-                        <p>Câu Lạc Bộ Sinh viên</p>
-                    </div>
-                </div>
-            </div> --}}
         </div>
     </div>
 </div>

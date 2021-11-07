@@ -32,5 +32,13 @@ class HomeController extends Controller
     public function team(){
         return view('index_Chuan.Pages.teamList');
     }
+
+    public function infrastructure(){
+        return view('index_Chuan.Pages.infrastructure.blog');
+    }
+
+    public function Infrastdetails(){
+        return view('index_Chuan.Pages.infrastructure.details');
+    }
 }
 
