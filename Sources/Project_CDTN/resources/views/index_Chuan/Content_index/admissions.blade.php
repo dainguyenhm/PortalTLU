@@ -11,7 +11,7 @@
                         <img src="{{ asset('asset/img/tuyensinh7.jpg') }}" alt="Image">
                     </div>
                     <div class="blog-text">
-                        <h3><a href="#">Thông tin tuyển sinh năm học 2021</a></h3>
+                        <h3><a href="">Thông tin tuyển sinh năm học 2021</a></h3>
                         <p></p>
                     </div>
                 </div>

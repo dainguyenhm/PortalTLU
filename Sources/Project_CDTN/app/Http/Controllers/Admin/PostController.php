@@ -57,7 +57,7 @@ class PostController extends Controller
         if ($request->hasFile('pdf')) {
             $file = $request->file('pdf');
             $duoi = $file->getClientOriginalExtension();
-            if ($duoi != 'pdf') {
+            if ($duoi != 'pdf' &&  $duoi != 'PDF') {
                 return redirect()->route('post.insert')->with('Thongbao', 'File chưa đúng định dạng.');
             }
             $name = $file->getClientOriginalName();

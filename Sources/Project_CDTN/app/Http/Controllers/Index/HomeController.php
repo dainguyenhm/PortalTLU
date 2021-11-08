@@ -40,5 +40,10 @@ class HomeController extends Controller
     public function Infrastdetails(){
         return view('index_Chuan.Pages.infrastructure.details');
     }
+
+    public function adminssion(){
+        $post = Post::where('message','3');
+        return view('index_Chuan.Content_index.admissions',['post'=>$post]);
+    }
 }
 

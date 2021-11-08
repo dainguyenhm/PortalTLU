@@ -24,7 +24,7 @@
                         @endif
                     </div>
                     <h1 class="page-header">
-                        <small style="color: ghostwhite;"></small>
+                        <small style="color:mediumblue; font-size:50px;">Thêm Bài Tuyển Dụng</small>
                     </h1>
 
                     <form action="{{ route('postRecruitment') }}" method="post" class="create-form"

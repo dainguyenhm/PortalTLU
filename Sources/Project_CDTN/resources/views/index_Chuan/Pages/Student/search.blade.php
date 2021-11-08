@@ -12,7 +12,7 @@
 
         <div id="profile" class="tabcontent">
             <div class="col-lg-7" style="padding: 20px 20px; ">
-                <form action="{{ route('postSearch') }}" method="POST">
+                <form action="{{ route('student.postSearch') }}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                     <div class="form-group">
                         <label>Tra Cứu Bảng Điểm</label>
