@@ -44,6 +44,16 @@ Route::group(['prefix' => 'index'], function () {
 
     Route::get('team', 'Index\HomeController@team')->name('team');
 
+    Route::get('Admission-Information','Index\HomeController@information')->name('Admission.Information');
+
+    Route::get('Enrollment-project','Index\HomeController@enrollment')->name('Admission.Enrollment');
+
+    Route::get('Application-form','Index\HomeController@application')->name('Admission.application');
+
+    Route::get('instruct','Index\HomeController@instruct')->name('Admission.instruct');
+
+    Route::get('floor-point','Index\HomeController@floor')->name('Admission.floor');
+
     Route::group(['prefix' => 'infrastructure'], function () {
         Route::get('blog', 'Index\HomeController@infrastructure')->name('infrastructure');
 

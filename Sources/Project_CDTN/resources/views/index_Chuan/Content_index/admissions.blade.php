@@ -11,7 +11,7 @@
                         <img src="{{ asset('asset/img/tuyensinh7.jpg') }}" alt="Image">
                     </div>
                     <div class="blog-text">
-                        <h3><a href="">Thông tin tuyển sinh năm học 2021</a></h3>
+                        <h3><a href="{{route('Admission.Information')}}">Thông tin tuyển sinh năm học 2021</a></h3>
                         <p></p>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                         <img src="{{ asset('asset/img/tuyesinh4.jpg') }}" alt="Image">
                     </div>
                     <div class="blog-text">
-                        <h3><a href="#">Đề Án tuyển sinh trình độ Đại học năm học 2021</a></h3>
+                        <h3><a href="{{route('Admission.Enrollment')}}">Đề Án tuyển sinh trình độ Đại học năm học 2021</a></h3>
                         <p></p>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                         <img src="{{ asset('asset/img/tuyensinh3.png') }}" alt="Image">
                     </div>
                     <div class="blog-text">
-                        <h3><a href="#">THÔNG BÁO Nhận hồ sơ xét tuyển học bạ và xét tuyển kết hợp tuyển sinh đại học
+                        <h3><a href="{{route('Admission.application')}}">THÔNG BÁO Nhận hồ sơ xét tuyển học bạ và xét tuyển kết hợp tuyển sinh đại học
                                 chính quy năm 2021 </a></h3>
                         <p></p>
                     </div>
@@ -45,7 +45,7 @@
                         <img src="{{ asset('asset/img/tuyensinh5.png') }}" alt="Image">
                     </div>
                     <div class="blog-text">
-                        <h3><a href="#">Hướng dẫn đăng ký trực tuyến xét tuyển Học bạ và xét tuyển kết hợp Đại học hệ
+                        <h3><a href="{{route('Admission.instruct')}}">Hướng dẫn đăng ký trực tuyến xét tuyển Học bạ và xét tuyển kết hợp Đại học hệ
                                 chính quy năm 2021</a></h3>
                         <p></p>
                     </div>
@@ -57,7 +57,7 @@
                         <img src="{{ asset('asset/img/tuyensinh6.jpg') }}" alt="Image">
                     </div>
                     <div class="blog-text">
-                        <h3><a href="#">THÔNG BÁO Công bố điểm sàn xét tuyển Đại học đợt 1, năm 2021</a></h3>
+                        <h3><a href="{{route('Admission.floor')}}">THÔNG BÁO Công bố điểm sàn xét tuyển Đại học đợt 1, năm 2021</a></h3>
                         <p></p>
                     </div>
                 </div>

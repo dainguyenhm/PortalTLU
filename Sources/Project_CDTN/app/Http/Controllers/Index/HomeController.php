@@ -45,5 +45,23 @@ class HomeController extends Controller
         $post = Post::where('message','3');
         return view('index_Chuan.Content_index.admissions',['post'=>$post]);
     }
+
+    public function information(){
+        return view('index_Chuan.Content_index.information');
+    }
+
+    public function enrollment(){
+        return view('index_Chuan.Content_index.enrollment');
+    }
+    
+    public function application(){
+        return view('index_Chuan.Content_index.application');
+    }
+    public function instruct(){
+        return view('index_Chuan.Content_index.instruct');
+    }
+    public function floor(){
+        return view('index_Chuan.Content_index.floor');
+    }
 }
 
