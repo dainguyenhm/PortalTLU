@@ -54,6 +54,8 @@ Route::group(['prefix' => 'index'], function () {
 
     Route::get('floor-point','Index\HomeController@floor')->name('Admission.floor');
 
+    Route::get('Club-TLU','Index\HomeController@club')->name('club');
+
     Route::group(['prefix' => 'infrastructure'], function () {
         Route::get('blog', 'Index\HomeController@infrastructure')->name('infrastructure');
 

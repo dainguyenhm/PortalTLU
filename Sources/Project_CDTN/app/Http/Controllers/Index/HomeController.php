@@ -63,5 +63,9 @@ class HomeController extends Controller
     public function floor(){
         return view('index_Chuan.Content_index.floor');
     }
+    
+    public function club(){
+        return view('index_Chuan.Content_index.clubTLU');
+    }
 }
 
