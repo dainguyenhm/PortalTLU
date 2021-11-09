@@ -42,7 +42,7 @@ class HomeController extends Controller
     }
 
     public function adminssion(){
-        $post = Post::where('message','3');
+        $post = Post::where('message','3')->get();
         return view('index_Chuan.Content_index.admissions',['post'=>$post]);
     }
 
@@ -63,9 +63,10 @@ class HomeController extends Controller
     public function floor(){
         return view('index_Chuan.Content_index.floor');
     }
-    
+
     public function club(){
         return view('index_Chuan.Content_index.clubTLU');
     }
+
 }
 

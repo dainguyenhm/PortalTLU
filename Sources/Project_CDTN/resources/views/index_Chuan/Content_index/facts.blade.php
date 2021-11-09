@@ -27,7 +27,7 @@
             <div class="col-lg col-md-6">
                 <div class="img-contents">
                     <div class="checkimg">
-                        <img width="435" height="330" src="{{ asset('asset/img/home-doi-song-05.jpg') }}" alt="Image">
+                        <img width="430" height="350" src="{{ asset('asset/img/home-doi-song-05.jpg') }}" alt="Image">
                     </div>
                     <div class="checkimg-1">
                         <img width="500" height="330" src="{{ asset('asset/img/home-doi-song-02.jpg') }}" alt="Image">

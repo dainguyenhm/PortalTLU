@@ -8,7 +8,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="about-img">
-                        <img src="{{ asset('asset/img/ThangLong.jpg') }}" alt="Image">
+                        <img src="{{asset('upload/images/dh-thang-long.jpg')}}" alt="Image">
                     </div>
                 </div>
                 <div class="col-lg-6" style="font-family: 'Barlow';">

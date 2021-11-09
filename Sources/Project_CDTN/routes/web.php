@@ -44,6 +44,8 @@ Route::group(['prefix' => 'index'], function () {
 
     Route::get('team', 'Index\HomeController@team')->name('team');
 
+    // Route::get('addmision', 'Index\HomeController@adminssion')->name('adminssion');
+
     Route::get('Admission-Information','Index\HomeController@information')->name('Admission.Information');
 
     Route::get('Enrollment-project','Index\HomeController@enrollment')->name('Admission.Enrollment');
