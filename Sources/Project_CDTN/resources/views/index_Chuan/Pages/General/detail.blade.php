@@ -7,22 +7,17 @@
     <div class="single">
         <div class="container">
             <div class="row">
-                
+
                 <div class="col-lg-8">
                     <div class="single-content">
-                        
-                            <h1>{!!$post->title!!}</h1>
-                            <hr>
-                                {!! $post->summary !!}  
+
+                        <h1 style="font-family: 'Font Awesome 5 Pro'; font-size: 40px;">{!! $post->title !!}</h1>
+                        <hr>
+                        {!! $post->summary !!}
                         {{-- Mục Tiêu đào Tạo --}}
                         <h2>Mục tiêu đào tạo</h2>
                         <hr>
-                            {!! $post->content !!}
-
-                        {{-- Sự nghiệp tương lai --}}
-                        <h2></h2>
-                        
-                        
+                        {!! $post->content !!}
                     </div>
                 </div>
 
@@ -31,10 +26,10 @@
                         <div class="sidebar-widget">
                             <div class="single-bio">
                                 <div class="single-bio-img">
-                                    <img src="/upload/images/{{$post->img}}" />
+                                    <img src="/upload/images/{{ $post->img }}" />
                                 </div>
                                 <div class="single-bio-text">
-                                    <h1 style="color: ghostwhite;">{!!$post->title!!}</h1>
+                                    <h1 style="color: ghostwhite;">{!! $post->title !!}</h1>
                                 </div>
                                 <div class="single-bio-social">
                                     <a class="btn" href="https://www.facebook.com/groups/cnttdhthanglong"><i
@@ -74,5 +69,5 @@
     <!-- Single Post End-->
 @endsection
 @section('slide')
-    @include('index_Chuan.Layout.slide')
+    {{-- @include('index_Chuan.Layout.slide') --}}
 @endsection
