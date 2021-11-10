@@ -44,4 +44,8 @@ class LoginAdminController extends Controller
         return redirect()->route('getAdmin.login');
     }
 
+    public function getUpdate(){
+        return view('index_Chuan.admin.user.update');
+    }
+
 }

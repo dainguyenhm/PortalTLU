@@ -82,6 +82,7 @@
                     <a href="#">Cựu Sinh Viên & Doanh Nghiệp</a>
                     <ul class="sub-menu">
                         <li><a href="{{ route('recruitment') }}">Thêm Bài Tuyển Dụng</a></li>
+                        <li><a href="">Danh Sách Sinh Viên Đã Tốt Nghiệp</a></li>
                     </ul>
                 </li>
 

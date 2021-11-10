@@ -22,8 +22,7 @@
                         <li><a><i
                                     class="fa fa-user fa-fw"></i>{{ auth()->user()->first_name }}&nbsp;{{ auth()->user()->last_name }}</a>
                         </li>
-                        <label for=""></label>
-                        <li><a href=""><i class="fa fa-gear fa-fw"></i>Settings</a>
+                        <li><a href="/admin/user/update/{{auth()->user()->id}}"><i class="fa fa-gear fa-fw"></i>Settings</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="{{ route('getAdmin.logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -89,20 +88,6 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        {{-- <li>
-                            <a href="{{ route('enterprise.list') }}"><i class="fa fa-users fa-fw"></i>&nbsp;&nbsp;Doanh
-                                Nghiệp <span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{{ route('enterprise.list') }}"><i
-                                            class="fas fa-list-alt"></i>&nbsp;&nbsp;Danh sách</a>
-                                </li>
-                                <li>
-                                    <a href="#">Thêm Doanh Nghiệp</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li> --}}
                         <li>
                             <a href="{{ route('post.list') }}"><i class="fas fa-paste"></i>&nbsp;&nbsp;Bài viết
                                 <span class="fa arrow"></span></a>
@@ -116,10 +101,6 @@
                                     <a href="{{ route('post.insert') }}"><i
                                             class="fas fa-list-alt"></i>&nbsp;&nbsp;Thêm Bài Viết</a>
                                 </li>
-                                {{-- <li>
-                                    <a href="/admin/post/form-Update/{{$post->id}}"><i
-                                            class="fas fa-list-alt"></i>&nbsp;&nbsp;Thêm Bài Viết</a>
-                                </li> --}}
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

@@ -161,6 +161,7 @@ Route::prefix('login-Admin')->group(function () {
     Route::get('index', 'Admin\LoginAdminController@getlogin')->name('getAdmin.login');
     Route::post('login', 'Admin\LoginAdminController@postlogin')->name('postAdmin.login');
     Route::get('logout', 'Admin\LoginAdminController@getlogout')->name('getAdmin.logout');
+
 });
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], function () {
     Route::get('quan-tri', 'Admin\LoginAdminController@manager')->name('manager.index');
