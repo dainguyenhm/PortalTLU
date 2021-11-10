@@ -21,8 +21,7 @@
                                     <th>ID</th>
                                     <th>User_ID</th>
                                     <th>Loại Bài Viết</th>
-                                    <th>Nội Dung</th>
-                                    <th>Tóm tắt</th>
+                                    <th>Tiêu Đề</th>
                                     <th>Hình Ảnh</th>
                                     <th>Trạng Thái</th>
                                     <th>Links</th>
@@ -48,8 +47,7 @@
                                                 
                                         @endswitch
                                     </td>
-                                    <td>{{$pt->content}}</td>
-                                    <td>{{$pt->summary}}</td>
+                                    <td>{{$pt->title}}</td>
                                     <td>{{$pt->img}}</td>
                                     <td>
                                         @switch($pt->status)

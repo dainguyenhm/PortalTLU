@@ -19,28 +19,37 @@ class StudentIndexController extends Controller
     public function postSearch(Request $request)
     {
         $count = 0;
-        $search = $request->search;
-        $student = Student::where('student_code', "$search")->first();
-        $score = Transcript::where('student_id',  $student->id)->get();
-        
-        foreach ($score as $value) {
-            $count = $count + $value->Subject->credit;
+        if (Auth::check() == true) {
+            if(auth()->user()->type==1){
+                $user = auth()->user()->id;
+                $student = Student::where('user_id', "$user")->first();
+    
+                $score = Transcript::where('student_id',  $student->id)->get();
+    
+                foreach ($score as $value) {
+                    $count = $count + $value->Subject->credit;
+                }
+            }else{
+                return view('index_Chuan.403');
+            }
+           
+        }else{
+            return view('index_Chuan.403');
         }
-        
-        return view('index_Chuan/Pages/Student/result', ['score' => $score, 'count' => $count,'search'=>$search]);
-        
+
+        return view('index_Chuan/Pages/Student/result', ['score' => $score, 'count' => $count, 'user' => $user,'student'=>$student]);
     }
 
     public function educate()
     {
         $post = Post::all();
-        return view('index_Chuan.Pages.Student.educate',['post'=>$post]);
+        return view('index_Chuan.Pages.Student.educate', ['post' => $post]);
     }
 
     public function tuition()
     {
         $post = Post::all();
-        return view('index_Chuan.Pages.Student.tuition',['post'=>$post]);
+        return view('index_Chuan.Pages.Student.tuition', ['post' => $post]);
     }
 
     public function insurance()
@@ -48,28 +57,30 @@ class StudentIndexController extends Controller
         return view('index_Chuan.Pages.Student.insurance');
     }
 
-    public function listRecruitment(){
-        $post = Post::where('type','1')->get();
-        return view('index_Chuan.Pages.Student.postList',['post'=>$post]);
+    public function listRecruitment()
+    {
+        $post = Post::where('type', '1')->get();
+        return view('index_Chuan.Pages.Student.postList', ['post' => $post]);
     }
 
     public function newRecruitment($id)
     {
         $post = Post::find($id);
-        return view('index_Chuan.Pages.Student.post',['post'=>$post]);
+        return view('index_Chuan.Pages.Student.post', ['post' => $post]);
     }
     public function recruitment()
     {
         return view('index_Chuan.Pages.StudentOld.post');
     }
 
-    public function postRecruitment(Request $request){
-        $this->validate($request,[
-            'title'=>'required|min:6|unique:posts',
-            'summary'=>'required|min:10',
-            'content'=>'required|min:30',
+    public function postRecruitment(Request $request)
+    {
+        $this->validate($request, [
+            'title' => 'required|min:6|unique:posts',
+            'summary' => 'required|min:10',
+            'content' => 'required|min:30',
 
-        ],[
+        ], [
             'title.required' => 'Bạn chưa nhật tiêu đề',
             'title.min'      => 'Tiêu đề phải có ít nhất 5 ký tự',
             'summary.required' => 'Bạn chưa nhập tóm tắt',
@@ -84,7 +95,7 @@ class StudentIndexController extends Controller
         $recruitment->content = $request->content;
         $recruitment->user_id = Auth()->user()->id;
         $recruitment->type = 1;
-        $recruitment->status= 0;
+        $recruitment->status = 0;
         if ($request->hasFile('img')) {
             $file = $request->file('img');
             $duoi = $file->getClientOriginalExtension();
@@ -103,19 +114,17 @@ class StudentIndexController extends Controller
         }
         $recruitment->save();
         return redirect()->route('recruitment')->with('Thongbao', 'Gửi Thành Thành Công, Vui Lòng Đợi Xét Duyệt');
-
-
-    } 
+    }
 
     public function detailMessage($id)
     {
         $post = Post::find($id);
-        return view('index_Chuan.Pages.Student.message',['post'=>$post]);
+        return view('index_Chuan.Pages.Student.message', ['post' => $post]);
     }
 
     public function messageTuition($id)
     {
         $post = Post::find($id);
-        return view('index_Chuan.Pages.Student.messageTuition',['post'=>$post]);
+        return view('index_Chuan.Pages.Student.messageTuition', ['post' => $post]);
     }
 }

@@ -95,9 +95,9 @@ Route::group(['prefix' => 'index'], function () {
     });
 
     Route::group(['prefix' => 'Students', 'middleware' => ['only.student']], function () {
-        // Route::get('form-Look-up-learning-results', 'Index\StudentIndexController@search')->name('search');
+        Route::get('form-Look-up-learning-results', 'Index\StudentIndexController@search')->name('search');
 
-        Route::get('search-results', 'Index\StudentIndexController@postSearch')->name('student.Search');
+        Route::post('search-results', 'Index\StudentIndexController@postSearch')->name('student.postSearch');
 
         Route::group(['prefix' => 'Messages'], function () {
             Route::get('Educate', 'Index\StudentIndexController@educate')->name('educate');

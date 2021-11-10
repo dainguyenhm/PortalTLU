@@ -49,7 +49,7 @@
                 <li>
                     <a href="#">Sinh Viên</a>
                     <ul class="sub-menu">
-                        <li><a href="{{ route('search') }}">Tra Cứu Kết Quả Học Tập</a></li>
+                        <li><a href="{{ route('student.Search') }}">Xem Kết Quả Học Tập</a></li>
                         <li>
                             <a href="#">Xem Thông Báo</a>
                             <ul class="sub-menu">
@@ -74,6 +74,7 @@
                                 <li><a href="{{route('teacher.insurance')}}">Bảo Hiểm</a></li>
                             </ul>
                         </li>
+                        <li><a href="{{route('learning.search')}}">Tra cứu bảng điểm của sinh viên</a></li>
                     </ul>
                 </li>
                 {{-- Cựu Sinh Viên --}}
