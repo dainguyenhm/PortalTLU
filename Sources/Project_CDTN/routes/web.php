@@ -142,6 +142,8 @@ Route::group(['prefix' => 'index'], function () {
         Route::get('Form-Recruitment', 'Index\StudentIndexController@recruitment')->name('recruitment');
 
         Route::post('Post-Recruitment', 'Index\StudentIndexController@postRecruitment')->name('postRecruitment');
+
+        Route::get('List-OldStudent','Index\StudentIndexController@listOldStudent')->name('oldStudent.List');
     });
 
     Route::group(['prefix' => 'Parent'], function () {

@@ -127,4 +127,8 @@ class StudentIndexController extends Controller
         $post = Post::find($id);
         return view('index_Chuan.Pages.Student.messageTuition', ['post' => $post]);
     }
+
+    public function listOldStudent(){
+        return view('index_Chuan.Pages.StudentOld.list');
+    }
 }
