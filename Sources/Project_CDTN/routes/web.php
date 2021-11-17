@@ -190,6 +190,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], func
 
         Route::match(['get', 'post'], 'import', 'Admin\StudentController@import')->name('Student.import');
 
+        Route::match(['get', 'post'], 'import-List', 'Admin\StudentController@importList')->name('List.import');
+
         Route::post('form-create-student', 'Admin\StudentController@store')->name('postStudent.create');
 
         Route::get('update/{id}', 'Admin\StudentController@getupdate')->name('getStudent.update');

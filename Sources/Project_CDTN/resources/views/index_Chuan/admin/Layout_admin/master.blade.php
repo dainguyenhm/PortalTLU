@@ -71,6 +71,10 @@
                                     <a href="{{ route('Student.import') }}"><i
                                             class="fas fa-user-plus"></i>&nbsp;&nbsp;Import</a>
                                 </li>
+                                <li>
+                                    <a href="{{ route('List.import') }}"><i
+                                            class="fas fa-user-plus"></i>&nbsp;&nbsp;Import List</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

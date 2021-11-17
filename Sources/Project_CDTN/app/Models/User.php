@@ -97,4 +97,26 @@ class User extends Authenticatable
 
         return $user;
     }
+
+    public static function createUserFromFiles($code, $name, $birthDay, $sex, $nation, $place_birth,$nationality){
+        $arrName = explode(' ',$name);
+        $firstName = array_shift($arrName);
+        $lastName = implode(' ',$arrName);
+
+        $user = new User;
+        $user->user_name = $code;
+        $user->password = Hash::make($code);
+        $user->first_name = $firstName;
+        $user->last_name = $lastName;
+        $user->date_birth = $birthDay;
+        $user->type = self::STUDENT;
+        $user->sex = $sex;
+        $user->email = sprintf('%s@thanglong.edu.vn', $code);
+        $user->nation = $nation;
+        $user->place_birth = $place_birth;
+        $user->nationality = $nationality;
+        $user->save();
+
+        return $user;
+    }
 }

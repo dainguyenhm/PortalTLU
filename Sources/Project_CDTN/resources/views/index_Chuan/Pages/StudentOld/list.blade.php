@@ -4,13 +4,16 @@
 @endsection
 @section('content')
     <div class="container">
-        <div class="cod-md-12">
-            <div class="row">
-               <div  style="padding-top: 40px;">
+        <div class="row">
+            <div class="cod-md-12">
+                    <h1 class="page-header">
+                        <small style=" font-size:50px;">Danh sách sinh viên đã tốt nghiệp</small>
+                    </h1>
+               <div>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">Mã Sinh Viên</th>
+                            <th scope="col">MSV</th>
                             <th scope="col">Họ Tên</th>
                             <th scope="col">Ngày Sinh</th>
                             <th scope="col">Giới Tính</th>
@@ -23,6 +26,7 @@
                             <th scope="col">Năm Tốt Nghiệp</th>
                             <th scope="col">Hình Thức</th>
                             <th scope="col">Số Quyết Định Tốt Nghiệp</th>
+                            <th scope="col">Xem Bảng Điểm</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,6 +44,7 @@
                             <td>2021</td>
                             <td>Đại Học Chính Quy</td>
                             <td>21101805/QĐ-ĐHTL ngày 18/10/2021</td>
+                            <td><input type="submit" value="Xem Bảng Điểm" class="btn btn-primary"></td>
                         </tr>
 
                         <tr>
@@ -56,6 +61,7 @@
                             <td>2021</td>
                             <td>Đại Học Chính Quy</td>
                             <td>21101805/QĐ-ĐHTL ngày 18/10/2021</td>
+                            <td><input type="submit" value="Xem Bảng Điểm" class="btn btn-primary"></td>
                         </tr>
 
                         <tr>
@@ -72,6 +78,7 @@
                             <td>2021</td>
                             <td>Đại Học Chính Quy</td>
                             <td>21101805/QĐ-ĐHTL ngày 18/10/2021</td>
+                            <td><input type="submit" value="Xem Bảng Điểm" class="btn btn-primary"></td>
                         </tr>
                     </tbody>
                 </table>

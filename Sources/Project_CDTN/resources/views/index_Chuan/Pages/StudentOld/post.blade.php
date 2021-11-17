@@ -8,7 +8,6 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="col-lg-7" style="padding-bottom:120px">
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
                                 @foreach ($errors->all() as $err)
@@ -22,9 +21,8 @@
                                 {{ session('Thongbao') }}
                             </div>
                         @endif
-                    </div>
                     <h1 class="page-header">
-                        <small style="color:mediumblue; font-size:50px;">Thêm Bài Tuyển Dụng</small>
+                        <small style="color:rgb(248, 240, 240); font-size:50px;">Thêm Bài Tuyển Dụng</small>
                     </h1>
 
                     <form action="{{ route('postRecruitment') }}" method="post" class="create-form"
@@ -32,7 +30,7 @@
                         @csrf
                         <div class="row line-item">
                             <div class="col-md-2">
-                                <label>Tiêu đề</label>
+                                <label><b style="font-size: 30px;">Tiêu đề</b></label>
                             </div>
                             <div class="col-md-8">
                                 <input style="height: 100px;" type="text" name="title" class="form-control"
@@ -41,7 +39,7 @@
                         </div> <br>
                         <div class="row line-item">
                             <div class="col-md-2">
-                                <label>Tóm Tắt</label>
+                                <label><b style="font-size: 30px;">Tóm Tắt</b></label>
                             </div>
                             <div class="col-md-8">
                                 <textarea class="ckeditor" name="summary" id="demo" rows="3"></textarea>
@@ -49,7 +47,7 @@
                         </div><br>
                         <div class="row line-item">
                             <div class="col-md-2">
-                                <label>Nội dung</label>
+                                <label><b style="font-size: 30px;">Nội dung</b></label>
                             </div>
                             <div class="col-md-8">
                                 <textarea class="ckeditor" name="content" id="demo" rows="5"></textarea>
@@ -57,7 +55,7 @@
                         </div><br>
                         <div class="row line-item">
                             <div class="col-md-2">
-                                <label>Hình ảnh</label>
+                                <label><b style="font-size: 30px;">Hình ảnh</b></label>
                             </div>
                             <div class="col-md-4">
                                 <input type="file" name="img">

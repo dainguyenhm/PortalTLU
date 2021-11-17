@@ -4,8 +4,11 @@
 @endsection
 @section('content')
     <div class="container">
-        <div class="cod-md-12">
-            <div class="row">
+        <div class="row">
+            <div class="cod-md-12">
+                <h1 class="page-header">
+                    <small style=" font-size:50px;">Bảng Lương</small>
+                </h1>
               <div style="padding-top: 40px;">
                 <table class="table table-bordered">
                     <thead>

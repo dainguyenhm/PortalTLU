@@ -14,7 +14,7 @@ class StudentController extends Controller
 {
     public function list()
     {
-        $student = Student::orderBy('faculity_id','DESC')->get();
+        $student = Student::orderBy('faculity_id', 'DESC')->get();
         return view('index_Chuan.admin.student.list', ['student' => $student]);
     }
 
@@ -73,7 +73,7 @@ class StudentController extends Controller
         $user->date_birth = $request->date_birth;
         $user->sex = $request->sex;
         $user->type = 1;
-        
+
         $user->save();
 
         $student = new Student();
@@ -100,7 +100,7 @@ class StudentController extends Controller
 
     public function postupdate(Request $request, $id)
     {
-        $this->validate($request,[],[]);
+        $this->validate($request, [], []);
 
         $student = Student::find($id);
         $student->user_id = $request->user_id;
@@ -112,7 +112,8 @@ class StudentController extends Controller
         return redirect()->route('student.list')->with('Thongbao', 'Sửa sinh viên thành công.');
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $student = Student::find($id);
         $student->delete();
 
@@ -121,16 +122,16 @@ class StudentController extends Controller
 
     public function import(Request $request)
     {
-        if($request->method() == "POST"){
+        if ($request->method() == "POST") {
             try {
                 $reader = ReaderEntityFactory::createXLSXReader();
                 $path_file = $request->pathfile;
                 $reader->open($path_file);
-    
+
                 foreach ($reader->getSheetIterator() as $k => $sheet) {
                     $this->importStudent($sheet);
                 }
-    
+
                 return redirect()->back()->with('success', 'Successfully');
             } catch (Throwable $th) {
                 //throw $th;
@@ -141,16 +142,17 @@ class StudentController extends Controller
 
     function importStudent($data)
     {
+
         foreach ($data->getRowIterator() as $rowIndex => $row) {
             if ($rowIndex === 1) {
                 continue;
             }
-            $cell = $row->getCells();
 
+            $cell = $row->getCells();
             $user = $this->createUserImport(
-                $cell[0]->getValue(), 
-                $cell[1]->getValue(), 
-                $cell[2]->getValue(), 
+                $cell[0]->getValue(),
+                $cell[1]->getValue(),
+                $cell[2]->getValue(),
                 $cell[3]->getValue()
             );
 
@@ -159,8 +161,8 @@ class StudentController extends Controller
                 $cell[0]->getValue(),
                 $cell[6]->getValue(),
                 $cell[4]->getValue(),
-                $cell[5]->getValue(), 
-            );  
+                $cell[5]->getValue(),
+            );
         }
         return redirect()->route('student.list')->with('Thongbao', 'Thêm Sinh Viên thành công.');
     }
@@ -168,7 +170,7 @@ class StudentController extends Controller
     function createUserImport($code, $name, $birthDay, $sex)
     {
         $user = User::where('user_name', $code)->first();
-        if(!$user){
+        if (!$user) {
             $user = User::createUserFromFile($code, $name, $birthDay, $sex);
         }
         return $user;
@@ -177,8 +179,83 @@ class StudentController extends Controller
     function createStudentImport($userId, $code, $session, $class, $faculityName)
     {
         $student = Student::where('student_code', $code)->get();
-        if(!count($student)){
+        if (!count($student)) {
             Student::createStudentFromFile($userId, $code, $session, $class, $faculityName);
+        }
+    }
+
+
+    public function importList(Request $request)
+    {
+        if ($request->method() == "POST") {
+            try {
+                $reader = ReaderEntityFactory::createXLSXReader();
+                $path_file = $request->pathfile;
+                $reader->open($path_file);
+
+                foreach ($reader->getSheetIterator() as $k => $sheet) {
+                    $this->importListStudent($sheet);
+                }
+
+                return redirect()->back()->with('success', 'Successfully');
+            } catch (Throwable $th) {
+                //throw $th;
+            }
+        }
+        return view('index_Chuan.admin.student.importlist');
+    }
+
+    function importListStudent($data)
+    {
+        foreach ($data->getRowIterator() as $rowIndex => $row) {
+            if ($rowIndex === 1) {
+                continue;
+            }
+
+            $cell = $row->getCells();
+            
+            $user = $this->createUser(
+                $cell[0]->getValue(),
+                $cell[1]->getValue(),
+                $cell[2]->getValue(),
+                $cell[3]->getValue(),
+                $cell[4]->getValue(),
+                $cell[5]->getValue(),
+                $cell[6]->getValue()
+            );
+
+            $this->createStudent(
+                $user->id,
+                $cell[0]->getValue(),
+                $cell[7]->getValue(),
+                $cell[8]->getValue(),
+                $cell[9]->getValue(),
+                $cell[10]->getValue(),
+                $cell[11]->getValue(),
+                $cell[12]->getValue(),
+                $cell[13]->getValue()
+            );
+            
+        }
+        return redirect()->route('student.list')->with('Thongbao', 'Thêm Sinh Viên thành công.');
+    }
+    
+   
+    function createUser($code, $name, $birthDay, $sex, $nation, $place_birth, $nationality)
+    {
+        
+        $user = User::where('user_name', $code)->first();
+        if (!$user) {
+            $user = User::createUserFromFiles($code, $name, $birthDay, $sex, $nation, $place_birth, $nationality);
+        }
+        return $user;
+    }
+
+    function createStudent($userId, $code, $session, $class, $faculityName, $graduation_type, $graduation_year, $graduation_form, $decision)
+    {
+        $student = Student::where('student_code', $code)->get();
+        if (!count($student)) {
+            Student::createStudentFromFiles($userId, $code, $session, $class, $faculityName, $graduation_type, $graduation_year, $graduation_form, $decision);
         }
     }
 }
