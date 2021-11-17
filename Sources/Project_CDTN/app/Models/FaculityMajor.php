@@ -13,7 +13,7 @@ class FaculityMajor extends Model
 
     public function students()
     {
-        return $this->belongsToMany(Students::class, 'faculity_id', 'id');
+        return $this->belongsToMany(Student::class, 'faculity_id', 'id');
     }
 
     public function faculityMajors()

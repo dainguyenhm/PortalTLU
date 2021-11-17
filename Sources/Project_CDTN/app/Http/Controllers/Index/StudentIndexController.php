@@ -129,6 +129,7 @@ class StudentIndexController extends Controller
     }
 
     public function listOldStudent(){
-        return view('index_Chuan.Pages.StudentOld.list');
+        $student = Student::where('type','1')->get();
+        return view('index_Chuan.Pages.StudentOld.list',['student'=>$student]);
     }
 }

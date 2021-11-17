@@ -213,7 +213,7 @@ class StudentController extends Controller
             }
 
             $cell = $row->getCells();
-            
+
             $user = $this->createUser(
                 $cell[0]->getValue(),
                 $cell[1]->getValue(),
@@ -235,15 +235,14 @@ class StudentController extends Controller
                 $cell[12]->getValue(),
                 $cell[13]->getValue()
             );
-            
         }
         return redirect()->route('student.list')->with('Thongbao', 'Thêm Sinh Viên thành công.');
     }
-    
-   
+
+
     function createUser($code, $name, $birthDay, $sex, $nation, $place_birth, $nationality)
     {
-        
+
         $user = User::where('user_name', $code)->first();
         if (!$user) {
             $user = User::createUserFromFiles($code, $name, $birthDay, $sex, $nation, $place_birth, $nationality);

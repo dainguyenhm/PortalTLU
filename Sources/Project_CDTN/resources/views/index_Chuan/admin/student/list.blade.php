@@ -37,10 +37,10 @@
                                 
                                 <td>
                                     @switch($st->faculity_id)
-                                        @case(9)
+                                        @case(10)
                                             {{ 'Khoa học Máy Tính' }}
                                         @break
-                                        @case(10)
+                                        @case(9)
                                             {{ 'Toán Ứng Dụng' }}
                                         @break
                                         @case(11)
@@ -49,10 +49,10 @@
                                         @case(12)
                                             {{ 'Hệ Thống Thông Tin' }}
                                         @break
-                                        @case( 13)
+                                        @case( 14)
                                             {{ 'Trí Tuệ Nhân Tạo' }}
                                         @break
-                                        @case(14)
+                                        @case(13)
                                             {{ 'Công Nghệ Thông tin' }}
                                         @break
                                         @case( 15)
@@ -64,49 +64,49 @@
                                         @case(17)
                                             {{ 'Quản Trị Kinh Doanh' }}
                                         @break
-                                        @case(19)
+                                        @case(18)
                                             {{ 'Marketing' }}
                                         @break
-                                        @case(20)
+                                        @case(19)
                                             {{ 'Logitics & Quản Lý Chuỗi Cung Ứng' }}
                                         @break
-                                        @case(21)
+                                        @case(20)
                                             {{ 'Luật Kinh Tế' }}
                                         @break
-                                        @case(22)
+                                        @case(21)
                                             {{ 'Kinh Tế Quốc Tế' }}
                                         @break
-                                        @case(23)
+                                        @case(22)
                                             {{ 'Điều Dưỡng' }}
                                         @break
-                                        @case(24)
+                                        @case(23)
                                             {{ 'Dinh Dưỡng' }}
                                         @break
-                                        @case(25)
+                                        @case(24)
                                             {{ 'Ngôn Ngữ Anh' }}
                                         @break
-                                        @case(26)
+                                        @case(25)
                                             {{ 'Ngôn Ngữ Nhật Bản' }}
                                         @break
-                                        @case(27)
+                                        @case(28)
                                             {{ 'Ngôn Ngữ Hàn Quốc' }}
                                         @break
-                                        @case(28)
+                                        @case(29)
                                             {{ 'Ngôn Ngữ Trung Quốc' }}
                                         @break
-                                        @case(29)
+                                        @case(30)
                                             {{ 'Việt Nam Học' }}
                                         @break
-                                        @case(30)
+                                        @case(31)
                                             {{ 'Công Tác Xã Hội' }}
                                         @break
-                                        @case(31)
+                                        @case(32)
                                             {{ 'Quản Trị & Du Lịch - Lữ Hành' }}
                                         @break
-                                        @case(32)
+                                        @case(33)
                                             {{ 'Thanh Nhạc' }}
                                         @break
-                                        @case(33)
+                                        @case(34)
                                             {{ 'Truyền Thông Đa Phương Tiện' }}
                                         @break
                                         @default
