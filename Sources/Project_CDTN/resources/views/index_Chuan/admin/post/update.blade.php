@@ -70,7 +70,8 @@
                             </div>
                             <div class="form-group">
                                 <label>Hình ảnh</label>
-                                <input type="file" name="img" class="form-control" value="{{ $post->img }}">
+                                <p> <img src="upload/images/{{ $post->img }}" width="400px" alt=""> </p>
+                                <input type="file" name="img" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Trạng Thái</label>
@@ -89,7 +90,7 @@
                                 </label>
                                 <div class="form-group">
                                     <label>Chọn file</label>
-                                    <input type="file" name="pdf" class="form-control">
+                                    <input type="file" name="pdf" class="form-control" value="pdf/{{$post->link}}">
                                 </div>
                             </div>
 

@@ -70,6 +70,7 @@ class PostController extends Controller
         }
 
         $post->type = $request->type;
+
         if ($request->hasFile('img')) {
             $file = $request->file('img');
             $duoi = $file->getClientOriginalExtension();
@@ -79,7 +80,7 @@ class PostController extends Controller
             $name = $file->getClientOriginalName();
             $img = "a" . "_" . $name;
             while (file_exists('upload/images/$img')) {
-                $Hinh = "b" . "_" . $name;
+                $img = "b" . "_" . $name;
             }
             $file->move("upload/images", $img);
             $post->img = $img;
@@ -133,9 +134,11 @@ class PostController extends Controller
                 $pdf = "b" . "_" . $name;
             }
             $file->move("pdf", $pdf);
+            $post->link =  sprintf('pdf/%s', $pdf);
         }
 
         $post->type = $request->type;
+        
         if ($request->hasFile('img')) {
             $file = $request->file('img');
             $duoi = $file->getClientOriginalExtension();
@@ -145,12 +148,11 @@ class PostController extends Controller
             $name = $file->getClientOriginalName();
             $img = "a" . "_" . $name;
             while (file_exists('upload/images/$img')) {
-                $Hinh = "b" . "_" . $name;
+                $img = "b" . "_" . $name;
             }
             $file->move("upload/images", $img);
+            unlink("upload/images/".$post->img);
             $post->img = $img;
-        } else {
-            $post->img = "";
         }
         $post->save();
         return redirect()->route('post.list')->with('Thongbao', 'Sửa Thành Công');
