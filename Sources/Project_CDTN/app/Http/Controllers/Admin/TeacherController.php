@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Teacher;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Box\Spout\Reader\Common\Creator\ReaderEntityFactory;
 
 class TeacherController extends Controller
 {
@@ -103,5 +104,65 @@ class TeacherController extends Controller
         $teacher->delete();
 
         return redirect()->route('teacher.list')->with('Thongbao', 'Xoá giảng viên thành công.');
+    }
+
+    public function importParyoll(Request $request)
+    {
+        if ($request->method() == "POST") {
+            try {
+                $reader = ReaderEntityFactory::createXLSXReader();
+                $path_file = $request->pathfile;
+                $reader->open($path_file);
+
+                foreach ($reader->getSheetIterator() as $k => $sheet) {
+                    $this->importTeacher($sheet);
+                }
+
+                return redirect()->back()->with('success', 'Successfully');
+            } catch (Throwable $th) {
+                //throw $th;
+            }
+        }
+        return view('index_Chuan.admin.teacher.import');
+    }
+
+    function importTeacher($data)
+    {
+        foreach ($data->getRowIterator() as $rowIndex => $row) {
+            if ($rowIndex === 1) {
+                continue;
+            }
+            $cell = $row->getCells();
+
+            $user = $this->createUserTeacherIfExist(
+                $cell[0]->getValue(),
+                $cell[1]->getValue()
+            );
+
+            Teacher::createTeacherFromFiles(
+                $user->id, 
+                $cell[0]->getValue(),
+                $cell[2]->getValue(),
+                $cell[3]->getValue(), 
+                $cell[4]->getValue(), 
+                $cell[5]->getValue(), 
+                $cell[6]->getValue(),
+                $cell[7]->getValue(),
+                $cell[9]->getValue(),
+                $cell[10]->getValue(),
+                $cell[11]->getValue()
+            );
+
+        }
+        return redirect()->back()->with('Thongbao', 'Import bảng lương thành công.');
+    }
+
+    function createUserTeacherIfExist($code, $name)
+    {
+        $user = User::where('user_name', $code)->first();
+        if(!$user){
+            $user =  User::createUserTeacherFromFile($code, $name);
+        }
+        return $user;
     }
 }

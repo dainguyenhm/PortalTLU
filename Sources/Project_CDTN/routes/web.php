@@ -213,6 +213,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'only.admin']], func
         Route::post('update/{id}', 'Admin\TeacherController@postupdate')->name('postTeacher.update');
 
         Route::get('delete/{id}', 'Admin\TeacherController@getdelete')->name('getTeacher.delete');
+
+        Route::match(['get', 'post'],'import-payroll', 'Admin\TeacherController@importParyoll')->name('Teacher.import-payroll');
     });
 
     Route::prefix('enterprise')->group(function () {

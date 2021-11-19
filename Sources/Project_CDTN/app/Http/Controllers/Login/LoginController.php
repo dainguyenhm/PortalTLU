@@ -40,8 +40,10 @@ class LoginController extends Controller
     }
 
     function Profile(){
-    
-        return view('index_Chuan.Login_index.infor.Profile',);
+        $user = auth()->user();
+        $user->load('teacher');
+
+        return view('index_Chuan.Login_index.infor.Profile', ['user' => $user]);
     }
 
     function postProfile( Request $request,$id){

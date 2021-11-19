@@ -89,6 +89,9 @@
                                 <li>
                                     <a href="{{ route('getTeacher.create') }}">Thêm Giảng Viên</a>
                                 </li>
+                                <li>
+                                    <a href="{{ route('Teacher.import-payroll') }}">Import bảng lương</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

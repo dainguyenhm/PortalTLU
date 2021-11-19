@@ -127,7 +127,7 @@ class StudentController extends Controller
                 $reader = ReaderEntityFactory::createXLSXReader();
                 $path_file = $request->pathfile;
                 $reader->open($path_file);
-
+                
                 foreach ($reader->getSheetIterator() as $k => $sheet) {
                     $this->importStudent($sheet);
                 }
@@ -257,4 +257,5 @@ class StudentController extends Controller
             Student::createStudentFromFiles($userId, $code, $session, $class, $faculityName, $graduation_type, $graduation_year, $graduation_form, $decision);
         }
     }
+    
 }

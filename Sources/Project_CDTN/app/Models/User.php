@@ -119,4 +119,20 @@ class User extends Authenticatable
 
         return $user;
     }
+
+    public static function createUserTeacherFromFile($code, $name){
+        $arrName = explode(' ',$name);
+        $firstName = array_shift($arrName);
+        $lastName = implode(' ',$arrName);
+        $user = new User;
+        $user->user_name = $code;
+        $user->password = Hash::make($code);
+        $user->first_name = $firstName;
+        $user->last_name = $lastName;
+        $user->type = self::TEACHER;
+        $user->email = sprintf('%s@thanglong.edu.vn', $code);
+        $user->save();
+
+        return $user;
+    }
 }

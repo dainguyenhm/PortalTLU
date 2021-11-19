@@ -8,9 +8,16 @@
             <button class="tablinks" onclick="openCity(event, 'profile')" id="defaultOpen">Xem Thông Tin Cá
                 Nhân</button>
             <button class="tablinks" onclick="openCity(event, 'updateProfile')">Sửa Thông Tin Cá Nhân</button>
+            @if(auth()->user()->type == 2)
+                <button class="tablinks" onclick="openCity(event, 'table-payroll')">Bảng lương</button>
+            @endif
             <button class="tablinks" onclick="openCity(event, 'forgotPw')">Đổi Mật Khẩu</button>
         </div>
-
+        @if(auth()->user()->type == 2)
+            <div id="table-payroll" class="tabcontent">
+                @include('index_Chuan.Login_index.infor.tablePayroll')
+            </div>
+        @endif
         <div id="profile" class="tabcontent">
             @include('index_Chuan.Login_index.infor.inforUser')
         </div>

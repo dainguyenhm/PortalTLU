@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Student;
 use App\Models\Transcript;
+use Box\Spout\Reader\Common\Creator\ReaderEntityFactory;
 
 class TeacherIndexController extends Controller
 {
