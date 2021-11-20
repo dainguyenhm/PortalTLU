@@ -67,7 +67,7 @@
             <li>
                 <a href="#">Giảng Viên</a>
                 <ul class="sub-menu">
-                    <li><a href="{{ route('teacher.search') }}">Tra Cứu Bảng Lương</a></li>
+                    {{-- <li><a href="{{ route('teacher.search') }}">Tra Cứu Bảng Lương</a></li> --}}
                     <li>
                         <a href="#">Xem Thông Báo</a>
                         <ul class="sub-menu">
