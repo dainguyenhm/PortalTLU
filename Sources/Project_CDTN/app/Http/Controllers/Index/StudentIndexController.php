@@ -31,7 +31,7 @@ class StudentIndexController extends Controller
                     $count = $count + $value->Subject->credit;
                 }
                 foreach ($credit as $score){
-                    $count1 = $count1 + $score->score;
+                    $count1 = $count1 +  ($score->score * $score->Subject->credit);
                 }
             }else{
                 return view('index_Chuan.403');

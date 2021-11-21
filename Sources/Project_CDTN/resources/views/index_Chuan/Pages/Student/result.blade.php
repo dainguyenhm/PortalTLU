@@ -27,8 +27,7 @@
                                     </tr>
                                 </thead>
                                 <div>
-                                    <h3><b>Bảng
-                                            Điểm:{{ auth()->user()->first_name }}&nbsp;{{ auth()->user()->last_name }}&nbsp;{{ $student->student_code }}</b>
+                                    <h3><b>Bảng Điểm:&nbsp;{{ auth()->user()->first_name }}&nbsp;{{ auth()->user()->last_name }}&nbsp;_{{ $student->student_code }}&nbsp;_{{ $student->class }}</b>
                                     </h3>
                                 </div>
                                 <tbody>
@@ -41,20 +40,21 @@
                                             <td>{{ $value->Subject->credit }}</td>
                                         </tr>
                                     @endforeach
-                                    <tr>
-                                        <th scope="row">{{ $K + 3 }}</th>
-                                        <td colspan="2">Điểm Trung Bình</td>
-                                        <td>{{ $count1 }}</td>
-                                    </tr>
-
-                                    <tr>
+                                    {{-- <tr>
                                         <th scope="row">{{ $K + 2 }}</th>
+                                        <td colspan="2">Điểm Trung Bình</td>
+                                        <td></td>
+                                    </tr> --}}
+
+                                    {{-- <tr>
+                                        <th scope="row">{{ $K + 3 }}</th>
                                         <td colspan="3">Tổng Số Tín Chỉ</td>
                                         <td>{{ $count }}</td>
-                                    </tr>
+                                    </tr> --}}
                                 </tbody>
                             </table>
-
+                            <p><b style="font-size: 20px;">Điểm Trung Bình:&nbsp; {{ round($count1 / $count, 2) }}</b></p>
+                            <p><b style="font-size: 20px;">Tổng Số Tín Chỉ Tích Luỹ:&nbsp; {{ $count }}</b></p>
                         </div>
 
                     </div>

@@ -71,14 +71,18 @@ class TeacherIndexController extends Controller
     public function postLearning(Request $request)
     {
         $count = 0;
+        $count1 = 1;
         $search = $request->search;
         $student = Student::where('student_code', "$search")->first();
-        $score = Transcript::where('student_id',  $student->id)->get();
+        $credit = Transcript::where('student_id',  $student->id)->get();
 
-        foreach ($score as $value) {
+        foreach ($credit as $value) {
             $count = $count + $value->Subject->credit;
         }
+        foreach ($credit as $score) {
+            $count1 = $count1 +  ($score->score * $score->Subject->credit);
+        }
 
-        return view('index_Chuan/Pages/Teacher/result', ['score' => $score, 'count' => $count, 'search' => $search]);
+        return view('index_Chuan/Pages/Teacher/result', ['credit' => $credit, 'count' => $count, 'count1' => $count1, 'search' => $search, 'student' => $student]);
     }
 }

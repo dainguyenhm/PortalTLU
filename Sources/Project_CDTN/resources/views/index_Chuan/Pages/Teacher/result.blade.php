@@ -24,10 +24,12 @@
                                 </tr>
                             </thead>
                             <div>
-                                <h3><b>Bảng Điểm:{{$search}}</b></h3>
+                                <h3><b>Bảng
+                                        Điểm:&nbsp;{{ $search }}_&nbsp;{{ $student->User->first_name }}&nbsp;{{ $student->User->last_name }}&nbsp;_{{ $student->class }}</b>
+                                </h3>
                             </div>
                             <tbody>
-                                @foreach ($score as $K => $value)
+                                @foreach ($credit as $K => $value)
                                     <tr>
                                         <th scope="row">{{ $K + 1 }}</th>
                                         <td>{{ $value->Subject->subject_code }}</td>
@@ -36,14 +38,15 @@
                                         <td>{{ $value->Subject->credit }}</td>
                                     </tr>
                                 @endforeach
-                                <tr>
+                                {{-- <tr>
                                     <th scope="row">{{ $K + 2 }}</th>
                                     <td colspan="3">Tổng Số Tín Chỉ</td>
                                     <td>{{$count}}</td>
-                                </tr>
+                                </tr> --}}
                             </tbody>
                         </table>
-
+                        <p><b style="font-size: 20px;">Điểm Trung Bình:&nbsp; {{ round($count1 / $count, 2) }}</b></p>
+                        <p><b style="font-size: 20px;">Tổng Số Tín Chỉ Tích Luỹ:&nbsp; {{ $count }}</b></p>
                     </div>
 
                 </div>

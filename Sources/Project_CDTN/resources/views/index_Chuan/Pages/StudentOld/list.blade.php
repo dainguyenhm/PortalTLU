@@ -10,6 +10,14 @@
                     <small style=" font-size:50px;">Danh sách sinh viên đã tốt nghiệp</small>
                 </h1>
                 <div>
+                    <select class="custom-select custom-select-lg mb-3">
+                        <option selected>Danh Sách Tốt nghiệp</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                </div><br>
+                <div>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -26,7 +34,6 @@
                                 <th scope="col">Năm Tốt Nghiệp</th>
                                 <th scope="col">Hình Thức</th>
                                 <th scope="col">Số Quyết Định Tốt Nghiệp</th>
-                                <th scope="col">Xem Bảng Điểm</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -149,7 +156,6 @@
                                     <td>{{ $student->graduation_year }}</td>
                                     <td>{{ $student->graduation_form }}</td>
                                     <td>{{ $student->decision }}</td>
-                                    <td><input type="submit" value="Xem Bảng Điểm" class="btn btn-primary"></td>
                                 </tr>
                             @endforeach
 
