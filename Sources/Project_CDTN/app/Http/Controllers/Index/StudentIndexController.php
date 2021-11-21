@@ -19,15 +19,19 @@ class StudentIndexController extends Controller
     public function postSearch(Request $request)
     {
         $count = 0;
+        $count1 = 0;
         if (Auth::check() == true) {
             if(auth()->user()->type==1){
                 $user = auth()->user()->id;
                 $student = Student::where('user_id', "$user")->first();
     
-                $score = Transcript::where('student_id',  $student->id)->get();
+                $credit = Transcript::where('student_id',  $student->id)->get();
     
-                foreach ($score as $value) {
+                foreach ($credit as $value) {
                     $count = $count + $value->Subject->credit;
+                }
+                foreach ($credit as $score){
+                    $count1 = $count1 + $score->score;
                 }
             }else{
                 return view('index_Chuan.403');
@@ -37,7 +41,7 @@ class StudentIndexController extends Controller
             return view('index_Chuan.403');
         }
 
-        return view('index_Chuan/Pages/Student/result', ['score' => $score, 'count' => $count, 'user' => $user,'student'=>$student]);
+        return view('index_Chuan/Pages/Student/result', ['credit' => $credit, 'count1'=>$count1 ,'count' => $count, 'user' => $user,'student'=>$student]);
     }
 
     public function educate()

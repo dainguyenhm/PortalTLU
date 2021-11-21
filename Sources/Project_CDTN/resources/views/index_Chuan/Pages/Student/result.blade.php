@@ -5,54 +5,62 @@
 @section('content')
     <!-- Single Post Start-->
     <div class="container">
-            @if (auth()->user()->type == 1)
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="menu-tab">
-                            <div class="tab">
-                                <button class="tablinks" onclick="openCity(event, 'profile')" id="defaultOpen">Két Quả
-                                    Tra
-                                    Cứu
-                                    <button>
-                            </div>
-                            <div id="profile" class="tabcontent">
-                                <table class="table table-bordered" style="overflow-y: scroll; height: 700px;">
-                                    <thead>
+        @if (auth()->user()->type == 1)
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="menu-tab">
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'profile')" id="defaultOpen">Két Quả
+                                Tra
+                                Cứu
+                                <button>
+                        </div>
+                        <div id="profile" class="tabcontent">
+                            <table class="table table-bordered" style="overflow-y: scroll; height: 700px;">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">STT</th>
+                                        <th scope="col">Mã Môn Học</th>
+                                        <th scope="col">Tên Môn Học</th>
+                                        <th scope="col">Điểm</th>
+                                        <th scope="col">Số Tín Chỉ</th>
+                                    </tr>
+                                </thead>
+                                <div>
+                                    <h3><b>Bảng
+                                            Điểm:{{ auth()->user()->first_name }}&nbsp;{{ auth()->user()->last_name }}&nbsp;{{ $student->student_code }}</b>
+                                    </h3>
+                                </div>
+                                <tbody>
+                                    @foreach ($credit as $K => $value)
                                         <tr>
-                                            <th scope="col">STT</th>
-                                            <th scope="col">Mã Môn Học</th>
-                                            <th scope="col">Tên Môn Học</th>
-                                            <th scope="col">Điểm</th>
-                                            <th scope="col">Số Tín Chỉ</th>
+                                            <th scope="row">{{ $K + 1 }}</th>
+                                            <td>{{ $value->Subject->subject_code }}</td>
+                                            <td>{{ $value->Subject->name }}</td>
+                                            <td>{{ $value->score }}</td>
+                                            <td>{{ $value->Subject->credit }}</td>
                                         </tr>
-                                    </thead>
-                                    <div>
-                                        <h3><b>Bảng Điểm:{{ auth()->user()->first_name }}&nbsp;{{ auth()->user()->last_name }}&nbsp;{{$student->student_code}}</b></h3>
-                                    </div>
-                                    <tbody>
-                                        @foreach ($score as $K => $value)
-                                            <tr>
-                                                <th scope="row">{{ $K + 1 }}</th>
-                                                <td>{{ $value->Subject->subject_code }}</td>
-                                                <td>{{ $value->Subject->name }}</td>
-                                                <td>{{ $value->score }}</td>
-                                                <td>{{ $value->Subject->credit }}</td>
-                                            </tr>
-                                        @endforeach
-                                        <tr>
-                                            <th scope="row">{{ $K + 2 }}</th>
-                                            <td colspan="3">Tổng Số Tín Chỉ</td>
-                                            <td>{{ $count }}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                    @endforeach
+                                    <tr>
+                                        <th scope="row">{{ $K + 3 }}</th>
+                                        <td colspan="2">Điểm Trung Bình</td>
+                                        <td>{{ $count1 }}</td>
+                                    </tr>
 
-                            </div>
+                                    <tr>
+                                        <th scope="row">{{ $K + 2 }}</th>
+                                        <td colspan="3">Tổng Số Tín Chỉ</td>
+                                        <td>{{ $count }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
                         </div>
+
                     </div>
                 </div>
-            @endif
+            </div>
+        @endif
     </div>
     <script>
         function openCity(evt, cityName) {
