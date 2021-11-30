@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Transcript;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 class StudentIndexController extends Controller
 {
@@ -21,27 +22,26 @@ class StudentIndexController extends Controller
         $count = 0;
         $count1 = 0;
         if (Auth::check() == true) {
-            if(auth()->user()->type==1){
+            if (auth()->user()->type == 1) {
                 $user = auth()->user()->id;
                 $student = Student::where('user_id', "$user")->first();
-    
+
                 $credit = Transcript::where('student_id',  $student->id)->get();
-    
+
                 foreach ($credit as $value) {
                     $count = $count + $value->Subject->credit;
                 }
-                foreach ($credit as $score){
+                foreach ($credit as $score) {
                     $count1 = $count1 +  ($score->score * $score->Subject->credit);
                 }
-            }else{
+            } else {
                 return view('index_Chuan.403');
             }
-           
-        }else{
+        } else {
             return view('index_Chuan.403');
         }
 
-        return view('index_Chuan/Pages/Student/result', ['credit' => $credit, 'count1'=>$count1 ,'count' => $count, 'user' => $user,'student'=>$student]);
+        return view('index_Chuan/Pages/Student/result', ['credit' => $credit, 'count1' => $count1, 'count' => $count, 'user' => $user, 'student' => $student]);
     }
 
     public function educate()
@@ -132,8 +132,32 @@ class StudentIndexController extends Controller
         return view('index_Chuan.Pages.Student.messageTuition', ['post' => $post]);
     }
 
-    public function listOldStudent(){
-        $student = Student::where('type','1')->get();
-        return view('index_Chuan.Pages.StudentOld.list',['student'=>$student]);
+    public function listOldStudent()
+    {
+        return view('index_Chuan.Pages.StudentOld.list');
     }
+
+    public function period(Request $request)
+    {
+
+        $period_key = $request->period_key;
+        $years_key = $request->years_key;
+        $student = Student::where('type', '1')->get();
+        $period = Student::where('period', 'like', "%$period_key%")->where('graduation_year', 'like', "%$years_key%")->get();
+        $years = Student::where('graduation_year', 'like', "%$years_key%")->get();
+
+        return view('index_Chuan.Pages.StudentOld.search', [
+            'period' => $period,
+            'years' => $years,
+            'student' => $student,
+            'period_key' => $period_key,
+            'years_key' => $years_key]);
+    }
+
+    // public function store(Request $request)
+    // {
+    //     return $request->all();
+    //     return view('index_Chuan/Pages/StudentOld/list');
+    // }
+
 }

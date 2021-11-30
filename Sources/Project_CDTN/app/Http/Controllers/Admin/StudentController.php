@@ -127,7 +127,7 @@ class StudentController extends Controller
                 $reader = ReaderEntityFactory::createXLSXReader();
                 $path_file = $request->pathfile;
                 $reader->open($path_file);
-                
+
                 foreach ($reader->getSheetIterator() as $k => $sheet) {
                     $this->importStudent($sheet);
                 }
@@ -187,6 +187,10 @@ class StudentController extends Controller
 
     public function importList(Request $request)
     {
+        // dd($request->all());
+        $period = $request->period;
+        
+
         if ($request->method() == "POST") {
             try {
                 $reader = ReaderEntityFactory::createXLSXReader();
@@ -194,7 +198,7 @@ class StudentController extends Controller
                 $reader->open($path_file);
 
                 foreach ($reader->getSheetIterator() as $k => $sheet) {
-                    $this->importListStudent($sheet);
+                    $this->importListStudent($sheet,$period);
                 }
 
                 return redirect()->back()->with('success', 'Successfully');
@@ -202,11 +206,14 @@ class StudentController extends Controller
                 //throw $th;
             }
         }
+
         return view('index_Chuan.admin.student.importlist');
     }
 
-    function importListStudent($data)
+    function importListStudent($data,$period)
     {
+
+        
         foreach ($data->getRowIterator() as $rowIndex => $row) {
             if ($rowIndex === 1) {
                 continue;
@@ -233,7 +240,8 @@ class StudentController extends Controller
                 $cell[10]->getValue(),
                 $cell[11]->getValue(),
                 $cell[12]->getValue(),
-                $cell[13]->getValue()
+                $cell[13]->getValue(),
+                $period
             );
         }
         return redirect()->route('student.list')->with('Thongbao', 'Thêm Sinh Viên thành công.');
@@ -250,12 +258,12 @@ class StudentController extends Controller
         return $user;
     }
 
-    function createStudent($userId, $code, $session, $class, $faculityName, $graduation_type, $graduation_year, $graduation_form, $decision)
+    function createStudent($userId, $code, $session, $class, $faculityName, $graduation_type, $graduation_year, $graduation_form, $decision, $period)
     {
         $student = Student::where('student_code', $code)->get();
+        // dd($code);
         if (!count($student)) {
-            Student::createStudentFromFiles($userId, $code, $session, $class, $faculityName, $graduation_type, $graduation_year, $graduation_form, $decision);
+            Student::createStudentFromFiles($userId, $code, $session, $class, $faculityName, $graduation_type, $graduation_year, $graduation_form, $decision, $period);
         }
     }
-    
 }

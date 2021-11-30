@@ -75,7 +75,7 @@ class TranscriptController extends Controller
             $this->createTranscript(
                 $cell[0]->getValue(),
                 $cell[1]->getValue(),
-                $cell[3]->getValue()
+                $cell[4]->getValue()
             );  
         }
         return redirect()->route('transcript.list')->with('Thongbao', 'Thêm Bảng điểm thành công.');

@@ -1,11 +1,12 @@
 <div style="padding: 20px 0px 20px 0px;">
 @if($user->teacher->coefficients_salary)
+        <div>
+                <p><b style="font-size: 20px;">{{ $user->first_name }} {{ $user->last_name }}&nbsp;_{{ $user->teacher->teacher_code }}&nbsp;_{{ $user->teacher->department }}</b></p>
+        </div>
         <table class="table table-bordered">
                 <thead>
                         <tr>
-                                <th scope="col">Mã Số</th>
-                                <th scope="col">Họ Tên</th>
-                                <th scope="col">Phòng Ban</th>
+                                <th scope="col">Tháng</th>
                                 <th scope="col">Hệ Số Lương</th>
                                 <th scope="col">Hệ Số Chức Vụ</th>
                                 <th scope="col">Lương Cơ Bản</th>
@@ -20,9 +21,7 @@
                 </thead>
                 <tbody>
                         <tr>
-                                <th scope="row">{{ $user->teacher->teacher_code }}</th>
-                                <td>{{ $user->first_name }} {{ $user->last_name }}</td>
-                                <td>{{ $user->teacher->department }}</td>
+                                <th scope="row">{{ number_format($user->teacher->month) }}</th>
                                 <td>{{ number_format($user->teacher->coefficients_salary) }}</td>
                                 <td>{{ number_format($user->teacher->position_coefficient) }}</td>
                                 <td>{{ number_format($user->teacher->basic_salary) }}</td>

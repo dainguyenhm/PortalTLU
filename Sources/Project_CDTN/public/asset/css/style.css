@@ -22,8 +22,8 @@ a {
     transition: .3s;
 }
 
-ul:hover,
-li:hover,
+/* ul:hover, */
+/* li:hover, */
 a:hover,
 a:active,
 a:focus {
@@ -363,6 +363,10 @@ a:focus {
 
 .row{
     font-family: "Avenir Next",sans-serif;
+    /* display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px; */
 
 }
 

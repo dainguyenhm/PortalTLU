@@ -59,16 +59,16 @@ class TeacherController extends Controller
 
         $user = new User();
 
-        $user->first_name = $request->first_name;
-        $user->last_name  = $request->last_name;
-        $user->email       = $request->email;
-        $user->password   = Hash::make($request->password);
-        $user->address    = $request->address;
-        $user->user_name   = $request->user_name;
+        $user->first_name   = $request->first_name;
+        $user->last_name    = $request->last_name;
+        $user->email        = $request->email;
+        $user->password     = Hash::make($request->password);
+        $user->address      = $request->address;
+        $user->user_name    = $request->user_name;
         $user->phone_number = $request->phone_number;
-        $user->date_birth = $request->date_birth;
-        $user->sex = $request->sex;
-        $user->type = 2;
+        $user->date_birth   = $request->date_birth;
+        $user->sex          = $request->sex;
+        $user->type         = 2;
 
         $user->save();
 
@@ -150,7 +150,9 @@ class TeacherController extends Controller
                 $cell[7]->getValue(),
                 $cell[9]->getValue(),
                 $cell[10]->getValue(),
-                $cell[11]->getValue()
+                $cell[11]->getValue(),
+                $cell[13]->getvalue(),
+                // $cell[13]->getvalue()
             );
 
         }

@@ -44,9 +44,10 @@
                             <form action="{{ route('List.import') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label>Đợt Tốt Nghiệp</label>
+                                    <label>Đợt Tốt Nghiệp</label> 
                                     <input class="form-control" name="period" placeholder="Nhập đợt tốt nghiệp...." />
                                 </div>
+                                
                                 <label>Import path file to Wards</label>
                                 <input type="file" name="pathfile" accept=".xlsx" class="form-control">
                                 <br>

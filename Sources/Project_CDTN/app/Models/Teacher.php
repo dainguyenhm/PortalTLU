@@ -26,7 +26,9 @@ class Teacher extends Model
         $bonus,
         $social_insurance,
         $health_insurance,
-        $personal_income_tax
+        $personal_income_tax,
+        $month,
+       
     )
     {
         $teacher = Teacher::where('teacher_code', $code)->first();
@@ -36,7 +38,6 @@ class Teacher extends Model
             $teacher->user_id               = $userId;
             $teacher->teacher_code          = $code;
         }
-
         $teacher->coefficients_salary   = $coefficients_salary;
         $teacher->position_coefficient  = $position_coefficient;
         $teacher->basic_salary          = $basic_salary;
@@ -46,6 +47,7 @@ class Teacher extends Model
         $teacher->health_insurance      = $health_insurance;
         $teacher->personal_income_tax   = $personal_income_tax;
         $teacher->department            = $department;
+        $teacher->month                 = $month;
         $teacher->save();
 
         return $teacher;

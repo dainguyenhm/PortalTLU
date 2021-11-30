@@ -42,7 +42,7 @@ class Student extends Model
         return $student;
     }
 
-    public static function createStudentFromFiles($userId, $code, $session, $class, $faculityName, $graduation_type, $graduation_year, $graduation_form, $decision)
+    public static function createStudentFromFiles($userId, $code, $session, $class, $faculityName, $graduation_type, $graduation_year, $graduation_form, $decision,$period)
     {
         $faculity = FaculityMajor::where('name', $faculityName)->first();
         $student = new Student;
@@ -56,6 +56,7 @@ class Student extends Model
         $student->graduation_year = $graduation_year;
         $student->graduation_form = $graduation_form;
         $student->decision = $decision;
+        $student->period = $period;
         $student->save();
         return $student;
     }
